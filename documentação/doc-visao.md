@@ -7,7 +7,7 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 Membros          |     Papel     |   E-mail   |
 ---------------- | ------------- | ---------- |
-Fábio Araújo     | Desenvolvedor | fabio.araujo.016@edu.ufrn.br
+Fábio Fabricio   | Desenvolvedor | fabio.araujo.016@edu.ufrn.br
 Flávio Glaydson  | Tech Leader   | flavio.lopes.709@edu.ufrn.br
 Gabriel José     | Analista      | gabriel.aquino069@edu.ufrn.br
 Laian Kevin      | Desenvolvedor | kevin.silva.701@ufrn.edu.br
@@ -17,7 +17,7 @@ Samuel Gutemberg | Testador      | samuel.gutemberg.069@ufrn.edu.br
 
 Membro           |     Competências   |
 ---------------- | ------------------ |
-Fábio Araújo     | Python, Javascript e Web Design                  
+Fábio Fabricio   | Python, Javascript e Web Design                  
 Flávio Glaydson  | Metodologias Ágeis, C, Python, Flutter, Javascript, UML                   
 Gabriel José     | C, Python, Javascript e Node.Js 
 Laian Kevin      | C, Python e JavaScript                   
@@ -37,16 +37,13 @@ Discente | Este usuário pode verificar o plano de aulas (horários), demosntrar
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Cadastrar Cliente     |  Cliente tem os atributos nome, email, cpf, telefone e endereço. | Técnico |
-RF002 - Alterar Cliente | A alteração permite a mudança do nome, email, telefone e endereço. | Técnico |
-RF003 - Excluir Cliente | O sistema deve permitir a exclusão de informações cadastradas.| Técnico |
-RF004 - Listar Cliente | Deve permitir a listagem de todos os clientes.  | Técnico |
-RF005 - Visualizar Cliente |  Deve permitir a visualização das informações de um cliente em específico | Técnico |
-RF006 - Cadastrar Produto | Produto tem os atributos marca, modelo e CPF do proprietário.| Técnico |
-RF007 - Alterar Produto | A alteração permite a mudança da marca e modelo. | Técnico | 
-RF008 - Listar Produto |  Deve permitir a listagem de todos os produtos. | Técnico |
-RF009 - Visualizar Produto | Deve permitir a visualização das informações de um produto em específico. | Técnico |
-RF010 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
+RF001 - Manter um cadastro de Centros     | Um centro representa uma unidade administrativa da Universidade. Um centro tem código, nome, sigla, endereço e site. | Administrador |
+RF002 - Manter um cadastro de Departamentos | Um departamento tem código, nome, sigla, endereço e o centro a qual pertence. | Administrador |
+RF003 - Manter o cadastro de Salas | Uma sala tem um número, um nome, capacidade, tamanho, bloco e o centro a qual pertence. | Administrador |
+RF004 - Manter cadastro de Componentes Curriculares | Um componente curricular é de um tipo de componente. Um componente curricular tem: código, nome, ementa, departamento, carga horária e modalidade, equivalências e requisitos com outros componentes, data de criação. | Administrador |
+RF005 - Manter o cadastro de Horários de Aula | Um horário tem: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início, uma hora de final | Administrador |
+RF006 - Manter o cadastro de professores | um professor tem: matrícula, nome, e-mail, telefone e o departamento | Administrador |
+RF007 - Manter cadastro de Turmas | Uma turma tem: código, professor, sala e horários (horário da turma). Uma turma é de um componente curricular. Uma turma tem um ou mais professores. Uma turma tem uma ou mais salas. Uma turma tem vários horários de aulas. | Chefes e Coordenadores |
 
 ### Modelo Conceitual
 
@@ -65,6 +62,14 @@ Requisito                                 | Descrição   |
 RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamento no Firefox e no Chrome. |
 RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milessegundos |
 RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
+RNF006 - Portabilidade | O sistema será voltado para todos os dispositivos que têm acesso a internet e ao navegador.|
+RNF007 - Treinamento | Os usuários deverão passar por um pequeno tutorial antes de usar o programa efetivamente. |
+RNF008 - Segurança de dados | Os dados serão protegidos com criptografia de ponta-a-ponta. |
+RNF009 - Entrega |Entregar o relatório com a lista de pedidos de assistência da semana na segunda e outro relatório com os serviços concluídos no sábado |
+RNF010 - Limite de pedidos semanais | O usuário terá um limite de 20 pedidos(por técnico) de análise por semana |
+RNF011 - Limite no tamanho do arquivo contendo o comprovante de pagamento | O arquivo enviado pelo cliente que solicitou o serviço deve possuir no máximo 10 Mb |
+RNF012 - O pagamento deverá ser efetuado após a prestação do serviço. | 
+
 
 ## Riscos
 
@@ -72,9 +77,9 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 
 Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
-07/03/2024 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
-07/03/2024 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
-07/03/2024 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
-07/03/2024 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
+10/03/2018 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
+10/03/2018 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
+10/03/2018 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
+10/03/2018 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
 
 ### Referências
