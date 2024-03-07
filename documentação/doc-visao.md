@@ -7,7 +7,7 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 Membros          |     Papel     |   E-mail   |
 ---------------- | ------------- | ---------- |
-Fábio Fabricio   | Desenvolvedor | fabio.araujo.016@edu.ufrn.br
+Fábio Araújo     | Desenvolvedor | fabio.araujo.016@edu.ufrn.br
 Flávio Glaydson  | Tech Leader   | flavio.lopes.709@edu.ufrn.br
 Gabriel José     | Analista      | gabriel.aquino069@edu.ufrn.br
 Laian Kevin      | Desenvolvedor | kevin.silva.701@ufrn.edu.br
@@ -17,7 +17,7 @@ Samuel Gutemberg | Testador      | samuel.gutemberg.069@ufrn.edu.br
 
 Membro           |     Competências   |
 ---------------- | ------------------ |
-Fábio Fabricio   | Python, Javascript e Web Design                  
+Fábio Araújo     | Python, Javascript e Web Design                  
 Flávio Glaydson  | Metodologias Ágeis, C, Python, Flutter, Javascript, UML                   
 Gabriel José     | C, Python, Javascript e Node.Js 
 Laian Kevin      | C, Python e JavaScript                   
@@ -69,9 +69,9 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 
 Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
-10/03/2018 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
-10/03/2018 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
-10/03/2018 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
-10/03/2018 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
+07/03/2024 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
+07/03/2024 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
+07/03/2024 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
+07/03/2024 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
 
 ### Referências
