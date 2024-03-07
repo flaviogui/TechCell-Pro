@@ -5,12 +5,13 @@ link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNF
 
 ## Equipe e Definição de Papéis
 
-Membro     |     Papel   |   E-mail   |
----------  | ----------- | ---------- |
-Taciano    | Cliente Professor  | taciano@bsi.ufrn.br
-Sandra     | Cliente (Diretora) | sandra@ceres.ufrn.br
-Zé         | Analista, Testador | ze@silva.com
-Maria      | Gerente, Desenvolvedor | maria@silva.com
+Membros          |     Papel     |   E-mail   |
+---------------- | ------------- | ---------- |
+Fábio Fabricio   | Desenvolvedor | fabio.araujo.016@edu.ufrn.br
+Flávio Glaydson  | Tech Leader   | flavio.lopes.709@edu.ufrn.br
+Gabriel José     | Analista      | gabriel.aquino069@edu.ufrn.br
+Laian Kevin      | Desenvolvedor | kevin.silva.701@ufrn.edu.br
+Samuel Gutemberg | Testador      | samuel.gutemberg.069@ufrn.edu.br
 
 ### Matriz de Competências
 
