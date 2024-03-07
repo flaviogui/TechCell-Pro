@@ -37,7 +37,7 @@ Discente | Este usuário pode verificar o plano de aulas (horários), demosntrar
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Cadastrar Cliente     |  Cliente tem os atributos nome, email, cpf, telefone e endereço. | Técnico |
+RF001 - Cadastrar Cliente |  Cliente tem os atributos nome, email, cpf, telefone e endereço. | Técnico |
 RF002 - Alterar Cliente | A alteração permite a mudança do nome, email, telefone e endereço. | Técnico |
 RF003 - Excluir Cliente | O sistema deve permitir a exclusão de informações cadastradas.| Técnico |
 RF004 - Listar Cliente | Deve permitir a listagem de todos os clientes.  | Técnico |
