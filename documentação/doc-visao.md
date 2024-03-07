@@ -37,13 +37,16 @@ Discente | Este usuário pode verificar o plano de aulas (horários), demosntrar
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Manter um cadastro de Centros     | Um centro representa uma unidade administrativa da Universidade. Um centro tem código, nome, sigla, endereço e site. | Administrador |
-RF002 - Manter um cadastro de Departamentos | Um departamento tem código, nome, sigla, endereço e o centro a qual pertence. | Administrador |
-RF003 - Manter o cadastro de Salas | Uma sala tem um número, um nome, capacidade, tamanho, bloco e o centro a qual pertence. | Administrador |
-RF004 - Manter cadastro de Componentes Curriculares | Um componente curricular é de um tipo de componente. Um componente curricular tem: código, nome, ementa, departamento, carga horária e modalidade, equivalências e requisitos com outros componentes, data de criação. | Administrador |
-RF005 - Manter o cadastro de Horários de Aula | Um horário tem: um dia de semana, um turno, uma ordem (ordenação/identificador), uma hora de início, uma hora de final | Administrador |
-RF006 - Manter o cadastro de professores | um professor tem: matrícula, nome, e-mail, telefone e o departamento | Administrador |
-RF007 - Manter cadastro de Turmas | Uma turma tem: código, professor, sala e horários (horário da turma). Uma turma é de um componente curricular. Uma turma tem um ou mais professores. Uma turma tem uma ou mais salas. Uma turma tem vários horários de aulas. | Chefes e Coordenadores |
+RF001 - Cadastrar Cliente     |  Cliente tem os atributos nome, email, cpf, telefone e endereço. | Técnico |
+RF002 - Alterar Cliente | A alteração permite a mudança do nome, email, telefone e endereço. | Técnico |
+RF003 - Excluir Cliente | O sistema deve permitir a exclusão de informações cadastradas.| Técnico |
+RF004 - Listar Cliente | Deve permitir a listagem de todos os clientes.  | Técnico |
+RF005 - Visualizar Cliente |  Deve permitir a visualização das informações de um cliente em específico | Técnico |
+RF006 - Cadastrar Produto | Produto tem os atributos marca, modelo e CPF do proprietário.| Técnico |
+RF007 - Alterar Produto | A alteração permite a mudança da marca e modelo. | Técnico | 
+RF008 - Listar Produto |  Deve permitir a listagem de todos os produtos. | Técnico |
+RF009 - Visualizar Produto | Deve permitir a visualização das informações de um produto em específico. | Técnico |
+RF010 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
 
 ### Modelo Conceitual
 
