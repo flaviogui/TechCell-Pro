@@ -15,12 +15,13 @@ Samuel Gutemberg | Testador      | samuel.gutemberg.069@ufrn.edu.br
 
 ### Matriz de Competências
 
-Membro     |     Competências   |
----------  | ----------- |
-Taciano    | Desenvolvedor Java, Junit, Eclipse, JSP, JSF, Hibernate, Matemática, Latex, etc |
-Sandra     | Gestão, Geográfa |
-Zé         | Desenvolvedor Java, Astrofísico |
-Maria      | Gestão, Desenvolvedor Java, Pesquisadora em Engenharia de Software |
+Membro           |     Competências   |
+---------------- | ------------------ |
+Fábio Fabricio   | Python, Javascript e Web Design                  
+Flávio Glaydson  | Metodologias Ágeis, C, Python, Flutter, Javascript, UML                   
+Gabriel José     | C, Python, Javascript e Node.Js 
+Laian Kevin      | C, Python e JavaScript                   
+Samuel Gutemberg | C, Python, Javascript e UML                   
 
 ## Perfis dos Usuários
 
