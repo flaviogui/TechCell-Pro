@@ -47,6 +47,15 @@ RF007 - Alterar Produto | A alteração permite a mudança da marca e modelo. | 
 RF008 - Listar Produto |  Deve permitir a listagem de todos os produtos. | Técnico |
 RF009 - Visualizar Produto | Deve permitir a visualização das informações de um produto em específico. | Técnico |
 RF010 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
+RF011 - Analisar Pedido | O pedido deve ser analisado com base na legislação prevista no CDC. | Técnico |
+RF012 - Gerar Protocolo | Após a análise do pedido o sistema gerará um número de protocolo. | Técnico |
+RF013 - Calcular Prazo | Será calculado um prazo de serviço | Técnico |
+RF014 - Pagar | O sistema disponibilizará de opções de pagamento, via pix, cartão, boleto ou em espécie.| Técnico e Cliente |
+RF015 - Gerar comprovante de pagamento | |Técnico|
+RF013 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico|
+
+
+
 
 ### Modelo Conceitual
 
