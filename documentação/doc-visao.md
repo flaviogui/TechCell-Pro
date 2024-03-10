@@ -84,8 +84,6 @@ classDiagram
 
 ```
 
-#### Descrição das Entidades
-
 ## Lista de Requisitos Não-Funcionais
 
 Requisito                                 | Descrição   |
