@@ -29,7 +29,7 @@ O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfi
 
 Perfil                                 | Descrição   |
 -------------------------------------- | ----------- |
-CLiente | Este usuário é responsável por fornecer informações pessoais e sobre o produto com defeito que serão utilizadas na alimentação do sistema e na solicitação do serviço de assistência técnica.
+Cliente | Este usuário é responsável por fornecer informações pessoais e sobre o produto com defeito que serão utilizadas na alimentação do sistema e na solicitação do serviço de assistência técnica.
 Técnico | Este usuário é capacitado na área e responsável pelo serviço de assistência técnica. 
 
 
