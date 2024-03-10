@@ -28,10 +28,10 @@ Samuel Gutemberg | C, Python, Javascript e UML
 O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
 
 Perfil                                 | Descrição   |
----------                              | ----------- |
-Administrador | Este usuário realiza os cadastros base e pode realizar qualquer função.
-Docentes | Este usuário pode verificar seu horário, e acessar turmas, estruturas curriculares, lista de alunos nas turmas, cadastrar enquetes e ver resultados, etc
-Discente | Este usuário pode verificar o plano de aulas (horários), demosntrar interesse em uma turma, e acessar turmas, a estrutura do curso, responder enquetes, etc.
+-------------------------------------- | ----------- |
+CLiente | Este usuário é responsável por fornecer informações pessoais e sobre o produto com defeito que serão utilizadas na alimentação do sistema e na solicitação do serviço de assistência técnica.
+Técnico | Este usuário é capacitado na área e responsável pelo serviço de assistência técnica. 
+
 
 ## Lista de Requisitos Funcionais
 
