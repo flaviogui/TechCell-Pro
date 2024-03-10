@@ -52,6 +52,39 @@ RF010 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
 
 Abaixo apresentamos o modelo conceitual usando o **YUML**.
 
+```mermaid
+classDiagram
+  class Aparelho {
+    - marca: char
+    - modelo: char
+  }
+
+  class Cliente {
+    - nome: char
+    - email: char
+    - telefone: char
+    - cpf: char
+  }
+
+  class Pedido {
+    - problema: char
+    - data_Pedido: char
+    - status: boolean
+    - id_Pedido: int
+    - cpf: char
+  }
+
+  class Pagamento {
+    - modo_pagamento: int
+    - dt: char
+  }
+
+  Aparelho --> Pedido : 1..*
+  Cliente --> Pedido : 1..*
+  Pedido --> Pagamento : 1
+
+
+```
  ![Modelo UML](yuml/monitoria-modelo.png)
 
 O código que gera o diagrama está [Aqui!](yuml/monitoria-yuml.md). O detalhamento dos modelos conceitual e de dados do projeto estão no [Documento de Modelos](doc-modelos.md).
