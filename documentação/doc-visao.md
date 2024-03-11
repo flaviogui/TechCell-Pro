@@ -28,10 +28,10 @@ Samuel Gutemberg | C, Python, Javascript e UML
 O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
 
 Perfil                                 | Descrição   |
----------                              | ----------- |
-Administrador | Este usuário realiza os cadastros base e pode realizar qualquer função.
-Docentes | Este usuário pode verificar seu horário, e acessar turmas, estruturas curriculares, lista de alunos nas turmas, cadastrar enquetes e ver resultados, etc
-Discente | Este usuário pode verificar o plano de aulas (horários), demosntrar interesse em uma turma, e acessar turmas, a estrutura do curso, responder enquetes, etc.
+-------------------------------------- | ----------- |
+Cliente | Este usuário é responsável por fornecer informações pessoais e sobre o produto com defeito que serão utilizadas na alimentação do sistema e na solicitação do serviço de assistência técnica.
+Técnico | Este usuário é capacitado na área e responsável pelo serviço de assistência técnica. 
+
 
 ## Lista de Requisitos Funcionais
 
@@ -59,13 +59,39 @@ RF013 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listado
 
 ### Modelo Conceitual
 
-Abaixo apresentamos o modelo conceitual usando o **YUML**.
+```mermaid
+classDiagram
+  class Aparelho {
+    - marca: char
+    - modelo: char
+  }
 
- ![Modelo UML](yuml/monitoria-modelo.png)
+  class Cliente {
+    - nome: char
+    - email: char
+    - telefone: char
+    - cpf: char
+  }
 
-O código que gera o diagrama está [Aqui!](yuml/monitoria-yuml.md). O detalhamento dos modelos conceitual e de dados do projeto estão no [Documento de Modelos](doc-modelos.md).
+  class Pedido {
+    - problema: char
+    - data_Pedido: char
+    - status: boolean
+    - id_Pedido: int
+    - cpf: char
+  }
 
-#### Descrição das Entidades
+  class Pagamento {
+    - modo_pagamento: int
+    - dt: char
+  }
+
+  Aparelho --> Pedido : 1..*
+  Cliente --> Pedido : 1..*
+  Pedido --> Pagamento : 1
+
+
+```
 
 ## Lista de Requisitos Não-Funcionais
 
