@@ -52,7 +52,7 @@ RF012 - Gerar Protocolo | Após a análise do pedido o sistema gerará um númer
 RF013 - Calcular Prazo | Será calculado um prazo de serviço | Técnico |
 RF014 - Pagar | O sistema disponibilizará de opções de pagamento, via pix, cartão, boleto ou em espécie.| Técnico e Cliente |
 RF015 - Gerar comprovante de pagamento | |Técnico|
-RF013 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico|
+RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico|
 
 
 
