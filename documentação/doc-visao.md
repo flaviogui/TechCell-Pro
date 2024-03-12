@@ -1,7 +1,7 @@
 # Documento de Visão
 
 Documento construído a partido do **Modelo BSI - Doc 001 - Documento de Visão** que pode ser encontrado no
-link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
+link: https://docs.google.com/document/d/1x3nvXfGH9MjGi0jumPmdyokC6Dfg0QCK/edit?usp=sharing&ouid=113399813679649873304&rtpof=true&sd=true
 
 ## Equipe e Definição de Papéis
 
@@ -47,6 +47,15 @@ RF007 - Alterar Produto | A alteração permite a mudança da marca e modelo. | 
 RF008 - Listar Produto |  Deve permitir a listagem de todos os produtos. | Técnico |
 RF009 - Visualizar Produto | Deve permitir a visualização das informações de um produto em específico. | Técnico |
 RF010 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
+RF011 - Analisar Pedido | O pedido deve ser analisado com base na legislação prevista no CDC. | Técnico |
+RF012 - Gerar Protocolo | Após a análise do pedido o sistema gerará um número de protocolo. | Técnico |
+RF013 - Calcular Prazo | Será calculado um prazo de serviço | Técnico |
+RF014 - Pagar | O sistema disponibilizará de opções de pagamento, via pix, cartão, boleto ou em espécie.| Técnico e Cliente |
+RF015 - Gerar comprovante de pagamento | |Técnico|
+RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico|
+
+
+
 
 ### Modelo Conceitual
 
@@ -106,9 +115,12 @@ Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os res
 
 Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
 ------ | ------ | ------ | ------ | ------ | ------ |
-10/03/2018 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
-10/03/2018 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
-10/03/2018 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
-10/03/2018 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
+09/03/2024 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Gerente | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
+09/03/2024 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
+09/03/2024 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
+09/03/2024 | Implementação de protótipo com as tecnologias | Alto | Todos | Vigente | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema. |
+09/03/2024 | Não conseguir implementar os métodos de pagamento | Alto | Desenvolvedor | Vigente | Pedir ajuda a um meio externo (outra pessoa) |
+09/03/2024 | Não garantir a segurança do sistema | Alto | Testador | Vigente | Realizar teste com foco em segurança |
 
 ### Referências
+Relatório Técnico, elaborado na disciplina de Organização, Sistemas e Métodos pelos alunos Guilherme Angelo de Medeiros, Renan Vale Dantas e Samuel Gutemberg Pereira no ano de 2021, sobre a documentação de um projeto de software - Gestão de uma assistência técnica de celulares.
