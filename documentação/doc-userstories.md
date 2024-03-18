@@ -58,7 +58,7 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | Como técnico, quero poder confirmar o reparo do aparelho, para que ele possa ser finalizado. |
+| **Descrição** | Como técnico, após realizar todas as etapas necessárias de diagnóstico e reparo do aparelho, quero poder confirmar oficialmente que o reparo foi concluído com sucesso. Isso envolve verificar se todos os problemas identificados foram corrigidos, se o aparelho está funcionando conforme esperado e se todas as peças e componentes estão em seu devido lugar. Além disso, quero garantir que o aparelho esteja pronto para ser devolvido ao cliente em um estado totalmente funcional. |
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
