@@ -73,8 +73,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Tamanho Funcional**     | 5 PF                                | 
 | **Analista**              | Gabriel                             | 
 | **Desenvolvedor**         | Fábio                               | 
-| **Revisor**               | Laian                               | 
+| **Revisor**               | Flávio                              | 
 | **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Laian                               |
 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
