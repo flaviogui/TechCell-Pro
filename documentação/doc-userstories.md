@@ -54,18 +54,18 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA01.03** | Descrever o teste de aceitação 03 do US01 |
 | **TA01.04** | Descrever o teste de aceitação 04 do US01 |
 
-### User Story US02 - Manter Produto
+### User Story US02 - Registrar Aparelho
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | Como técnico responsável pela assistência técnica de celulares, eu gostaria de cadastrar informações sobre um produto, incluindo Marca, Modelo e o CPF do proprietário Para que seja possível manter um registro organizado e preciso dos dispositivos em assistência. Além disso, desejo a capacidade de corrigir qualquer dado incorretamente cadastrado e permitir que o cliente consulte essas informações para assegurar a precisão dos registros.
+| **Descrição** | O sistema deve manter um registro de todos os aparelhos defeituosos, com os atributos, marca, modelo, IMEI, número de série, e descrição do problema pelo cliente. O sistema ainda deve permitir a alteração dos dados que estejam incorretos, além da opção de buscar por determinado aparelho, como também, visualizar detalhes do dispositivo. E ao final do processo de registro será gerado um número de ordem de serviço do aparelho. 
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF01          | Cadastrar Produto |
-| RF02          | Alterar Produto  |
-| RF03          | Consultar Produto        |
-| RF04          | Vizualizar detalhes do Produto |
+| RF01          | Cadastrar Aparelho |
+| RF02          | Alterar Aparelho  |
+| RF03          | Consultar Aparelho  |
+| RF04          | Vizualizar detalhes do Aparelho |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
@@ -73,19 +73,19 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **Estimativa**            | 4 dias                              | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
-| **Analista**              | Gabriel                             | 
-| **Desenvolvedor**         | Fábio                               | 
-| **Revisor**               | Laian                               | 
+| **Analista**              | Gabriel José                        | 
+| **Desenvolvedor**         | Laian Kevin e Fábio                 | 
+| **Revisor**               | Flávio                              | 
 | **Testador**              | Samuel                              | 
 
 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
-| **Código**      | **Descrição** |
+| **Código**  | **Descrição** |
 | **TA01.01** | O técnico tenta cadastrar um novo produto com informações válidas. O sistema permite o cadastro do produto. O sistema exibe uma  mensagem de confirmação de cadastro. |
 | **TA01.02** | Ao tentar cadastrar o produto,  caso algum dado do aparelho seja inválido, ele será informado e deverá apresentar uma informação válida. |
 | **TA01.03** | O técnico informa ao sistema o modelo cadastrado. 2. O sistema exibe na tela todas as informações do aparelho. |
-| **TA01.04** | Caso o aparelho não esteja cadastrado, o sistema exibe na tela a mensagem: “O aparelho não foi cadastrado no sistema. |
+| **TA01.04** | Caso o aparelho não esteja cadastrado, o sistema exibe na tela a mensagem: “O aparelho não foi cadastrado no sistema". |
 | **TA01.05** | Técnico altera dados de um produto com informações incorretas. O sistema valida as alterações durante a edição. O sistema não permite a alteração se dados inválidos forem detectados. |
 
 
