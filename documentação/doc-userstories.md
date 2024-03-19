@@ -58,14 +58,15 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema deve manter um registro de todos os aparelhos defeituosos, com os atributos, marca, modelo, IMEI, número de série, e descrição do problema pelo cliente. O sistema ainda deve permitir a alteração dos dados que estejam incorretos, além da opção de buscar por determinado aparelho, como também, visualizar detalhes do dispositivo. E ao final do processo de registro será gerado um número de ordem de serviço do aparelho. 
+| **Descrição** | O sistema deve manter um registro de todos os aparelhos defeituosos, com os atributos, marca, modelo, IMEI, número de série, e descrição do problema pelo cliente. O sistema ainda deve permitir a alteração dos dados que estejam incorretos, além da opção de buscar por determinado aparelho, como também, visualizar detalhes do dispositivo. E ao final do processo de registro será gerado um número de ordem de serviço do aparelho. O sistema também vai permitir a exclusão dos dados de algum aparelho em especifico.
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
 | RF01          | Cadastrar Aparelho |
 | RF02          | Alterar Aparelho  |
-| RF03          | Consultar Aparelho  |
+| RF03          | Consultar Aparelho  | 
 | RF04          | Vizualizar detalhes do Aparelho |
+| RF05          | Excluir Aparelho |
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
