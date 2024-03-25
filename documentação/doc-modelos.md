@@ -38,9 +38,9 @@ Descrição sucinta das entidades presentes no sistema.
 
 | Entidade | Descrição   |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Animal   | Entidade abstrata para representar informações gerais dos Animais: age, gender, isMammal(), mate().                                                  |
-| Duck     | Entidade que representa um Pato tem as informações: String beakColor, +swim(), +quack(). A classe Duck estende a classe abstrata Animal. |
-| Fish     | Entidade que representa um Peixe tem as informações: sizeInFeet, -canEat(). A classe Peixe estende a classe abstrata Animal.                                                                   |
+| Aparelho   | Entidade abstrata para representar informações gerais dos aparelhos: marca, modelo, inserir_aparelho(), consultar_aparelho(), excluir_aparelho(), buscar_aparelho(), alterar_aparelho(). A classe Aparelho estende a classe abstrata Pedido                                                  |
+| Cliente     | Entidade que representa um Cliente tem as informações: nome, email, email, telefone, cpf, inserir_cliente(), consultar_cliente(), setnome(), setemail(), settelefone(), excluir_cliente(), getnome(), validarcpf(),bucar_cliente(), . A classe Cliente estende a classe abstrata Pedido. |
+| AparelhoPedido    | Entidade que representa a conexão entre o aparelho e o pedido e tem as informações: aparelho, pedido, serial. A classe AparelhoPedido estende a classe abstrata Pedido.                                                                   |
 | Zebra    | Entidade que representa um Zebra tem as informações is_wild, run(). A classe Zebra estende a classe abstrata Animal.                                                                   |
 
 ## Modelo de Dados (Entidade-Relacionamento)
