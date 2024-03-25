@@ -1,14 +1,104 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### User Story US03 - Análise do Problema
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema necessita de um campo que permita ao técnico realizar uma análise detalhada do problema. Este campo deve proporcionar acesso ao histórico de reparos do aparelho e disponibilizar ferramentas que auxiliem o técnico no diagnóstico do problema. O técnico deve ser capaz de registrar o problema e a solução proposta no sistema, e ao final, o sistema deve gerar o tempo e o custo estimado do reparo. |
-
-
-                     
+                    
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
