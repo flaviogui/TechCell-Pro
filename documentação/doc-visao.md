@@ -62,58 +62,62 @@ RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listado
 ```mermaid
 classDiagram
     class Aparelho {
-        -marca: char
-        -modelo: char
-        +inserir_Aparelho(marca: char, modelo: char): void
-        +consultar_Aparelho(modelo: char): Aparelho 
-        +excluir_Aparelho(aparelho: Aparelho): void 
-        +buscar_Aparelho(modelo: char): Aparelho 
-        +alterar_Aparelho(aparelho: Aparelho): void 
+        - marca: char
+	- modelo: char
+          + inserir_aparelho(marca: char, modelo: char): void
+          + consultar_Aparelho(modelo: char): Aparelho 
+          + excluir_aparelho(aparelho: Aparelho): void 
+          + buscar_Aparelho(modelo: char): Aparelho 
+          + alterar_Aparelho(aparelho: Aparelho): void 
     }
     
     class Cliente {
-        -nome: char
-        -email: char
-        -telefone: char
-        -cpf: char
-        +inserir_Cliente(nome: char, email: char, telefone: char, cpf: char): void 
-        +consultar_Cliente(cpf: char): Cliente 
-        +setNome(nome: Cliente, nome: char): void 
-		+setEmail(email: Cliente, email: char): void 
-		+setTelefone(telefone: Cliente, telefone: char): void	
-		+setCpf(cpf: Cliente, cpf: char): void	
-	    +getCpf(): char	
-	    +validar_Cpf(cpf: char): boolean	
-	    +buscar_Cliente(cpf: char): Cliente	
-	    +excluir_Cliente(cliente: Cliente): void 	
-	    +alterar_Cliente(cliente: Cliente): Cliente 	
+        - nome: char
+        - email: char
+        - telefone: char
+        - cpf: char
+          + inserir_Cliente(nome: char, email: char, telefone: char, cpf: char): void 
+          + consultar_cliente(cpf: char): Cliente 
+          + setNome(nome: Cliente, nome: char): void 
+	  + setEmail(email: Cliente, email: char): void 
+	  + setTelefone(telefone: Cliente, telefone: char): void	
+	  + setCpf(cpf: Cliente, cpf: char): void	
+	  + getNome(): char	
+	  + validar_Cpf(cpf: char): boolean	
+	  + buscar_Cliente(cpf: char): Cliente
+	  + buscar_Cliente(email: char): Cliente
+	  + excluir_Cliente(cliente: Cliente): void 	
+	  + alterar_Cliente(c: Cliente): Cliente
+	  + alterar_Cliente(cpf: char): Cliente 	
     }
     
     class Pedido {
-       -problema: char  
-       -status_Pedido: char  
-       -data_Pedido: char   
-       -id_Pedido: int   
-       -cpf_cliente: char   
-       +selecionar_Pedido(problema: char): void   
-	   +setStatusPedido(status: boolean): void   
-	   +getStatusPedido(): boolean  	
-	   +gerar_Pagamento(p: Pedido): void  	
-	   +finalizar_Pedido(p: Pedido): void  	
+       - problema: char  
+       - status_Pedido: boolean
+       - data_Pedido: char   
+       - id_Pedido: int   
+       - cpf_cliente: char   
+       	   + selecionar_Pedido(problema: char): void   
+	   + setStatusPedido(pedido: Pedido, status: boolean): void   
+	   + setProblema(problema : char ): void
+	   + getStatus() : boolean	
+	   + gerar_Pagamento(p: Pedido): void  	
+	   + finalizar_Pedido(p: Pedido): void  	
     }
     
     class Pagamento {
-      -modo_pagamento: int  
-	  -data_pagamento: char  
-	  -valor_Pagamento: float  	
-	  +gerar_Comprovante(): void  	
-	  +efetuar_Pagamento(): void  	
-	  +reembolsar(valor_pagar: float): boolean 	
+	- modo_pagamento: int  
+	- data_pagamento: char  
+	- valor_Pagamento: float  	
+	  + gerar_Comprovante(): void  	
+	  + efetuar_Pagamento(): void  	
+	  + reembolsar(valor_Pagar: float): boolean 	
      }
 
      class Relatorio{
-      -nome_Relatorio: char  
-      +gerar_Relatorios(pedidos: Pedido[]): void
+      	- nome_Relatorio: char  
+      	  + gerar_Relatorios(pedidos: Pedido[]): void
+	  + exibir_Relatorios(): void
      }
 
     class AparelhoPedido {
