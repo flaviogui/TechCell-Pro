@@ -60,19 +60,13 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ------------- | :------------------------------------------------------------- |
 | **Descrição** | O sistema facilitará o processo de pagamento para clientes que procuram suporte técnico para dispositivos móveis. Assim que o cliente decidir pelo serviço e estiver pronto para efetuar o pagamento, ele será direcionado para a página de pagamento, seja através de um botão dedicado na página de suporte técnico. Na página de pagamento, todas as informações relevantes, incluindo os serviços selecionados e seus preços correspondentes, serão exibidas de forma clara para o cliente revisar antes de prosseguir. O cliente terá a opção de escolher entre diferentes métodos de pagamento, como cartão de crédito, débito, transferência bancária, entre outros. |
 | **Requisitos envolvidos** |                                                    |
-| RF06          | O sistema deve fornecer uma página de pagamento acessível a partir da página de suporte técnico. |
-| RF07          | As informações relevantes, incluindo serviços selecionados e preços correspondentes, devem ser exibidas claramente na página de pagamento.  |
-| RF08          | Os clientes devem ter a capacidade de escolher entre diferentes métodos de pagamento, como cartão de crédito, débito, transferência bancária, entre outros.        |
-| RF09          | Assegurar a transmissão segura de dados sensíveis do cliente durante o processo de pagamento, utilizando protocolos de criptografia padrão. |
-| RF10          | Após a conclusão bem-sucedida do pagamento, o sistema deve gerar automaticamente um comprovante de pagamento e enviá-lo para o email cadastrado pelo cliente. |
-| RF11          | Em caso de erros durante o processo de pagamento, o sistema deve exibir mensagens claras para orientar o cliente sobre como proceder. |
-| RF12          | Após o pagamento ser confirmado com sucesso, o sistema deve fornecer uma confirmação imediata na página, indicando que o processo foi concluído com êxito. |
-| RF13          | Todas as transações de pagamento devem ser registradas de forma precisa e segura para fins de auditoria. |
-| RF14          | O sistema deve integrar-se a gateways de pagamento confiáveis para processar transações financeiras de forma eficiente e segura. |
-| RF15          | Os clientes devem ter a opção de salvar métodos de pagamento para facilitar transações futuras. |
-| RF16          | O sistema deve permitir que os clientes revisem e editem os detalhes do pagamento antes de confirmar a transação. |
-| RF17          | Os clientes devem receber notificações por email e/ou SMS após a conclusão bem-sucedida do pagamento. |
-| RF18          | O sistema deve disponibilizar um histórico de transações de pagamento para os clientes visualizarem suas compras anteriores. |
+| RF14          | Direcionamento para a página de pagamento. |
+| RF15          | Exibição clara das informações de serviço e preços.  |
+| RF16          | Opções de métodos de pagamento.        |
+| RF17          | Segurança dos dados de pagamento. |
+| RF18          | Confirmação de pagamento. |
+| RF19          | Gerar comprovante de pagamento. |
+
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 12 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
@@ -85,18 +79,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA05.01** | Garantir que os usuários possam acessar a página de pagamento facilmente a partir da página de suporte técnico.  |
-| **TA05.02** | Verificar se todos os serviços prestados são exibidos corretamente, incluindo detalhes e preços, na página de pagamento. |
-| **TA05.03** | Testar a funcionalidade de escolha do método de pagamento, assegurando que os dados sensíveis do cliente sejam transmitidos de forma segura. |
-| **TA05.04** | Verificar se o sistema gera e envia corretamente o comprovante de pagamento para o email cadastrado pelo cliente. |
-| **TA05.05** | Testar a exibição de mensagens claras em caso de erro durante o processo de pagamento, garantindo uma experiência de usuário amigável. |
-| **TA05.06** | Confirmar que os clientes visualizam imediatamente uma confirmação de sucesso após efetuar o pagamento. |
-| **TA05.07** | Verificar se os itens do carrinho são removidos e se o estoque é atualizado após a conclusão do pagamento. |
-| **TA05.08** | Testar se as transações de pagamento são registradas corretamente para fins de auditoria. |
-| **TA05.09** | Verificar a integração com gateways de pagamento, garantindo eficiência e segurança no processamento das transações financeiras. |
-| **TA05.10** | Testar a funcionalidade de salvar métodos de pagamento para facilitar transações futuras. |
-| **TA05.11** | Garantir que os clientes possam revisar e editar os detalhes do pagamento antes de confirmar a transação. |
-| **TA05.12** | Verificar se os clientes recebem notificações por email e/ou SMS após a conclusão bem-sucedida do pagamento. |
-| **TA05.13** | Testar a disponibilização de um histórico de transações de pagamento para os clientes visualizarem suas compras anteriores. |
-| **TA05.14** | Verificar se o pagamento é processado com sucesso quando todos os dados fornecidos pelo cliente estão corretos. |
-| **TA05.15** | Testar a exibição de mensagem de erro quando ocorre falha no processamento do pagamento devido a dados inválidos ou erro no sistema. |
+| **TA05.01** | O usuário tenta realizar o pagamento de um pedido com todas as informações de pagamento válidas. O sistema processa o pagamento com sucesso e exibe uma mensagem de confirmação da transação.  |
+| **TA05.02** | Ao tentar realizar o pagamento, se algum dado do cartão de crédito ou informações de pagamento forem inválidos, o sistema informa o usuário sobre os campos incorretos e solicita informações válidas. |
+| **TA05.03** |  O usuário seleciona o método de pagamento desejado. O sistema exibe na tela todas as opções disponíveis de pagamento, incluindo cartão de crédito, PayPal, entre outros. |
+| **TA05.04** |  Caso o método de pagamento escolhido não esteja disponível, o sistema informa o usuário sobre a falta de opções de pagamento e fornece orientações sobre como proceder. |
+| **TA05.05** | O usuário tenta realizar o pagamento de um pedido, mas ocorre uma falha no processamento. O sistema exibe uma mensagem de erro clara e orienta o usuário sobre como resolver o problema, como verificar a conexão com a internet ou entrar em contato com o suporte ao cliente. |
