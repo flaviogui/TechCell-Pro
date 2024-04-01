@@ -61,21 +61,58 @@ erDiagram
 
 ### Dicionário de Dados
 
-|   Tabela   | Laboratório |
+|   Tabela   | Cliente |
 | ---------- | ----------- |
-| Descrição  | Armazena as informações de um laboratório acadêmico. |
-| Observação | Laboratórios acadêmicos podem ser de Ensino, Pesquisa, Extensão, P&D, etc. |
+| Descrição  | Armazena as informações dos clientes da assistência tecnica de celulares. |
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
-| codigo        | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity |
-| sigla         | representação em sigla do lab    | VARCHAR      | 15      | Unique / Not Null |
-| nome          | nome do laboratório              | VARCHAR      | 150     | Not Null |
-| descricao     | detalhes sobre o laboratório     | VARCHAR      | 250     | --- |
-| endereco      | endereço e localização do lab    | VARCHAR      | 150     | --- |
-| data_criacao  | data de criação do lab           | DATE         | ---     | Not Null |
-| portaria      | portaria de criação do lab       | VARCHAR      | 50      | --- |
-| link_portaria | URL para a portaria (PDF)        | VARCHAR      | 150     | --- |
-| site          | URL para o site do laboratório   | VARCHAR      | 150     | --- |
-| e-mail        | e-mail de contato do laboratório | VARCHAR      | 150     | --- |
-| departamento  | departamento vinculado ao lab    | SERIAL       | ---     | FK / Not Null |
+| id_cliente    | Número de idenficação do cliente | SERIAL       | ---     | PK / Identity |
+| nome          | Nome do cliente                  | VARCHAR      | 150     | Not Null |
+| email         | Endereço de e-mail do cliente    | VARCHAR      | 150     | Not Null |
+| fone          | Número de telefone do cliente    | VARCHAR      | 150     | Not Null |
+| cpf           | Número de CPF do cliente         | VARCHAR      | 250     | Not Null |
+
+|   Tabela   | Aparelho |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos aparelhos da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| IMEI          | IMEI do aparelho                 | SERIAL       | ---     | PK / Identity |
+| num_serie     | Número de série do aparelho      | VARCHAR      | 150     | Not Null |
+| marca         | Marca do aparelho                | VARCHAR      | 150     | Not Null |
+| modelo        | Modelo do aparelho               | VARCHAR      | 150     | Not Null |
+| descricao     | Descrição problema pelo cliente  | VARCHAR      | 250     | Not Null |
+
+|   Tabela   | Pedido |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos pedidos da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id_pedido     | Identificador do pedido          | SERIAL       | ---     | PK / Identity |
+| status        | Estado do pedido (ativo/inativo) | BOOLEAN      | 150     | Not Null |
+| data          | Data do pedido                   | VARCHAR      | 150     | Not Null |
+| problema      | Descrição do problema tecnico    | VARCHAR      | 150     | Not Null |
+| cpf_cliente   | CPF cliente associado ao pedido  | VARCHAR      | 250     | FK / Not Null |
+
+|   Tabela   | Pagamento |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos pagamentos da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id_pagamento  | Identificador de pagamento       | SERIAL       | ---     | PK / Identity         |
+| modo_pagamento| Modo de pagamento                | BOOLEAN      | 150     | Not Null              |
+| valor_pagament| Valor do pagamento               | VARCHAR      | 150     | Not Null              |
+| cpf_cliente   | CPF cliente associado ao pedido  | VARCHAR      | 250     | FK / Not Null         |
+
+
+|   Tabela   | Relatório |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| nome_relatorio| Identificador de pagamento       | VARCHAR      | ---     | Not Null              |
