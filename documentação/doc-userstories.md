@@ -160,3 +160,34 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA01.01** | Técnico informa o cliente sobre o custo do reparo. O cliente confirma o reparo antes de ele ser iniciado. O sistema gera um comprovante de reparo. O sistema notifica o cliente quando o reparo estiver concluído. |
 | **TA02.02** | Técnico registra o pagamento do reparo no sistema. O sistema valida o pagamento e atualiza o status do reparo para concluído. |
 
+
+### User Story US05 - Realizar Pagamento
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema facilitará o processo de pagamento para clientes que procuram suporte técnico para dispositivos móveis. Assim que o cliente decidir pelo serviço e estiver pronto para efetuar o pagamento, ele será direcionado para a página de pagamento, seja através de um botão dedicado na página de suporte técnico. Na página de pagamento, todas as informações relevantes, incluindo os serviços selecionados e seus preços correspondentes, serão exibidas de forma clara para o cliente revisar antes de prosseguir. O cliente terá a opção de escolher entre diferentes métodos de pagamento, como cartão de crédito, débito, transferência bancária, entre outros. |
+| **Requisitos envolvidos** |                                                    |
+| RF14          | Direcionamento para a página de pagamento. |
+| RF15          | Exibição clara das informações de serviço e preços.  |
+| RF16          | Opções de métodos de pagamento.        |
+| RF17          | Segurança dos dados de pagamento. |
+| RF18          | Confirmação de pagamento. |
+| RF19          | Gerar comprovante de pagamento. |
+
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 12 h                                 | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 8 PF                                | 
+| **Analista**              | Gabriel                                    | 
+| **Desenvolvedor**         | Laian e Fabio                              | 
+| **Revisor**               | Flavio                               | 
+| **Testador**              | Samuel                                 | 
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+| **TA05.01** | O usuário tenta realizar o pagamento de um pedido com todas as informações de pagamento válidas. O sistema processa o pagamento com sucesso e exibe uma mensagem de confirmação da transação.  |
+| **TA05.02** | Ao tentar realizar o pagamento, se algum dado do cartão de crédito ou informações de pagamento forem inválidos, o sistema informa o usuário sobre os campos incorretos e solicita informações válidas. |
+| **TA05.03** |  O usuário seleciona o método de pagamento desejado. O sistema exibe na tela todas as opções disponíveis de pagamento, incluindo cartão de crédito, PayPal, entre outros. |
+| **TA05.04** |  Caso o método de pagamento escolhido não esteja disponível, o sistema informa o usuário sobre a falta de opções de pagamento e fornece orientações sobre como proceder. |
+| **TA05.05** | O usuário tenta realizar o pagamento de um pedido, mas ocorre uma falha no processamento. O sistema exibe uma mensagem de erro clara e orienta o usuário sobre como resolver o problema, como verificar a conexão com a internet ou entrar em contato com o suporte ao cliente. |

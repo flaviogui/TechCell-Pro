@@ -96,7 +96,9 @@ Descrição sucinta das entidades presentes no sistema.
 | Cliente     | Entidade que representa um Cliente tem as informações: nome, email, email, telefone, cpf, inserir_cliente(), consultar_cliente(), setnome(), setemail(), settelefone(), excluir_cliente(), getnome(), validarcpf(),bucar_cliente(), . A classe Cliente estende a classe abstrata Pedido. |
 | AparelhoPedido    | Entidade que representa a conexão entre o aparelho e o pedido e tem as informações: aparelho, pedido, serial. A classe AparelhoPedido estende a classe abstrata Pedido.                                                                   |
 | Zebra    | Entidade que representa um Zebra tem as informações is_wild, run(). A classe Zebra estende a classe abstrata Animal.                                                                   |
-
+| Pedido    | Entidade que representa um Pedido tem as informações: problema, data_pedido, status, id_pedido, cpf, solicita_Pedido(), setStatus(), setProblema(), getStatus(), gerar_pagamento(), finalizar_Pedido(). A classe Pedido estende a classe abstrata Relatorio.
+| Pagamento    | Entidade que representa um Pagamento tem as informações: modo_pagar, data_pagamento, valor_Pagar, gerar_Comprovante(), efetuar_Pagamento(), reembolsar(). A classe Pagamento é dependente da classe abstrata Pedido.                                                                   |
+| Relatorio    | Entidade que representa um Relatorio tem as informações: nome_Relatorio, gerar_Relatorio(), exibir_Relatorio(). A classe Relatorio estende a classe abstrata Pedido.                                                                   |
 ## Modelo de Dados (Entidade-Relacionamento)
 
 Para criar modelos ER é possível usar o BrModelo e gerar uma imagem. Contudo, atualmente é possível criar modelos ER usando a ferramenta **Mermaid**, escrevendo o modelo diretamente em markdown. Acesse a documentação para escrever modelos [ER Diagram Mermaid](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram).
