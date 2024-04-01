@@ -10,27 +10,81 @@ Para a modelagem pode se usar o Astah UML ou o BrModelo. Uma ferramenta interess
 
 ```mermaid
 classDiagram
-      Animal <|-- Duck
-      Animal <|-- Fish
-      Animal <|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck{
-          +String beakColor
-          +swim()
-          +quack()
-      }
-      class Fish{
-          -int sizeInFeet
-          -canEat()
-      }
-      class Zebra{
-          +bool is_wild
-          +run()
-      }
+    class Aparelho {
+        - marca: char
+	- modelo: char
+          + inserir_aparelho(marca: char, modelo: char): void
+          + consultar_Aparelho(modelo: char): Aparelho 
+          + excluir_aparelho(aparelho: Aparelho): void 
+          + buscar_Aparelho(modelo: char): Aparelho 
+          + alterar_Aparelho(aparelho: Aparelho): void 
+    }
+    
+    class Cliente {
+        - nome: char
+        - email: char
+        - telefone: char
+        - cpf: char
+          + inserir_Cliente(nome: char, email: char, telefone: char, cpf: char): void 
+          + consultar_cliente(cpf: char): Cliente 
+          + setNome(nome: Cliente, nome: char): void 
+	  + setEmail(email: Cliente, email: char): void 
+	  + setTelefone(telefone: Cliente, telefone: char): void	
+	  + setCpf(cpf: Cliente, cpf: char): void	
+	  + getNome(): char	
+	  + validar_Cpf(cpf: char): boolean	
+	  + buscar_Cliente(cpf: char): Cliente
+	  + buscar_Cliente(email: char): Cliente
+	  + excluir_Cliente(cliente: Cliente): void 	
+	  + alterar_Cliente(c: Cliente): Cliente
+	  + alterar_Cliente(cpf: char): Cliente 	
+    }
+    
+    class Pedido {
+       - problema: char  
+       - status_Pedido: boolean
+       - data_Pedido: char   
+       - id_Pedido: int   
+       - cpf_cliente: char   
+       	   + selecionar_Pedido(problema: char): void   
+	   + setStatusPedido(pedido: Pedido, status: boolean): void   
+	   + setProblema(problema : char ): void
+	   + getStatus() : boolean	
+	   + gerar_Pagamento(p: Pedido): void  	
+	   + finalizar_Pedido(p: Pedido): void  	
+    }
+    
+    class Pagamento {
+	- modo_pagamento: int  
+	- data_pagamento: char  
+	- valor_Pagamento: float  	
+	  + gerar_Comprovante(): void  	
+	  + efetuar_Pagamento(): void  	
+	  + reembolsar(valor_Pagar: float): boolean 	
+     }
+
+     class Relatorio{
+      	- nome_Relatorio: char  
+      	  + gerar_Relatorios(pedidos: Pedido[]): void
+	  + exibir_Relatorios(): void
+     }
+
+    class AparelhoPedido {
+        - aparelho : Aparelho
+        - pedido : Pedido
+        - serial : char
+    }
+
+     Aparelho "1" -- "0..*" Pedido : possui
+     Cliente "1" -- "0..*" Pedido : realiza
+     Pedido "1" -- "0..*" Pagamento : gera
+     Pedido "1" -- "0..*" Relatorio : gera
+     Aparelho "1" -- "0..*" AparelhoPedido
+     Pedido "1" -- "0..*" AparelhoPedido
+
+
 ```
+
 
 ### Descrição das Entidades
 
