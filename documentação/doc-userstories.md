@@ -177,6 +177,9 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF18          | Confirmação de pagamento. |
 | RF19          | Gerar comprovante de pagamento. |
 
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
 | **Estimativa**            | 12 h                                 | 
 | **Tempo Gasto (real):**   |                                     | 
