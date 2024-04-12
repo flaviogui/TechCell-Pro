@@ -92,44 +92,67 @@ Descrição sucinta das entidades presentes no sistema.
 
 | Entidade | Descrição   |
 |----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Animal   | Entidade abstrata para representar informações gerais dos Animais: age, gender, isMammal(), mate().                                                  |
-| Duck     | Entidade que representa um Pato tem as informações: String beakColor, +swim(), +quack(). A classe Duck estende a classe abstrata Animal. |
-| Fish     | Entidade que representa um Peixe tem as informações: sizeInFeet, -canEat(). A classe Peixe estende a classe abstrata Animal.                                                                   |
-| Zebra    | Entidade que representa um Zebra tem as informações is_wild, run(). A classe Zebra estende a classe abstrata Animal.                                                                   |
-
-## Modelo de Dados (Entidade-Relacionamento)
-
-Para criar modelos ER é possível usar o BrModelo e gerar uma imagem. Contudo, atualmente é possível criar modelos ER usando a ferramenta **Mermaid**, escrevendo o modelo diretamente em markdown. Acesse a documentação para escrever modelos [ER Diagram Mermaid](https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram).
-
-```mermaid
-erDiagram
-    Departamento ||--o{ Laboratorio : labs
-    Departamento ||--|{ Docente : docentes
-    Docente ||--o| Laboratorio : coordenador
-    Docente ||--o| Laboratorio : vice-coordenador
-    Laboratorio ||--o{ Membro_Docente : membros
-    Docente ||--|{ Membro_Docente : ""
-    Laboratorio ||--o{ Membro_Discente : membros
-    Membro_Discente }|--|| Discente: ""
-```
+| Aparelho   | Entidade abstrata para representar informações gerais dos aparelhos: marca, modelo, inserir_aparelho(), consultar_aparelho(), excluir_aparelho(), buscar_aparelho(), alterar_aparelho(). A classe Aparelho estende a classe abstrata Pedido                                                  |
+| Cliente     | Entidade que representa um Cliente tem as informações: nome, email, email, telefone, cpf, inserir_cliente(), consultar_cliente(), setnome(), setemail(), settelefone(), excluir_cliente(), getnome(), validarcpf(),bucar_cliente(), . A classe Cliente estende a classe abstrata Pedido. |
+| AparelhoPedido    | Entidade que representa a conexão entre o aparelho e o pedido e tem as informações: aparelho, pedido, serial. A classe AparelhoPedido estende a classe abstrata Pedido.                                                                   |
+| Pedido    | Entidade que representa um Pedido tem as informações: problema, data_pedido, status, id_pedido, cpf, solicita_Pedido(), setStatus(), setProblema(), getStatus(), gerar_pagamento(), finalizar_Pedido(). A classe Pedido estende a classe abstrata Relatorio.
+| Pagamento    | Entidade que representa um Pagamento tem as informações: modo_pagar, data_pagamento, valor_Pagar, gerar_Comprovante(), efetuar_Pagamento(), reembolsar(). A classe Pagamento é dependente da classe abstrata Pedido.                                                                   |
+| Relatorio    | Entidade que representa um Relatorio tem as informações: nome_Relatorio, gerar_Relatorio(), exibir_Relatorio(). A classe Relatorio estende a classe abstrata Pedido.                                                                   |
 
 ### Dicionário de Dados
 
-|   Tabela   | Laboratório |
+|   Tabela   | Cliente |
 | ---------- | ----------- |
-| Descrição  | Armazena as informações de um laboratório acadêmico. |
-| Observação | Laboratórios acadêmicos podem ser de Ensino, Pesquisa, Extensão, P&D, etc. |
+| Descrição  | Armazena as informações dos clientes da assistência tecnica de celulares. |
 
 |  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
 | ------------- | -------------------------------- | ------------ | ------- | --------------------- |
-| codigo        | identificador gerado pelo SGBD   | SERIAL       | ---     | PK / Identity |
-| sigla         | representação em sigla do lab    | VARCHAR      | 15      | Unique / Not Null |
-| nome          | nome do laboratório              | VARCHAR      | 150     | Not Null |
-| descricao     | detalhes sobre o laboratório     | VARCHAR      | 250     | --- |
-| endereco      | endereço e localização do lab    | VARCHAR      | 150     | --- |
-| data_criacao  | data de criação do lab           | DATE         | ---     | Not Null |
-| portaria      | portaria de criação do lab       | VARCHAR      | 50      | --- |
-| link_portaria | URL para a portaria (PDF)        | VARCHAR      | 150     | --- |
-| site          | URL para o site do laboratório   | VARCHAR      | 150     | --- |
-| e-mail        | e-mail de contato do laboratório | VARCHAR      | 150     | --- |
-| departamento  | departamento vinculado ao lab    | SERIAL       | ---     | FK / Not Null |
+| id_cliente    | Número de idenficação do cliente | SERIAL       | ---     | PK / Identity |
+| nome          | Nome do cliente                  | VARCHAR      | 150     | Not Null |
+| email         | Endereço de e-mail do cliente    | VARCHAR      | 150     | Not Null |
+| fone          | Número de telefone do cliente    | VARCHAR      | 150     | Not Null |
+| cpf           | Número de CPF do cliente         | VARCHAR      | 250     | Not Null |
+
+|   Tabela   | Aparelho |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos aparelhos da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| IMEI          | IMEI do aparelho                 | SERIAL       | ---     | PK / Identity |
+| num_serie     | Número de série do aparelho      | VARCHAR      | 150     | Not Null |
+| marca         | Marca do aparelho                | VARCHAR      | 150     | Not Null |
+| modelo        | Modelo do aparelho               | VARCHAR      | 150     | Not Null |
+| descricao     | Descrição problema pelo cliente  | VARCHAR      | 250     | Not Null |
+
+|   Tabela   | Pedido |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos pedidos da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id_pedido     | Identificador do pedido          | SERIAL       | ---     | PK / Identity |
+| status        | Estado do pedido (ativo/inativo) | BOOLEAN      | 150     | Not Null |
+| data          | Data do pedido                   | VARCHAR      | 150     | Not Null |
+| problema      | Descrição do problema tecnico    | VARCHAR      | 150     | Not Null |
+| cpf_cliente   | CPF cliente associado ao pedido  | VARCHAR      | 250     | FK / Not Null |
+
+|   Tabela   | Pagamento |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações dos pagamentos da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| id_pagamento  | Identificador de pagamento       | SERIAL       | ---     | PK / Identity         |
+| modo_pagamento| Modo de pagamento                | BOOLEAN      | 150     | Not Null              |
+| valor_pagament| Valor do pagamento               | VARCHAR      | 150     | Not Null              |
+| cpf_cliente   | CPF cliente associado ao pedido  | VARCHAR      | 250     | FK / Not Null         |
+
+
+|   Tabela   | Relatório |
+| ---------- | ----------- |
+| Descrição  | Armazena as informações da assistência tecnica de celulares. |
+
+|  Nome         | Descrição                        | Tipo de Dado | Tamanho | Restrições de Domínio |
+| ------------- | -------------------------------- | ------------ | ------- | --------------------- |
+| nome_relatorio| Identificador de pagamento       | VARCHAR      | ---     | Not Null              |
