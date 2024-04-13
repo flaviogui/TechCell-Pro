@@ -3,56 +3,31 @@
 Documento construído a partido do **Modelo BSI - Doc 005 - Documento de Projeto Arquitetual do Software** que pode ser encontrado no
 link:https://docs.google.com/document/d/1i80vPaInPi5lSpI7rk4QExnO86iEmrsHBfmYRy6RDSM/edit?usp=sharing
 
-## Descrição da Arquitetura do Projeto
-
-Descrever de forma geral a arquitetura do projeto. Se será monolítico, cliente-servidor, REST, Microsserviço, etc. Descrever alguns requisitos não funcionais que impactem na arquitetura: Redundância e Réplicas, Cloud, Conexão com outros módulos e projetos, etc.
-
 ## Visão Geral da Arquitetura
 
-Imagem com a organização geral dos componentes da arquitetura do projeto. Segue um exemplo da **Arquitetura Geral** de um Projeto usando **Django Framework**:
+Imagem com a organização geral dos componentes da arquitetura do projeto.
 
-![Arquitetura Django Framework](django-arquitetura.jpg)
+![Arquitetura Django Framework](django-architecture.webp)
 
-## Requisitos Não-Funcionais
+## Descrição da Arquitetura do Projeto
 
-Requisitos não-funcionais que impactam na arquitetura. Nesta seção do documento, é necessário listar os requisitos não funcionais encontrados no sistema, tais como: portabilidade, usabilidade, desempenho e etc. O objetivo é colocar o nome do requisito e descrever com detalhes suas características.
+A arquitetura de um projeto Django é geralmente referida como uma arquitetura **MTV (Model, Template, View)**. Aqui está uma descrição detalhada de cada componente:
 
-Segue um exemplo:
+1. **Model**: É responsável pelo mapeamento do banco de dados para o projeto. É onde o Django fornece sua ORM (Object-Relational Mapping) para a modelagem de dados.
 
-Requisito  | Detalhes
----------- | -------------------------------------------- 
-Desempenho | 1. A página principal tem que ser carregada em no máximo 3 segundos em uma conexão mínima de 256kbps. <br />2. As páginas que recuperam informações de sistemas legados, devem responder em dois segundos em uma conexão de 256kbps. <br />3. As páginas que recuperam informações de transações no banco de dados da própria aplicação, deve responder em um segundo usando paginação real (limit e offset), retornados em uma conexão de 256kbps. <br />4. O servidor deve suportar 100.000 conexões simultâneas sem perda de desempenho.
-Interoperabilidade | 1. Deve ser desenvolvido no sistema linux, criando uma imagem docker do sistema e com banco de dados PostgreSQL 16.
+2. **Template**: São as páginas para visualização de dados. Normalmente, é aqui que fica o HTML que será renderizado nos navegadores.
 
-## Mecanismos arquiteturais
+3. **View**: É onde a lógica de negócio é implementada. É aqui que determinamos o que irá acontecer em nosso projeto.
 
-Nesta seção do documento, devemos listar os mecanismos arquiteturais encontrados no sistema, ou seja, identificar todos os mecanismos de análise, mecanismo de design e mecanismo de implementação. O intuito desta etapa é verificar e garantir que todas as preocupações técnicas relativas à arquitetura do sistema tenham sido capturadas.
+Esses três componentes são interligados e se comunicam entre si. Uma depende da outra para realizar um determinado serviço e, no final, executar a tarefa que o usuário solicitou.
 
-Exemplo:
+Quando o usuário faz uma requisição pelo navegador, utilizando uma rota, é executado um método das Views, que utiliza os Models para acessar o banco de dados e retornar as informações. Estas informações são renderizadas pela camada de Template e, finalmente, é renderizado para o usuário pelo navegador.
 
-| Mecanismo de Análise | Mecanismo de Design  | Mecanismo de Implementação |
-| -------------------- | -------------------- | -------------------------- |
-| Persistência         | Banco de dados relacional | PostgreSQL 16.2       |
-| Camada de Dados      | Mapeamento OR             | Django ORM            |
-| Frontend  | Interface Usuário | Django Templates, HTML5, JS, Bootstrap 5 |
-| Backend              | REST                  | Django REST Framework     |
-| Build                | Imagem Docker            | Docker e Dockerfile    |
-| Deploy               | Container Docker         | Docker compose         |
+A arquitetura MTV do Django é semelhante ao padrão MVC (Model, View, Controller), utilizado em diversos outros frameworks. As camadas do padrão MTV podem ser comparadas ao MVC da seguinte maneira:
 
-# Implantação
+- M (MTV) = M (MVC): Ambas as camadas possuem a mesma responsabilidade, que é o mapeamento do banco de dados para o projeto.
+- T (MTV) = V (MVC): Ambas as camadas possuem a mesma responsabilidade, que é exibir informações para o usuário da aplicação, normalmente utilizando páginas HTML.
+- V (MTV) = C (MVC): Apesar de possuírem responsabilidades parecidas, conceitualmente, apresentam algumas diferenças.
 
-O arquiteto deve descrever as configurações de distribuição dos componentes de software na área física em que serão implantados.
+Em uma arquitetura monolítica, todas as funcionalidades da aplicação são desenvolvidas em apenas um projeto, causando uma alta dependência no código implementado, fazendo comunicação entre as funcionalidades a nível de classe.
 
-# Referências
-
-Links utilizados como referência sobre Arquitetura de Software e documentação de Arquiteturas.
-
-https://edisciplinas.usp.br/pluginfile.php/134335/mod_resource/content/1/Aula13_ArquiteturaSoftware_02_Documentacao.pdf
-
-http://www.linhadecodigo.com.br/artigo/3343/como-documentar-a-arquitetura-de-software.aspx
-
-http://diatinf.ifrn.edu.br/prof/lib/exe/fetch.php?media=user:1301182:disciplinas:arquitetura:exemplo-arquitetura-01.pdf
-
-Peter Eeles; Peter Cripps. The Process of Software Architecting, Addison-Wesley Professional, 2009.
-
-Paul Clements; Felix Bachmann; Len Bass; David Garlan; James Ivers; Reed Little; Paulo Merson; Robert Nord; Judith Stafford. Documenting Software Architectures: Views and Beyond, Second Edition, Addison-Wesley Professional, 2010.
