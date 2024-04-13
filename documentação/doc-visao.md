@@ -62,68 +62,68 @@ RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listado
 ```mermaid
 classDiagram
     class Aparelho {
-        - marca: char
-	- modelo: char
-          + inserir_aparelho(marca: char, modelo: char): void
-          + consultar_Aparelho(modelo: char): Aparelho 
-          + excluir_aparelho(aparelho: Aparelho): void 
-          + buscar_Aparelho(modelo: char): Aparelho 
-          + alterar_Aparelho(aparelho: Aparelho): void 
+        - marca
+	- modelo
+          + inserir_aparelho(marca, modelo)
+          + consultar_Aparelho(modelo)
+          + excluir_aparelho(aparelho)
+          + buscar_Aparelho(modelo)
+          + alterar_Aparelho(aparelho)
     }
     
     class Cliente {
-        - nome: char
-        - email: char
-        - telefone: char
-        - cpf: char
-          + inserir_Cliente(nome: char, email: char, telefone: char, cpf: char): void 
-          + consultar_cliente(cpf: char): Cliente 
-          + setNome(nome: Cliente, nome: char): void 
-	  + setEmail(email: Cliente, email: char): void 
-	  + setTelefone(telefone: Cliente, telefone: char): void	
-	  + setCpf(cpf: Cliente, cpf: char): void	
-	  + getNome(): char	
-	  + validar_Cpf(cpf: char): boolean	
-	  + buscar_Cliente(cpf: char): Cliente
-	  + buscar_Cliente(email: char): Cliente
-	  + excluir_Cliente(cliente: Cliente): void 	
-	  + alterar_Cliente(c: Cliente): Cliente
-	  + alterar_Cliente(cpf: char): Cliente 	
+        - nome
+        - email
+        - telefone
+        - cpf
+          + inserir_Cliente(nome, email, telefone, cpf)
+          + consultar_cliente(cpf)
+          + setNome(nome)
+	  + setEmail(email)
+	  + setTelefone(telefone)
+	  + setCpf(cpf)
+	  + getNome()
+	  + validar_Cpf(cpf)
+	  + buscar_Cliente(cpf)
+	  + buscar_Cliente(email)
+	  + excluir_Cliente(cliente)
+	  + alterar_Cliente(c)
+	  + alterar_Cliente(cpf)
     }
     
     class Pedido {
-       - problema: char  
-       - status_Pedido: boolean
-       - data_Pedido: char   
-       - id_Pedido: int   
-       - cpf_cliente: char   
-       	   + selecionar_Pedido(problema: char): void   
-	   + setStatusPedido(pedido: Pedido, status: boolean): void   
-	   + setProblema(problema : char ): void
-	   + getStatus() : boolean	
-	   + gerar_Pagamento(p: Pedido): void  	
-	   + finalizar_Pedido(p: Pedido): void  	
+       - problema
+       - status_Pedido
+       - data_Pedido
+       - id_Pedido
+       - cpf_cliente
+       	   + selecionar_Pedido(problema)
+	   + setStatusPedido(pedido, status)
+	   + setProblema(problema)
+	   + getStatus()
+	   + gerar_Pagamento(p)
+	   + finalizar_Pedido(p)
     }
     
     class Pagamento {
-	- modo_pagamento: int  
-	- data_pagamento: char  
-	- valor_Pagamento: float  	
-	  + gerar_Comprovante(): void  	
-	  + efetuar_Pagamento(): void  	
-	  + reembolsar(valor_Pagar: float): boolean 	
+	- modo_pagamento
+	- data_pagamento
+	- valor_Pagamento
+	  + gerar_Comprovante()
+	  + efetuar_Pagamento()
+	  + reembolsar(valor_Pagar)
      }
 
      class Relatorio{
-      	- nome_Relatorio: char  
-      	  + gerar_Relatorios(pedidos: Pedido[]): void
-	  + exibir_Relatorios(): void
+      	- nome_Relatorio
+      	  + gerar_Relatorios(pedidos)
+	  + exibir_Relatorios()
      }
 
     class AparelhoPedido {
-        - aparelho : Aparelho
-        - pedido : Pedido
-        - serial : char
+        - aparelho
+        - pedido
+        - serial
     }
 
      Aparelho "1" -- "0..*" Pedido : possui
