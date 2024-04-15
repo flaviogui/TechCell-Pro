@@ -185,4 +185,3 @@ docker container exec -it triagil_app python manage.py test
 
 http://127.0.0.1:8000/
 ```
-  
