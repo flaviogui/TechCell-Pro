@@ -4,7 +4,7 @@ Repositório destinado ao desenvolvimento de um Sistema de Gestão de Assistênc
 ## __Tecnologias__
 * Django(Python)
 * PostgreSQL
-* Algum framework CSS (opicional)
+* Algum framework CSS
 
 ## Tutoriais
 
