@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # __TechCell-Pro__
 Repositório destinado ao desenvolvimento de um Sistema de Gestão de Assistência Técnica para a disciplina de Engenharia de Software II. 
 
