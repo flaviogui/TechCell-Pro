@@ -1,21 +1,47 @@
-from django.shortcuts import render, redirect  # type: ignore
+from django.shortcuts import render, redirect, get_object_or_404  # type: ignore
 from django.views.generic import CreateView  # type: ignore
 from .models import Cliente
+from .forms import ClienteForm
+from django.contrib import messages  # type: ignore
+from django.urls import reverse  # type: ignore
 
 # Função para criar um cliente
 
 
-class ClienteCreateView(CreateView):
-    model = Cliente
-    fields = ['nome', 'email', 'telefone', 'cpf']
-    template_name = 'cliente_form.html'
-    # Redireciona para a lista de clientes após a criação
-    success_url = '/clientes/lista/'
+def cliente_create_view(request):
+    form = ClienteForm()
+    if request.method == 'POST':
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Usuário Criado com Sucesso!')
+            return redirect(reverse('cliente:create_cliente'))
+    context = {
+        'form': form
+    }
+    return render(request, 'cliente_form.html', context)
 
-    # Opcional: Sobrescrever o método form_valid para realizar ações adicionais após a criação do cliente
-    def form_valid(self, form):
-        # Realizar alguma ação, como enviar um email de boas-vindas ao cliente
-        cliente = form.save(commit=False)
-        # ... sua lógica aqui ...
-        cliente.save()
-        return super().form_valid(form)
+
+def cliente_list_view(request):
+    clientes = Cliente.objects.all()
+    context = {'clientes': clientes}
+    return render(request, 'cliente_list.html', context)
+
+
+def cliente_update_view(request, pk):
+    cliente = get_object_or_404(Cliente, pk=pk)
+    form = ClienteForm(request.POST or None, instance=cliente)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Usuário Alterado com Sucesso!')
+        return redirect(reverse('cliente:list_cliente'))
+    context = {
+        'form': form
+    }
+    return render(request, 'cliente_update.html', context)
+
+
+def cliente_delete_view(request, pk):
+    cliente = get_object_or_404(Cliente, pk=pk)
+    cliente.delete()
+    return redirect(reverse('cliente:list_cliente'))

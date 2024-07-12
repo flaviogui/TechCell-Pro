@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Listar Clientes {% endblock %}
+
+{% block content %} 
+<table class="table-css">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>CPF</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cliente in clientes %}
+      <tr>
+        <td>{{cliente.nome}}</td>
+        <td><a href="#"> {{cliente.email}}</a></td>
+        <td>{{cliente.telefone}}</td>
+        <td>{{cliente.cpf}}</td>
+        <td>
+            <div>
+                <a href="{% url 'cliente:update_cliente' cliente.id %}">Editar Cliente</a>
+                <a href="{% url 'cliente:delete_cliente' cliente.id %}">Deletar Cliente</a>
+            </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
