@@ -1,7 +1,6 @@
 from django.db import models  # type: ignore
 import uuid
-from cpf_field.models import cpffield  # type: ignore
-from .my_package import cpf_field  # type: ignore
+from cpf_field.models import CPFField  # type: ignore # Use CPFField
 # Create your models here.
 
 
@@ -10,7 +9,7 @@ class Cliente(models.Model):
     nome = models.CharField(max_length=200)
     email = models.EmailField()
     telefone = models.CharField(max_length=16, null=True, blank=True)
-    cpf = models.CharField(max_length=200)
+    cpf = CPFField('cpf')
 
     class Meta:
         verbose_name = 'Cliente'
