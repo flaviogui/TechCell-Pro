@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Cliente Formulário {% endblock %}
+
+{% block content %} 
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <h2>Adicionar novo cliente</h2>
+                <hr>
+                {% for field in form %}
+                    <div>
+                        <label>{{field.label}}</label>
+                        {{field}}
+                    </div>
+                {% endfor %}
+                <div>
+                    <input type="submit" name="cliente" value="Salvar Cliente"/>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
