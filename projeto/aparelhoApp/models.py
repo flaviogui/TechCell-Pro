@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models # type: ignore
 import uuid
 
 # Modelo para Aparelho
@@ -26,7 +26,7 @@ class Aparelho(models.Model):
 
 # Implementação de funções adicionais para interagir com o modelo
 
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ObjectDoesNotExist # type: ignore
 
 def cadastrar_aparelho(marca, modelo, imei, numero_serie, descricao_problema):
     aparelho = Aparelho(marca=marca, modelo=modelo, imei=imei, numero_serie=numero_serie, descricao_problema=descricao_problema)

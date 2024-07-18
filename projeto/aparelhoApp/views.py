@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404  # type: ignore
-from django.views.generic import CreateView  # type: ignore
 from .models import Aparelho
 from .forms import AparelhoForm
 from django.contrib import messages  # type: ignore

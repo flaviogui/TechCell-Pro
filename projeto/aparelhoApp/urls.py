@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path  # type: ignore
 from .views import aparelho_create_view, aparelho_list_view, aparelho_update_view, aparelho_delete_view
 
 app_name = 'aparelho'
