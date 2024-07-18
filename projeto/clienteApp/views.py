@@ -15,7 +15,7 @@ def cliente_create_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Usuário Criado com Sucesso!')
-            return redirect(reverse('cliente:create_cliente'))
+            return redirect(reverse('cliente:list_cliente'))
     context = {
         'form': form
     }
