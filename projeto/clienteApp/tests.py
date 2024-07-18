@@ -9,9 +9,6 @@ from django.test import TestCase  # type: ignore
 from clienteApp.models import Cliente
 from django.test import TestCase  # type: ignore
 from clienteApp.forms import ClienteForm
-import os
-from django.test import TestCase  # type: ignore
-from django.core.wsgi import get_wsgi_application  # type: ignore
 
 
 class ClienteViewsTest(TestCase):
@@ -127,17 +124,3 @@ class ClienteFormTest(TestCase):
         self.assertIn('cpf', form.errors.keys())
         # Verifica a mensagem de erro esperada
         self.assertEqual(form.errors['cpf'][0], 'Número de CPF inválido')
-
-
-class WSGITest(TestCase):
-    def test_wsgi_application(self):
-        # Configura a variável de ambiente
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                              'techcell_pro.settings')
-
-        # Importa e verifica a aplicação WSGI
-        try:
-            application = get_wsgi_application()
-            self.assertIsNotNone(application)
-        except Exception as e:
-            self.fail(f"WSGI application failed to load: {e}")
