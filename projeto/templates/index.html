@@ -4,16 +4,23 @@
 
 {% block content %}
     <header>
-        <div class = "container" id = "nav-container">
-            <nav class="navbar-expand-lg fixed-top">
+        <nav class="navbar bg-light navbar-expand-sm">
+        <div class = "container" id = "nav-container d-flex align-items-center">
                 <a href="#" class = "navbar-brand">
-                    <img id = "logo" src="img/hdcagency_logo.svg" alt="TechCell-Pro"> TechCell-Pro
+                    TechCell-Pro 
                 </a>
-                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
+                    <span class = "navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id ="menuNavbar">
+                    <div class="collapse navbar-collapse">
+                        <div class="navbar-nav"><a href="#" class="nav-link active">Principal</a><a href="#" class="nav-link">Clientes</a><a href="#" class="nav-link">Produtos</a><a href="#" class="nav-link">Manutenção</a></div>
+                    </div>
+    
+                </div>
             </nav>
             
         </div>
     </header>
 
 {% endblock %} 
-
