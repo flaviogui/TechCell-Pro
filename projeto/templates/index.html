@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %} TechCell-Pro {% endblock %}
 
 {% block content %}
     <header>
-        <nav class="navbar bg-light navbar-expand-sm">
+        <nav class="navbar bg-success
+         navbar-dark navbar-expand-sm py-3">
         <div class = "container" id = "nav-container d-flex align-items-center">
                 <a href="#" class = "navbar-brand">
+                    <img src="{% static 'img/logo.svg' %}" alt="TechCell Logo" class="d-inline-block align-text-top" style="height: 30px; width: auto;">
                     TechCell-Pro 
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
@@ -14,7 +17,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id ="menuNavbar">
                     <div class="collapse navbar-collapse">
-                        <div class="navbar-nav"><a href="#" class="nav-link active">Principal</a><a href="#" class="nav-link">Clientes</a><a href="#" class="nav-link">Produtos</a><a href="#" class="nav-link">Manutenção</a></div>
+                        <div class="navbar-nav ms-auto">
+                            <a href="#" 
+                            class="nav-link active">Principal</a>
+                            <a href="#" class="nav-link">Clientes</a>
+                            <a href="#" class="nav-link">Produtos</a>
+                            <a href="#" class="nav-link">Manutenção</a>
+                            <a href="#" class="nav-link">Sobre</a></div>
                     </div>
     
                 </div>
