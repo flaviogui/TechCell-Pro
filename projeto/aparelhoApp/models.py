@@ -4,6 +4,8 @@ import uuid
 # Modelo para Aparelho
 class Aparelho(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    nome = models.CharField(max_length=100, default='nome')
+    descricao = models.CharField(max_length=255, default='Descrição padrão')
     marca = models.CharField(max_length=200)
     modelo = models.CharField(max_length=200)
     imei = models.CharField(max_length=15, unique=True)
@@ -28,12 +30,12 @@ class Aparelho(models.Model):
 
 from django.core.exceptions import ObjectDoesNotExist # type: ignore
 
-def cadastrar_aparelho(marca, modelo, imei, numero_serie, descricao_problema):
+def aparelho_create_view(marca, modelo, imei, numero_serie, descricao_problema):
     aparelho = Aparelho(marca=marca, modelo=modelo, imei=imei, numero_serie=numero_serie, descricao_problema=descricao_problema)
     aparelho.save()
     return aparelho.ordem_servico
 
-def alterar_aparelho(id_aparelho, marca=None, modelo=None, imei=None, numero_serie=None, descricao_problema=None):
+def aparelho_update_view(id_aparelho, marca=None, modelo=None, imei=None, numero_serie=None, descricao_problema=None):
     try:
         aparelho = Aparelho.objects.get(id=id_aparelho)
         if marca:
@@ -51,21 +53,16 @@ def alterar_aparelho(id_aparelho, marca=None, modelo=None, imei=None, numero_ser
     except ObjectDoesNotExist:
         return False
 
-def consultar_aparelho(numero_serie):
+def aparelho_list_view(numero_serie):
     try:
         aparelho = Aparelho.objects.get(numero_serie=numero_serie)
         return aparelho
     except ObjectDoesNotExist:
         return None
 
-def visualizar_detalhes_aparelho(id_aparelho):
-    try:
-        aparelho = Aparelho.objects.get(id=id_aparelho)
-        return aparelho
-    except ObjectDoesNotExist:
-        return None
 
-def excluir_aparelho(id_aparelho):
+
+def aparelho_delete_view(id_aparelho):
     try:
         aparelho = Aparelho.objects.get(id=id_aparelho)
         aparelho.delete()
