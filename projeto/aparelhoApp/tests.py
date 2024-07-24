@@ -87,3 +87,8 @@ class AparelhoURLTest(TestCase):
         path = reverse('aparelho:create_aparelho')
         self.assertEqual(resolve(path).view_name, 'aparelho:create_aparelho')
         self.assertEqual(resolve(path).func, aparelho_create_view)
+    
+    def test_list_url(self):
+        path = reverse('aparelho:list_aparelho')
+        self.assertEqual(resolve(path).view_name, 'aparelho:list_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_list_view)
