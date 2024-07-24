@@ -72,4 +72,3 @@ class AparelhoModelTest(TestCase):
         self.assertEqual(meta.verbose_name, 'Aparelho')
         self.assertEqual(meta.verbose_name_plural, 'Aparelhos')
         self.assertEqual(meta.ordering, ['marca', 'modelo'])
-
