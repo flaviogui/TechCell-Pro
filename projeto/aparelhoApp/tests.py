@@ -106,3 +106,17 @@ class AparelhoURLTest(TestCase):
         path = reverse('aparelho:update_aparelho', args=[aparelho.pk])
         self.assertEqual(resolve(path).view_name, 'aparelho:update_aparelho')
         self.assertEqual(resolve(path).func, aparelho_update_view)
+    
+    def test_delete_url(self):
+        aparelho = Aparelho.objects.create(
+            nome='Tablet',
+            descricao='Tablet com tela grande',
+            marca='MarcaY',
+            modelo='ModeloZ',
+            imei='987654321098765',
+            numero_serie='SN0987654321',
+            descricao_problema='Problema com a bateria'
+        )
+        path = reverse('aparelho:delete_aparelho', args=[aparelho.pk])
+        self.assertEqual(resolve(path).view_name, 'aparelho:delete_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_delete_view)
