@@ -1,6 +1,13 @@
 from django.test import TestCase, Client # type: ignore
 from uuid import uuid4
 from .models import Aparelho
+from django.urls import reverse, resolve  # type: ignore
+from .views import (
+    aparelho_create_view,
+    aparelho_list_view,
+    aparelho_update_view,
+    aparelho_delete_view,
+)
 
 class AparelhoModelTest(TestCase):
     
@@ -72,3 +79,44 @@ class AparelhoModelTest(TestCase):
         self.assertEqual(meta.verbose_name, 'Aparelho')
         self.assertEqual(meta.verbose_name_plural, 'Aparelhos')
         self.assertEqual(meta.ordering, ['marca', 'modelo'])
+
+
+class AparelhoURLTest(TestCase):
+    
+    def test_create_url(self):
+        path = reverse('aparelho:create_aparelho')
+        self.assertEqual(resolve(path).view_name, 'aparelho:create_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_create_view)
+    
+    def test_list_url(self):
+        path = reverse('aparelho:list_aparelho')
+        self.assertEqual(resolve(path).view_name, 'aparelho:list_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_list_view)
+
+    def test_update_url(self):
+        aparelho = Aparelho.objects.create(
+            nome='Tablet',
+            descricao='Tablet com tela grande',
+            marca='MarcaY',
+            modelo='ModeloZ',
+            imei='987654321098765',
+            numero_serie='SN0987654321',
+            descricao_problema='Problema com a bateria'
+        )
+        path = reverse('aparelho:update_aparelho', args=[aparelho.pk])
+        self.assertEqual(resolve(path).view_name, 'aparelho:update_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_update_view)
+    
+    def test_delete_url(self):
+        aparelho = Aparelho.objects.create(
+            nome='Tablet',
+            descricao='Tablet com tela grande',
+            marca='MarcaY',
+            modelo='ModeloZ',
+            imei='987654321098765',
+            numero_serie='SN0987654321',
+            descricao_problema='Problema com a bateria'
+        )
+        path = reverse('aparelho:delete_aparelho', args=[aparelho.pk])
+        self.assertEqual(resolve(path).view_name, 'aparelho:delete_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_delete_view)

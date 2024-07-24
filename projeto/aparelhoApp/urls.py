@@ -6,6 +6,6 @@ app_name = 'aparelho'
 urlpatterns = [
     path('create/', aparelho_create_view, name='create_aparelho'),
     path('list/', aparelho_list_view, name='list_aparelho'),
-    path('update/<int:pk>/', aparelho_update_view, name='update_aparelho'),
-    path('delete/<int:pk>/', aparelho_delete_view, name='delete_aparelho'),
+    path('update/<uuid:pk>/', aparelho_update_view, name='update_aparelho'),
+    path('delete/<uuid:pk>/', aparelho_delete_view, name='delete_aparelho'),
 ]
