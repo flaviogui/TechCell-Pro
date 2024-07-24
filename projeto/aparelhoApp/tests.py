@@ -1,6 +1,13 @@
 from django.test import TestCase, Client # type: ignore
 from uuid import uuid4
 from .models import Aparelho
+from django.urls import reverse, resolve  # type: ignore
+from .views import (
+    aparelho_create_view,
+    aparelho_list_view,
+    aparelho_update_view,
+    aparelho_delete_view,
+)
 
 class AparelhoModelTest(TestCase):
     
@@ -73,3 +80,10 @@ class AparelhoModelTest(TestCase):
         self.assertEqual(meta.verbose_name_plural, 'Aparelhos')
         self.assertEqual(meta.ordering, ['marca', 'modelo'])
 
+
+class AparelhoURLTest(TestCase):
+    
+    def test_create_url(self):
+        path = reverse('aparelho:create_aparelho')
+        self.assertEqual(resolve(path).view_name, 'aparelho:create_aparelho')
+        self.assertEqual(resolve(path).func, aparelho_create_view)
