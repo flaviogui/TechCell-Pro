@@ -128,3 +128,10 @@ class AparelhoViewsTest(TestCase):
         response = self.client.get(reverse('aparelho:create_aparelho'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'aparelho_form.html')
+    
+    def test_list_view(self):
+        """Testa a view de listagem de aparelhos."""
+        response = self.client.get(reverse('aparelho:list_aparelho'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'aparelho_list.html')
+        self.assertContains(response, self.aparelho.nome)
