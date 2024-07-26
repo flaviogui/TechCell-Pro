@@ -120,3 +120,11 @@ class AparelhoURLTest(TestCase):
         path = reverse('aparelho:delete_aparelho', args=[aparelho.pk])
         self.assertEqual(resolve(path).view_name, 'aparelho:delete_aparelho')
         self.assertEqual(resolve(path).func, aparelho_delete_view)
+
+class AparelhoViewsTest(TestCase):
+
+    def test_create_view(self):
+        """Testa a view de criação de aparelhos."""
+        response = self.client.get(reverse('aparelho:create_aparelho'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'aparelho_form.html')
