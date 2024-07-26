@@ -135,3 +135,9 @@ class AparelhoViewsTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'aparelho_list.html')
         self.assertContains(response, self.aparelho.nome)
+    
+    def test_update_view(self):
+        """Testa a view de atualização de aparelhos."""
+        response = self.client.get(reverse('aparelho:update_aparelho', args=[self.aparelho.pk]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'aparelho_update.html')
