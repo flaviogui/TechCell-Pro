@@ -168,3 +168,20 @@ class AparelhoFormTest(TestCase):
         }
         form = AparelhoForm(data=form_data)
         self.assertTrue(form.is_valid())
+
+    def test_aparelho_form_invalid(self):
+        form_data = {
+            'nome': '',  # Nome vazio
+            'descricao': 'iPhone 13 Pro Max',
+            'marca': '',
+            'modelo': '',
+            'imei': '123456789012345',
+            'numero_serie': '',
+            'descricao_problema': 'Tela quebrada'
+        }
+        form = AparelhoForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('nome', form.errors)
+        self.assertIn('marca', form.errors)
+        self.assertIn('modelo', form.errors)
+        self.assertIn('numero_serie', form.errors)
