@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cliente/', include('clienteApp.urls')),
     path('aparelho/', include('aparelhoApp.urls')),
+    path('confirmarreparo/', include('confirmarreparo.urls')),  # Incluindo URLs do appConfirmarreparo
     path('', TemplateView.as_view(template_name="index.html"))
 ]
