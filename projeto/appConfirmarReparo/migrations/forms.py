@@ -1,5 +1,5 @@
-from django import forms
-from .models import Reparo
+from django import forms # type: ignore
+from .models import Reparo # type: ignore
 
 class ConfirmarReparoForm(forms.ModelForm):
     class Meta:

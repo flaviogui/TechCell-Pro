@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models # type: ignore
 from appAparelho.models import Aparelho # type: ignore
 from django.utils import timezone # type: ignore
 from uuid import uuid4
