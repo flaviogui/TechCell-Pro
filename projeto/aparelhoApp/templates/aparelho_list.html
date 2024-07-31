@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Lista de Aparelhos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>IMEI</th>
+        <th>Número de Série</th>
+        <th>Descrição do Problema</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for aparelho in aparelhos %}
+        <tr>
+          <td>{{ aparelho.marca }}</td>
+          <td>{{ aparelho.modelo }}</td>
+          <td>{{ aparelho.imei }}</td>
+          <td>{{ aparelho.numero_serie }}</td>
+          <td>{{ aparelho.descricao_problema }}</td>
+          <td>
+            <a href="{% url 'aparelho:update_aparelho' aparelho.pk %}">Editar</a>
+            <a href="{% url 'aparelho:delete_aparelho' aparelho.pk %}">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
