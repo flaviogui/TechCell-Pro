@@ -18,7 +18,7 @@ def confirmar_reparo(request, pk):
             reparo.data_conclusao = timezone.now()
             reparo.save()
             # Notificar o cliente
-            notificar_cliente(reparo) # type: ignore
+            
             return redirect('reparo_detalhes', pk=reparo.pk)
     else:
         form = ConfirmarReparoForm(instance=reparo)
@@ -26,3 +26,6 @@ def confirmar_reparo(request, pk):
         'form': form,
         'reparo': reparo,
     })
+def reparo_detalhes(request, pk):
+    reparo = get_object_or_404(Reparo, pk=pk)
+    return render(request, 'reparo_detalhes.html', {'reparo': reparo})
