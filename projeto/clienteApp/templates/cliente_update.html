@@ -2,23 +2,26 @@
 
 {% block title %} Cliente Formulário {% endblock %}
 
-{% block content %} 
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            <div>
-                <h2>Editar Cliente</h2>
-                <hr>
+{% block content %}
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Editar Cliente</h2>
+            </div>
+            <div class="card-body">
                 {% for field in form %}
-                    <div>
-                        <label>{{field.label}}</label>
-                        {{field}}
+                    <div class="mb-3">
+                        <label class="form-label">{{ field.label }}</label>
+                        {{ field }}
                     </div>
                 {% endfor %}
-                <div>
-                    <input type="submit" name="cliente" value="Salvar Cliente"/>
-                </div>
             </div>
-        </form>
-    </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary">Salvar Cliente</button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}
