@@ -412,5 +412,3 @@ docs/_book
 test/
 
 # End of https://www.toptal.com/developers/gitignore/api/vue,node,python,django
-
-projeto/static
