@@ -2,7 +2,7 @@ from audioop import reverse
 from django.test import TestCase, Client # type: ignore
 from django.test import TestCase # type: ignore
 from appConfirmarReparo.models import Reparo
-from appAparelho.models import Aparelho # type: ignore
+from aparelhoApp.models import Aparelho # type: ignore
 
 
 class ReparoIntegrationTest(TestCase):

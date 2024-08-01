@@ -1,6 +1,6 @@
 from django.contrib import admin # type: ignore
-from .models import Aparelho, ConfirmacaoReparo
+from .models import Reparo
 
 # Registro dos modelos para o admin
-admin.site.register(Aparelho)
-admin.site.register(ConfirmacaoReparo)
+
+admin.site.register(Reparo)

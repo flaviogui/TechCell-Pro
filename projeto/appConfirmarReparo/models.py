@@ -1,5 +1,5 @@
 from django.db import models # type: ignore
-from appAparelho.models import Aparelho # type: ignore
+from aparelhoApp.models import Aparelho # type: ignore
 from django.utils import timezone # type: ignore
 from uuid import uuid4
 
@@ -20,3 +20,6 @@ class Reparo(models.Model):
 
     def __str__(self):
         return f'Reparo {self.protocolo} - {self.aparelho.nome}'
+    
+
+

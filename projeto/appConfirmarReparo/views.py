@@ -1,7 +1,12 @@
+from http.client import HTTPResponse
 from django.shortcuts import render, get_object_or_404, redirect # type: ignore
 from django.utils import timezone # type: ignore
 from .models import Reparo
 from .forms import ConfirmarReparoForm
+
+
+def index(request):
+    return HTTPResponse("Hello, world. You're at the index.")
 
 def confirmar_reparo(request, pk):
     reparo = get_object_or_404(Reparo, pk=pk)
