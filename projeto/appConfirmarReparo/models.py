@@ -10,7 +10,7 @@ class Reparo(models.Model):
         ('concluido', 'Concluído'),
     ]
     aparelho = models.ForeignKey(Aparelho, on_delete=models.CASCADE)
-    descricao_problema = models.TextField()
+
     custo_estimado = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     data_inicio = models.DateTimeField(default=timezone.now)
     data_conclusao = models.DateTimeField(null=True, blank=True)

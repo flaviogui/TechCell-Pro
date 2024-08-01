@@ -22,4 +22,7 @@ def confirmar_reparo(request, pk):
             return redirect('reparo_detalhes', pk=reparo.pk)
     else:
         form = ConfirmarReparoForm(instance=reparo)
-    return render(request, 'confirmar_reparo.html', {'form': form, 'reparo': reparo})
+    return render(request, 'confirmar_reparo.html', {
+        'form': form,
+        'reparo': reparo,
+    })

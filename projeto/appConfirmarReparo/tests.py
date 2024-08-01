@@ -28,7 +28,7 @@ class ReparoIntegrationTest(TestCase):
         # Confirmação do reparo
         response = self.client.post(reverse('confirmar_reparo', args=[self.reparo.pk]), {
             'custo_estimado': 250.00,
-            'descricao_problema': 'Teclado trocado e problema resolvido'
+
         })
         self.reparo.refresh_from_db()
         self.assertEqual(self.reparo.status, 'concluido')
