@@ -1,18 +1,25 @@
-<!-- appConfirmarReparo/templates/reparo_detalhes.html -->
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Reparo</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <h1>Detalhes do Reparo</h1>
-    <p><strong>ID do Reparo:</strong> {{ reparo.id }}</p>
-    <p><strong>Descrição:</strong> {{ reparo.descricao }}</p>
-    <p><strong>Status:</strong> {{ reparo.status }}</p>
-    <a href="{% url 'appConfirmarReparo:confirmar_reparo' reparo.id %}">Confirmar Reparo</a>
+    
+    <div>
+        <h2>Status:</h2>
+        <p>{{ reparo.status }}</p>
+    </div>
+    
+    <div>
+        <h2>Data de Início:</h2>
+        <!-- Formatação da data -->
+        <p>{{ reparo.data_inicio|date:"Y-m-d H:i:s" }}</p>
+    </div>
+    
+    <!-- Adicione outros detalhes do reparo conforme necessário -->
+    
+    <a href="{% url 'appConfirmarReparo:confirmar_reparo' reparo.pk %}">Confirmar Reparo</a>
 </body>
 </html>

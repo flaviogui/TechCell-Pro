@@ -17,9 +17,7 @@ def confirmar_reparo(request, pk):
             reparo.status = 'concluido'
             reparo.data_conclusao = timezone.now()
             reparo.save()
-            # Notificar o cliente
-            
-            return redirect('reparo_detalhes', pk=reparo.pk)
+            return redirect('appConfirmarReparo:reparo_detalhes', pk=reparo.pk)
     else:
         form = ConfirmarReparoForm(instance=reparo)
     return render(request, 'confirmar_reparo.html', {
