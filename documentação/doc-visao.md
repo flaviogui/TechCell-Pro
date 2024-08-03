@@ -37,22 +37,22 @@ Técnico | Este usuário é capacitado na área e responsável pelo serviço de 
 
 Requisito                                 | Descrição   | Ator |
 ---------                                 | ----------- | ---------- |
-RF001 - Cadastrar Cliente |  Cliente tem os atributos nome, email, cpf, telefone e endereço. | Técnico |
-RF002 - Alterar Cliente | A alteração permite a mudança do nome, email, telefone e endereço. | Técnico |
-RF003 - Excluir Cliente | O sistema deve permitir a exclusão de informações cadastradas.| Técnico |
-RF004 - Listar Cliente | Deve permitir a listagem de todos os clientes.  | Técnico |
-RF005 - Visualizar Cliente |  Deve permitir a visualização das informações de um cliente em específico | Técnico |
-RF006 - Cadastrar Aparelho | Aparelho tem os atributos marca, modelo, IMEI, número de série, descrição do problema e CPF do proprietário.| Técnico |
-RF007 - Alterar Aparelho | A alteração permite a mudança da marca, modelo, IMEI, número de série. | Técnico | 
-RF008 - Listar Aparelho |  Deve permitir a listagem de todos os aparelhos. | Técnico |
-RF009 - Visualizar Aparelho | Deve permitir a visualização das informações de um Aparelho em específico. | Técnico |
-RF010 - Analisar Pedido | O pedido deve ser analisado com base na legislação prevista no CDC. | Técnico |
-RF011 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
-RF012 - Criar Protocolo | Após a análise do pedido o técnico deve registrar um número de protocolo do pedido para fins de organização. | Técnico |
-RF013 - Definir Prazo | Será definido um prazo de serviço para o cliente | Técnico |
+RF001 - Cadastrar Cliente |  Cliente tem os atributos nome, email, cpf, telefone e endereço. | Técnico e Gerente |
+RF002 - Alterar Cliente | A alteração permite a mudança do nome, email, telefone e endereço. | Técnico e Gerente |
+RF003 - Excluir Cliente | O sistema deve permitir a exclusão de informações cadastradas.| Técnico e Gerente |
+RF004 - Listar Cliente | Deve permitir a listagem de todos os clientes.  | Técnico e Gerente |
+RF005 - Visualizar Cliente |  Deve permitir a visualização das informações de um cliente em específico | Técnico e Gerente |
+RF006 - Cadastrar Aparelho | Aparelho tem os atributos marca, modelo, IMEI, número de série, descrição do problema e CPF do proprietário.| Técnico e Gerente |
+RF007 - Alterar Aparelho | A alteração permite a mudança da marca, modelo, IMEI, número de série. | Técnico e Gerente | 
+RF008 - Listar Aparelho |  Deve permitir a listagem de todos os aparelhos. | Técnico e Gerente |
+RF009 - Visualizar Aparelho | Deve permitir a visualização das informações de um Aparelho em específico. | Técnico e Gerente |
+RF010 - Analisar Pedido | O pedido deve ser analisado com base na legislação prevista no CDC. | Técnico e Gerente |
+RF011 - Cadastrar Descrição | Inclui descrição do problema | Técnico e Gerente |
+RF012 - Criar Protocolo | Após a análise do pedido o técnico deve registrar um número de protocolo do pedido para fins de organização. | Técnico e Gerente |
+RF013 - Definir Prazo | Será definido um prazo de serviço para o cliente | Técnico e Gerente |
 RF014 - Pagar | O sistema disponibilizará de opções de pagamento, via pix, cartão, boleto ou em espécie.| Técnico e Cliente |
-RF015 - Gerar comprovante de pagamento | |Técnico|
-RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico|
+RF015 - Gerar comprovante de pagamento | |Técnico e Gerente|
+RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico e Gerente|
 RF0015 - Cadastrar Funcionário |  Funcionário tem os atributos nome, email, cpf, telefone e cargo. | Gerente |
 RF0016 - Alterar Funcionário | A alteração permite a mudança do nome, email, telefone e cargo. | Gerente |
 RF0017 - Excluir Funcionário | O sistema deve permitir a exclusão de informações cadastradas.| Gerente |
