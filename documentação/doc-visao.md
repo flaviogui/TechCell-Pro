@@ -48,12 +48,16 @@ RF008 - Listar Aparelho |  Deve permitir a listagem de todos os aparelhos. | Té
 RF009 - Visualizar Aparelho | Deve permitir a visualização das informações de um Aparelho em específico. | Técnico |
 RF010 - Analisar Pedido | O pedido deve ser analisado com base na legislação prevista no CDC. | Técnico |
 RF011 - Cadastrar Descrição | Inclui descrição do problema | Técnico |
-RF012 - Gerar Protocolo | Após a análise do pedido o sistema gerará um número de protocolo. | Técnico |
-RF013 - Calcular Prazo | Será calculado um prazo de serviço | Técnico |
+RF012 - Criar Protocolo | Após a análise do pedido o técnico deve registrar um número de protocolo do pedido para fins de organização. | Técnico |
+RF013 - Definir Prazo | Será definido um prazo de serviço para o cliente | Técnico |
 RF014 - Pagar | O sistema disponibilizará de opções de pagamento, via pix, cartão, boleto ou em espécie.| Técnico e Cliente |
 RF015 - Gerar comprovante de pagamento | |Técnico|
 RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico|
-
+RF0015 - Cadastrar Funcionário |  Funcionário tem os atributos nome, email, cpf, telefone e cargo. | Gerente |
+RF0016 - Alterar Funcionário | A alteração permite a mudança do nome, email, telefone e cargo. | Gerente |
+RF0017 - Excluir Funcionário | O sistema deve permitir a exclusão de informações cadastradas.| Gerente |
+RF0018 - Listar Listar Funcionário | Deve permitir a listagem de todos os funcionários.  | Gerente |
+RF0019- Visualizar Funcionário |  Deve permitir a visualização das informações de um funcionário em específico | Gerente |
 
 
 
