@@ -1,0 +1,20 @@
+<!-- appConfirmarReparo/templates/confirmar_reparo.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Reparo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Confirmar Reparo</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Você tem certeza que deseja confirmar o reparo?</p>
+        <button type="submit">Confirmar</button>
+    </form>
+    <a href="{% url 'appConfirmarReparo:reparo_detalhes' reparo.id %}">Voltar</a>
+</body>
+</html>

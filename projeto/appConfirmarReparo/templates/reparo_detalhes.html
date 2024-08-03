@@ -1,0 +1,18 @@
+<!-- appConfirmarReparo/templates/reparo_detalhes.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Reparo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Detalhes do Reparo</h1>
+    <p><strong>ID do Reparo:</strong> {{ reparo.id }}</p>
+    <p><strong>Descrição:</strong> {{ reparo.descricao }}</p>
+    <p><strong>Status:</strong> {{ reparo.status }}</p>
+    <a href="{% url 'appConfirmarReparo:confirmar_reparo' reparo.id %}">Confirmar Reparo</a>
+</body>
+</html>

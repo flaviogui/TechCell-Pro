@@ -1,6 +1,5 @@
 from django.apps import AppConfig # type: ignore
 
-
-class AparelhoappConfig(AppConfig):
+class AppconfirmarreparoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'aparelhoApp'
+    name = 'appConfirmarReparo'  
