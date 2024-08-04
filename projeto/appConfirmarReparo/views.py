@@ -14,8 +14,6 @@ def confirmar_reparo(request, pk):
         form = ConfirmarReparoForm(request.POST, instance=reparo)
         if form.is_valid():
             reparo = form.save(commit=False)
-            reparo.status = 'concluido'
-            reparo.data_conclusao = timezone.now()
             reparo.save()
             return redirect('appConfirmarReparo:reparo_detalhes', pk=reparo.pk)
     else:
