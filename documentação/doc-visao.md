@@ -58,6 +58,22 @@ RF0016 - Alterar Funcionário | A alteração permite a mudança do nome, email,
 RF0017 - Excluir Funcionário | O sistema deve permitir a exclusão de informações cadastradas.| Gerente |
 RF0018 - Listar Listar Funcionário | Deve permitir a listagem de todos os funcionários.  | Gerente |
 RF0019- Visualizar Funcionário |  Deve permitir a visualização das informações de um funcionário em específico | Gerente |
+RF0020 - Cadastrar Produto |  O sistema deve permitir a criação de um produto com os seguintes campos: Nome, descrição, código de barras, preço e categoria. | Gerente |
+RF0021 - Alterar Produto | O sistema deve permitir a alteração das informações de um produto existente com os seguintes campos: Nome, descrição, código de barras, preço e categoria. | Gerente |
+RF0022 - Excluir Produto | O sistema deve permitir a exclusão de produtos cadastrados. | Gerente |
+RF0023 - Listar Produto | O sistema deve permitir a listagem de todos os produtos cadastrados.  | Gerente |
+RF0024- Visualizar Produto |  O sistema deve permitir a visualização das informações de um produto específico. | Gerente |
+RF0025 - Cadastrar Serviço |  O sistema deve permitir o cadastro de novos serviços com os seguintes atributos: nome, descrição, preço e duração estimada. | Gerente |
+RF0026 - Alterar Serviço | O sistema deve permitir a alteração das informações de um serviço cadastrado, incluindo nome, descrição, preço e duração estimada.| Gerente |
+RF0027 - Excluir Serviço | O sistema deve permitir a exclusão de informações cadastradas de um serviço. | Gerente |
+RF0028 - Listar Serviço | O sistema deve permitir a listagem de todos os serviços cadastrados. | Gerente |
+RF0029- Visualizar Serviço | O sistema deve permitir a visualização das informações detalhadas de um serviço específico. | Gerente |
+RF0030 - Cadastrar Peça |  O sistema deve permitir o cadastro de novas peças com os seguintes atributos: nome, descrição, código, quantidade em estoque, preço de compra e fornecedor. | Gerente |
+RF0031 - Alterar Peça | O sistema deve permitir a alteração das informações de uma peça cadastrada, incluindo nome, descrição, código, quantidade em estoque, preço de compra e fornecedor. | Gerente |
+RF0032 - Excluir Peça | O sistema deve permitir a exclusão de informações cadastradas de uma peça.| Gerente |
+RF0033 - Listar Peça | O sistema deve permitir a listagem de todas as peças cadastradas.  | Gerente |
+RF0034- Visualizar Peça |  O sistema deve permitir a visualização das informações detalhadas de uma peça específica. | Gerente |
+
 
 
 
