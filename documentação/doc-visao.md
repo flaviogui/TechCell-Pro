@@ -31,6 +31,7 @@ Perfil                                 | Descrição   |
 -------------------------------------- | ----------- |
 Cliente | Este usuário é responsável por fornecer informações pessoais e sobre o produto com defeito que serão utilizadas na alimentação do sistema e na solicitação do serviço de assistência técnica.
 Técnico | Este usuário é capacitado na área e responsável pelo serviço de assistência técnica. 
+Gerente | Este usuário é o dono do negócio e responsável por gerir o sistema e os funcionários.
 
 
 ## Lista de Requisitos Funcionais
