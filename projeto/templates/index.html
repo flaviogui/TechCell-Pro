@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} TechCell-Pro {% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+{% endblock %}
+
+{% block content %}
+<header>
+    <nav class="navbar bg-primary navbar-dark navbar-expand-sm py-3" id="navbar">
+        <div class="container" id="nav-container d-flex align-items-center">
+            <a href="#" class="navbar-brand">
+                <img src="{% static 'img/hdcagency_logo.svg' %}" alt="Logo" class="me-2" style="height: 50px;">
+                TechCell-Pro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Clientes</a>
+                    <a href="#" class="nav-link">Produtos</a>
+                    <a href="#" class="nav-link">Manutenção</a>
+                    <a href="#" class="nav-link">Sobre</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="container-fluid">
+        <div id="mainSlider" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#mainSlider" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#mainSlider" data-bs-slide-to="1"></li>
+                <li data-bs-target="#mainSlider" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'img/banner1.png' %}" class="d-block w-100" alt="Projetos">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Assistência Técnica Especializada</h2>
+                        <p>Oferecemos serviços especializados de reparo e manutenção para todos os tipos de aparelhos celulares. Confie na TechCell-Pro para cuidar do seu dispositivo.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/banner2.png' %}" class="d-block w-100" alt="Projetos">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Peças e Acessórios de Qualidade</h2>
+                        <p>Utilizamos apenas peças e acessórios de alta qualidade para garantir a durabilidade e a performance do seu celular. Venha conhecer nossas opções.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="{% static 'img/banner3.png' %}" class="d-block w-100" alt="Projetos">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Atendimento Rápido e Eficiente</h2>
+                        <p>Nosso time de especialistas está pronto para oferecer um atendimento rápido e eficiente, solucionando os problemas do seu celular no menor tempo possível.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#mainSlider" class="carousel-control-prev" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a href="#mainSlider" class="carousel-control-next" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </div>
+    </div>
+</main>
+{% endblock %}
