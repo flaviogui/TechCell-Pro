@@ -25,3 +25,7 @@ def confirmar_reparo(request, pk):
 def reparo_detalhes(request, pk):
     reparo = get_object_or_404(Reparo, pk=pk)
     return render(request, 'reparo_detalhes.html', {'reparo': reparo})
+
+def lista_reparos(request):
+    reparos = Reparo.objects.all()
+    return render(request, 'lista_reparos.html', {'reparos': reparos})

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Reparos{% endblock %}
+
+{% block content %}
+<header>
+    <nav class="navbar bg-primary navbar-dark navbar-expand-sm py-3">
+        <div class="container" id="nav-container">
+            <a href="#" class="navbar-brand">TechCell-Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link active">Reparos</a>
+                    <a href="#" class="nav-link">Clientes</a>
+                    <a href="#" class="nav-link">Produtos</a>
+                    <a href="#" class="nav-link">Manutenção</a>
+                    <a href="#" class="nav-link">Sobre</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="mt-4">
+    <div class="container mt-5">
+        <h2>Lista de Reparos</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Aparelho</th>
+                    <th>Custo Estimado</th>
+                    <th>Data Início</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reparo in reparos %}
+                    <tr>
+                        <td>{{ reparo.aparelho }}</td>
+                        <td>{{ reparo.custo_estimado }}</td>
+                        <td>{{ reparo.data_inicio }}</td>
+                        <td>{{ reparo.get_status_display }}</td>
+                        <td>
+                            <a href="{% url 'appConfirmarReparo:confirmar_reparo' reparo.pk %}" class="btn btn-primary btn-sm">Confirmar</a>
+                            <a href="{% url 'appConfirmarReparo:reparo_detalhes' reparo.pk %}" class="btn btn-secondary btn-sm">Detalhes</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+{% endblock %}
