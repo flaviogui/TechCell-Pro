@@ -126,14 +126,19 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA01.01** |O técnico deve ter acesso ao histórico de reparos do aparelho |
-| **TA01.02** | Ao tentar ter acesso ao histórico de reparo do apareho se não aparecer deve aparecer uma mensagem mostrando que o aparelho não teve reparos anteriores |
-| **TA01.03** | O sistema deve fornecer ferramentas para auxiliar no diagnóstico do problema |
-| **TA01.04** | Caso não seja possível fornecer ferramentas para auxiliar no diagnóstico do problema, pode-se considerar a implementação de recursos alternativos para facilitar a identificação dos problemas apresentados pelo aparelho |        |
-| **TA01.05** | O técnico deve poder registrar o problema e a solução proposta no sistema  |
-| **TA01.06** | Caso não seja possivel registrar o problema e a solução, deve se dar uma opção alternativa para o técnico fazer esse regisstro, por exemplo em um formulário físico |
-| **TA01.07** |  O sistema deve emitir o tempo e custo do reparo|
-| **TA01.08** |  Caso não seja possível implementar a funcionalidade de emitir automaticamente o tempo e custo do reparo pelo sistema, uma alternativa viável seria que o técnico responsável fornecesse uma estimativa do tempo necessário para o reparo e do custo envolvido manualmente. |
+| **TA03.01** | O gerente deve poder acessar a funcionalidade de cadastro de funcionário.|
+| **TA03.02** | O gerente deve poder cadastrar um novo funcionário com nome, email, CPF, telefone e cargo.|
+| **TA03.03** | Após o cadastro de um funcionário, o sistema deve confirmar o sucesso do cadastro. |
+| **TA03.04** | O gerente deve poder acessar a funcionalidade de alteração de funcionário. |        
+| **TA03.05** | O gerente deve poder alterar o nome, email, telefone e cargo de um funcionário existente.  |
+| **TA03.06** | Após a alteração das informações de um funcionário, o sistema deve confirmar o sucesso da alteração.|
+| **TA03.07** | O gerente deve poder acessar a funcionalidade de exclusão de funcionário.|
+| **TA03.08** | O gerente deve poder excluir um funcionário específico. |
+| **TA03.09** | Após a exclusão de um funcionário, o sistema deve confirmar o sucesso da exclusão. |
+| **TA03.10** | O gerente deve poder acessar a funcionalidade de listagem de funcionários.|
+| **TA03.11** | O sistema deve exibir uma lista de todos os funcionários cadastrados, incluindo nome, email, telefone e cargo.|
+| **TA03.12** | O gerente deve poder acessar a funcionalidade de visualização de um funcionário específico.|
+| **TA03.13** | O sistema deve exibir todas as informações do funcionário selecionado, incluindo nome, email, CPF, telefone e cargo.|
 
 ### User Story US04 - Confirmar Reparo
 
