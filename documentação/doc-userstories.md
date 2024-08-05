@@ -16,8 +16,8 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | ...        | ...     | ...                                | ...     |
 | 12/07/2020 | 1.0.0   | Detalhamento do User Story US01 | Samuel     |
 | 12/07/2020 | 1.1.0   | Detalhamento do User Story US02 | Flávio     |
-| 12/07/2020 | 1.2.0   | Detalhamento do User Story US03 | Fábio      |
-| 12/07/2020 | 1.3.0   | Detalhamento do User Story US04 | Gabiel     |
+| 12/07/2020 | 1.2.0   | Detalhamento do User Story US03 | Gabriel    |
+| 12/07/2020 | 1.3.0   | Detalhamento do User Story US04 | Fabio      |
 | 12/07/2020 | 1.4.0   | Detalhamento do User Story US05 | Laian      |
 | 30/04/2022 | 1.5.0   | Adição das informações da equipe: Analista, Desenvolvedor, Revisor e Testador. | Equipe |
 
@@ -95,31 +95,32 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA01.05** | Técnico altera dados de um produto com informações incorretas. O sistema valida as alterações durante a edição. O sistema não permite a alteração se dados inválidos forem detectados. |
 
 
-### User Story US03 - Análise do Problema
+### User Story US03 - Manter Funcionário
 
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema necessita de um campo que permita ao técnico realizar uma análise detalhada do problema. Este campo deve proporcionar acesso ao histórico de reparos do aparelho e disponibilizar ferramentas que auxiliem o técnico no diagnóstico do problema. O técnico deve ser capaz de registrar o problema e a solução proposta no sistema, e ao final, o sistema deve gerar o tempo e o custo estimado do reparo. |
+| **Descrição** | Como gerente, eu quero ser capaz de gerenciar as informações dos funcionários para garantir que todos os dados relevantes estejam atualizados e acessíveis.|
                     
 
 | **Requisitos envolvidos** |                                                    |
 | ------------- | :------------------------------------------------------------- |
-| RF10          | Cadastrar Descrição|
-| RF12          | Gerar Protocolo    |
-| RF13          | Calcular Prazo |
-| RF17          | Solicitar Assistencia |
+| RF15          | Cadastrar Funcionário |
+| RF16          | Alterar Funcionário   |
+| RF17          | Excluir Funcionário   |
+| RF18          | Listar Funcionário    |
+| RF19          | Visualizar Funcionário|
 
 
 |                           |                                     |
 | ------------------------- | ----------------------------------- | 
 | **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 5 diaas                             | 
+| **Estimativa**            | 3 diaas                             | 
 | **Tempo Gasto (real):**   |                                     | 
 | **Tamanho Funcional**     | 7 PF                                | 
 | **Analista**              | Fábio                               | 
-| **Desenvolvedor**         | Laian                               | 
-| **Revisor**               | Gabriel                             | 
-| **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Gabriel                             | 
+| **Revisor**               | Flavio                              | 
+| **Testador**              | Laian                               | 
 
 
 | Testes de Aceitação (TA) |  |
