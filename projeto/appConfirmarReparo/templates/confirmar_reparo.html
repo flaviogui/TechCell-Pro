@@ -1,20 +1,56 @@
-<!-- appConfirmarReparo/templates/confirmar_reparo.html -->
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmar Reparo</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <h1>Confirmar Reparo</h1>
-    <form method="post">
-        {% csrf_token %}
-        <p>Você tem certeza que deseja confirmar o reparo?</p>
-        <button type="submit">Confirmar</button>
-    </form>
-    <a href="{% url 'appConfirmarReparo:reparo_detalhes' reparo.id %}">Voltar</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Reparo{% endblock %}
+
+{% block content %}
+<header>
+    <nav class="navbar bg-primary navbar-dark navbar-expand-sm py-3">
+        <div class="container" id="nav-container">
+            <a href="#" class="navbar-brand">TechCell-Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Clientes</a>
+                    <a href="#" class="nav-link">Produtos</a>
+                    <a href="#" class="nav-link active">Manutenção</a>
+                    <a href="#" class="nav-link">Sobre</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="mt-4">
+    <div class="container mt-5">
+        <form method="post">
+            {% csrf_token %}
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="card-title">Confirmar Reparo</h2>
+                </div>
+                <div class="card-body">
+                    <hr>
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                            {% if field.errors %}
+                                <div class="alert alert-danger mt-2">{{ field.errors }}</div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="card-footer text-end">
+                    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
