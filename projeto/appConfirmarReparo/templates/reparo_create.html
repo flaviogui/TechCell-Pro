@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastrar Reparo{% endblock %}
+
+{% block content %}
+<main class="mt-4">
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title">Cadastrar Reparo</h2>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <a href="{'lista_reparos.html'}" class="btn btn-secondary">Cancelar</a> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
