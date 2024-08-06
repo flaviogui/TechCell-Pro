@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'clienteApp',
     'aparelhoApp',
+    'appConfirmarReparo',
     'cpf_field',
 ]
 

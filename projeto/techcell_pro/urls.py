@@ -19,9 +19,11 @@ from django.urls import path, include   # type: ignore
 from django.views.generic import TemplateView # type: ignore
 
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cliente/', include('clienteApp.urls')),
     path('aparelho/', include('aparelhoApp.urls')),
+    path('appConfirmarReparo/', include('appConfirmarReparo.urls')),
     path('', TemplateView.as_view(template_name="index.html"))
 ]
