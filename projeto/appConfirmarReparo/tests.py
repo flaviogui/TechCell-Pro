@@ -1,14 +1,10 @@
-from pydoc import resolve
-from uuid import uuid4
-from uuid import UUID
-from django.test import TestCase # type: ignore
-from django.urls import reverse # type: ignore
-from .models import Reparo, Aparelho
+from uuid import uuid4, UUID
+from django.test import TestCase, SimpleTestCase # type: ignore
+from django.urls import reverse, resolve # type: ignore
 from django.utils import timezone # type: ignore
+from .models import Reparo, Aparelho
 from .forms import ConfirmarReparoForm
 from appConfirmarReparo.views import reparo_detalhes, confirmar_reparo
-from django.test import SimpleTestCase # type: ignore
-from django.urls import reverse, resolve # type: ignore
 
 
 class ReparoIntegrationTest(TestCase):
@@ -24,50 +20,41 @@ class ReparoIntegrationTest(TestCase):
         )
 
     def test_confirmar_reparo_view(self):
-        # Envia um POST request para confirmar o reparo
         response = self.client.post(reverse('appConfirmarReparo:confirmar_reparo', args=[self.reparo.pk]), {
             'status': 'concluido',
             'data_conclusao': timezone.now(),
         })
-        self.assertEqual(response.status_code, 302)  # 302 é o código de redirecionamento
+        self.assertEqual(response.status_code, 302)
         self.assertRedirects(response, reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
 
     def test_view_reparo_status(self):
-        # Supondo que 'reparo_detalhes' é uma página que exibe detalhes do reparo
         response = self.client.get(reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
         self.assertEqual(response.status_code, 200)
-        # Verifica se os detalhes do reparo são exibidos corretamente
         self.assertContains(response, self.reparo.status)
         self.assertContains(response, self.reparo.data_inicio.strftime('%Y-%m-%d %H:%M:%S'))
 
 
-
 class ConfirmarReparoFormTest(TestCase):
-
     def setUp(self):
-        # Cria uma instância de Reparo para usar nos testes
-        self.reparo = Reparo.objects.create(custo_estimado=100.0)
+        self.aparelho = Aparelho.objects.create(nome="Aparelho Teste", descricao="Descrição Teste")
+        self.reparo = Reparo.objects.create(aparelho=self.aparelho, custo_estimado=100.0, status='pendente')
 
     def test_form_valid_data(self):
-        # Testa o formulário com dados válidos
-        form_data = {'custo_estimado': 150.0}
+        form_data = {'custo_estimado': 150.0, 'aparelho': self.aparelho.id}
         form = ConfirmarReparoForm(data=form_data, instance=self.reparo)
         self.assertTrue(form.is_valid())
 
     def test_form_invalid_data(self):
-        # Testa o formulário com dados inválidos (por exemplo, uma string em vez de um número)
-        form_data = {'custo_estimado': 'invalid_value'}
+        form_data = {'custo_estimado': 'invalid_value', 'aparelho': self.aparelho.id}
         form = ConfirmarReparoForm(data=form_data, instance=self.reparo)
         self.assertFalse(form.is_valid())
 
     def test_form_empty_data(self):
-        # Testa o formulário com dados vazios
         form = ConfirmarReparoForm(data={}, instance=self.reparo)
         self.assertFalse(form.is_valid())
 
     def test_form_save(self):
-        # Testa se o formulário salva corretamente os dados
-        form_data = {'custo_estimado': 200.0}
+        form_data = {'custo_estimado': 200.0, 'aparelho': self.aparelho.id}
         form = ConfirmarReparoForm(data=form_data, instance=self.reparo)
         self.assertTrue(form.is_valid())
         saved_reparo = form.save()
@@ -76,26 +63,21 @@ class ConfirmarReparoFormTest(TestCase):
 
 class UrlsTestCase(SimpleTestCase):
     def test_reparo_detalhes_url(self):
-        # Testa a resolução da URL 'reparo_detalhes'
         url = reverse('appConfirmarReparo:reparo_detalhes', args=[1])
         self.assertEqual(url, '/reparo/1/')
         resolved_view = resolve(url)
         self.assertEqual(resolved_view.func, reparo_detalhes)
 
     def test_confirmar_reparo_url(self):
-        # Testa a resolução da URL 'confirmar_reparo'
         url = reverse('appConfirmarReparo:confirmar_reparo', args=[1])
         self.assertEqual(url, '/confirmar_reparo/1/')
         resolved_view = resolve(url)
         self.assertEqual(resolved_view.func, confirmar_reparo)
 
 
-
 class ReparoModelTest(TestCase):
-
     def setUp(self):
-        # Criação de um objeto Aparelho para ser usado nos testes
-        self.aparelho = Aparelho.objects.create(nome="Ar Condicionado", modelo="XYZ", serial="12345")
+        self.aparelho = Aparelho.objects.create(nome="Ar Condicionado", descricao="Modelo XYZ")
 
     def test_criacao_reparo(self):
         reparo = Reparo.objects.create(
@@ -132,7 +114,7 @@ class ReparoModelTest(TestCase):
             aparelho=self.aparelho,
             custo_estimado=350.00,
             data_inicio=timezone.now(),
-            status='concluido'
+            status='pendente',
+            data_conclusao=None
         )
         self.assertIsNone(reparo.data_conclusao)
-
