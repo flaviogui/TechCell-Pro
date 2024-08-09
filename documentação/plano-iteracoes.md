@@ -8,9 +8,9 @@ Iteração | Data início | Data Final | Apresentação | Líder Técnico  | Det
 -------- | ----------- | ---------- | ------------ | -------  | -------
 It0      | 27/02/2024  | 14/03/2024 |      --      | Flávio  | Planejamento, Estudos e Estudo dos Documentos e Definição de Tecnologias dos projetos. Criação dos Documentos: Documento de Visão, Modelo Conceitual, Lista de User Stories, Plano de Iteração e Plano de Release,  Estrutura do Projeto (código base do projeto), Detalhar User Stories para a Iteração 1, Implementar User Story Base.
 It1      | 15/03/2024  | 28/03/2024 | 28/03/2024   | Flávio | Criar Documento de Visão, Modelo Conceitual, Lista de User Stories, Plano de Iteração e Plano de Release, Detalhar User Stories para a Iteração 2, Implementar User Stories definidos na Iteração 1 (um US por membro da equipe).
-It2      | 29/03/2024  | 18/04/2024 | 18/04/2024   | Gabriel | Implementar User Storie 00, revisar documentação, e implementar alguns user stories.
+It2      | 29/03/2024  | 18/04/2024 | 18/04/2024   | Gabriel | Implementação User Storie 00, revisão da documentação, implementação de user stories, implementação de testes automatizados, levantamento de novos requisitos, adicionando o sonar, resolução de erros.
 It3      | 19/04/2024  | 09/05/2024 | 09/05/2024   | Laian   | Criar novos user story, atualizar documentação, implementar alguns user stories.
-It4      | 10/05/2024  | 30/05/2024 | 30/05/2024   | Líder 4 | Detalhar User Stories, Implementar User Stories, Testar User Stories, Deploy da Iteração.
+It4      | 10/05/2024  | 30/05/2024 | 30/05/2024   | Fabio | Detalhar User Stories, Implementar User Stories, Testar User Stories, Deploy da Iteração.
 It5      | 31/05/2024  | 20/06/2024 | 20/06/2024   | Líder 5 | Detalhar User Stories, Implementar User Stories, Testar User Stories, Deploy da Iteração.
 It6      | 21/06/2024  | 11/07/2024 | 11/07/2024   | Líder 6 | Correções de Bugs, Testes, e Entrega do Projeto.
 
