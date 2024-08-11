@@ -51,9 +51,7 @@ RF010 - Analisar Pedido | O pedido deve ser analisado com base na legislação p
 RF011 - Cadastrar Descrição | Inclui descrição do problema | Técnico e Gerente |
 RF012 - Criar Protocolo | Após a análise do pedido o técnico deve registrar um número de protocolo do pedido para fins de organização. | Técnico e Gerente |
 RF013 - Definir Prazo | Será definido um prazo de serviço para o cliente | Técnico e Gerente |
-RF014 - Pagar | O sistema disponibilizará de opções de pagamento, via pix, cartão, boleto ou em espécie.| Técnico e Cliente |
-RF015 - Gerar comprovante de pagamento | |Técnico e Gerente|
-RF016 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico e Gerente|
+RF014 - Gerar Relatórios |Gerar e exibir relatórios os quais podem ser listados por Marca, Cliente, Problemas solucionados.|Técnico e Gerente|
 RF0015 - Cadastrar Funcionário |  Funcionário tem os atributos nome, email, cpf, telefone e cargo. | Gerente |
 RF0016 - Alterar Funcionário | A alteração permite a mudança do nome, email, telefone e cargo. | Gerente |
 RF0017 - Excluir Funcionário | O sistema deve permitir a exclusão de informações cadastradas.| Gerente |
@@ -74,7 +72,16 @@ RF0031 - Alterar Peça | O sistema deve permitir a alteração das informações
 RF0032 - Excluir Peça | O sistema deve permitir a exclusão de informações cadastradas de uma peça.| Gerente |
 RF0033 - Listar Peça | O sistema deve permitir a listagem de todas as peças cadastradas.  | Gerente |
 RF0034- Visualizar Peça |  O sistema deve permitir a visualização das informações detalhadas de uma peça específica. | Gerente |
-
+RF0035 - Cadastrar Fornecedor |  O sistema deve permitir o cadastro de novo fornecedor com os seguintes atributos: Nome, CNPJ, Endereço, Telefone, Email, Produtos/Peças Fornecidas, Data de Cadastro. | Gerente |
+RF0036 - Alterar Fornecedor | O sistema deve permitir a alteração das informações de um fornecedor cadastrada, incluindo Nome, CNPJ, Endereço, Telefone, Email, Produtos/Peças Fornecidas. | Gerente |
+RF0037 - Excluir Fornecedor | O sistema deve permitir a exclusão de informações cadastradas de um fornecedor.| Gerente |
+RF0038 - Listar Fornecedor | O sistema deve permitir a listagem de todos os fornecedores cadastrados.  | Gerente |
+RF0039- Visualizar Fornecedor |  O sistema deve permitir a visualização das informações detalhadas de um fornecedor específico. | Gerente |
+RF0035 - Cadastrar Ferramenta |  O sistema deve permitir o cadastro de uma nova ferramenta com os seguintes atributos: Nome, Código, Descrição, Categoria, Marca, Modelo, Quantidade, Data de Aquisição, Status (Disponível, Em Uso, Manutenção). | Gerente |
+RF0036 - Alterar Ferramenta | O sistema deve permitir a alteração das informações de uma ferramenta cadastrada, incluindo Nome, Código, Descrição, Categoria, Marca, Modelo, Quantidade, Data de Aquisição, Status. | Gerente |
+RF0037 - Excluir Ferramenta | O sistema deve permitir a exclusão de informações cadastradas de uma ferramenta.| Gerente |
+RF0038 - Listar Ferramenta | O sistema deve permitir a listagem de todas as ferramentas cadastradas.  | Gerente |
+RF0039- Visualizar Ferramenta |  O sistema deve permitir a visualização das informações detalhadas de uma ferramenta específica. | Gerente |
 
 
 

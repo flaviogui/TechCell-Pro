@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+from pyexpat.errors import messages
 from django.shortcuts import render, get_object_or_404, redirect  # type: ignore
 from django.utils import timezone  # type: ignore
 from .models import Reparo
@@ -33,3 +34,16 @@ def reparo_detalhes(request, pk):
 def lista_reparos(request):
     reparos = Reparo.objects.all()
     return render(request, 'lista_reparos.html', {'reparos': reparos})
+
+
+def reparo_create_view(request):
+    if request.method == 'POST':
+        form = ConfirmarReparoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Reparo cadastrado com sucesso!')
+            return redirect('lista_reparos.html')
+    else:
+        form = ConfirmarReparoForm()
+
+    return render(request, 'reparo_create.html', {'form': form})
