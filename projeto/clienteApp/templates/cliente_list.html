@@ -12,7 +12,6 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>CPF</th>
-                <th>Sexo</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -23,7 +22,6 @@
                 <td><a href="#">{{ cliente.email }}</a></td>
                 <td>{{ cliente.telefone }}</td>
                 <td>{{ cliente.cpf }}</td>
-                <td>{{ cliente.sexo }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <a href="{% url 'cliente:update_cliente' cliente.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
