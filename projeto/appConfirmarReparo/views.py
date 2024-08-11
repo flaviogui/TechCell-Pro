@@ -1,13 +1,13 @@
 from http.client import HTTPResponse
-from pyexpat.errors import messages
-from django.shortcuts import render, get_object_or_404, redirect # type: ignore
-from django.utils import timezone # type: ignore
+from django.shortcuts import render, get_object_or_404, redirect  # type: ignore
+from django.utils import timezone  # type: ignore
 from .models import Reparo
 from .forms import ConfirmarReparoForm
 
 
 def index(request):
     return HTTPResponse("Hello, world. You're at the index.")
+
 
 def confirmar_reparo(request, pk):
     reparo = get_object_or_404(Reparo, pk=pk)
@@ -23,9 +23,12 @@ def confirmar_reparo(request, pk):
         'form': form,
         'reparo': reparo,
     })
+
+
 def reparo_detalhes(request, pk):
     reparo = get_object_or_404(Reparo, pk=pk)
     return render(request, 'reparo_detalhes.html', {'reparo': reparo})
+
 
 def lista_reparos(request):
     reparos = Reparo.objects.all()

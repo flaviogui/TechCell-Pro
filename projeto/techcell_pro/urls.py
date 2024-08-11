@@ -16,8 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin  # type: ignore
 from django.urls import path, include   # type: ignore
-from django.views.generic import TemplateView # type: ignore
-
+from django.views.generic import TemplateView  # type: ignore
 
 
 urlpatterns = [
@@ -27,4 +26,6 @@ urlpatterns = [
     path('appConfirmarReparo/', include('appConfirmarReparo.urls')),
     path('', TemplateView.as_view(template_name="index.html"), name='index'), 
     #path('', TemplateView.as_view(template_name="index.html"))
+    path('funcionario/', include('funcionarioApp.urls')),
+    path('', TemplateView.as_view(template_name="index.html"))
 ]
