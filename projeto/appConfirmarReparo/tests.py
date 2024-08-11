@@ -1,7 +1,7 @@
 from uuid import uuid4, UUID
-from django.test import TestCase, SimpleTestCase # type: ignore
-from django.urls import reverse, resolve # type: ignore
-from django.utils import timezone # type: ignore
+from django.test import TestCase, SimpleTestCase  # type: ignore
+from django.urls import reverse, resolve  # type: ignore
+from django.utils import timezone  # type: ignore
 from .models import Reparo, Aparelho
 from .forms import ConfirmarReparoForm
 from appConfirmarReparo.views import reparo_detalhes, confirmar_reparo
@@ -9,7 +9,8 @@ from appConfirmarReparo.views import reparo_detalhes, confirmar_reparo
 
 class ReparoIntegrationTest(TestCase):
     def setUp(self):
-        self.aparelho = Aparelho.objects.create(nome="Aparelho Teste", descricao="Descrição Teste")
+        self.aparelho = Aparelho.objects.create(
+            nome="Aparelho Teste", descricao="Descrição Teste")
         self.reparo = Reparo.objects.create(
             aparelho=self.aparelho,
             custo_estimado=100.00,
@@ -25,19 +26,24 @@ class ReparoIntegrationTest(TestCase):
             'data_conclusao': timezone.now(),
         })
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
+        self.assertRedirects(response, reverse(
+            'appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
 
     def test_view_reparo_status(self):
-        response = self.client.get(reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
+        response = self.client.get(
+            reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.reparo.status)
-        self.assertContains(response, self.reparo.data_inicio.strftime('%Y-%m-%d %H:%M:%S'))
+        self.assertContains(
+            response, self.reparo.data_inicio.strftime('%Y-%m-%d %H:%M:%S'))
 
 
 class ConfirmarReparoFormTest(TestCase):
     def setUp(self):
-        self.aparelho = Aparelho.objects.create(nome="Aparelho Teste", descricao="Descrição Teste")
-        self.reparo = Reparo.objects.create(aparelho=self.aparelho, custo_estimado=100.0, status='pendente')
+        self.aparelho = Aparelho.objects.create(
+            nome="Aparelho Teste", descricao="Descrição Teste")
+        self.reparo = Reparo.objects.create(
+            aparelho=self.aparelho, custo_estimado=100.0, status='pendente')
 
     def test_form_valid_data(self):
         form_data = {'custo_estimado': 150.0, 'aparelho': self.aparelho.id}
@@ -45,7 +51,8 @@ class ConfirmarReparoFormTest(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_form_invalid_data(self):
-        form_data = {'custo_estimado': 'invalid_value', 'aparelho': self.aparelho.id}
+        form_data = {'custo_estimado': 'invalid_value',
+                     'aparelho': self.aparelho.id}
         form = ConfirmarReparoForm(data=form_data, instance=self.reparo)
         self.assertFalse(form.is_valid())
 
@@ -77,7 +84,8 @@ class UrlsTestCase(SimpleTestCase):
 
 class ReparoModelTest(TestCase):
     def setUp(self):
-        self.aparelho = Aparelho.objects.create(nome="Ar Condicionado", descricao="Modelo XYZ")
+        self.aparelho = Aparelho.objects.create(
+            nome="Ar Condicionado", descricao="Modelo XYZ")
 
     def test_criacao_reparo(self):
         reparo = Reparo.objects.create(
@@ -98,7 +106,8 @@ class ReparoModelTest(TestCase):
             data_inicio=timezone.now(),
             status='em_progresso'
         )
-        self.assertEqual(str(reparo), f'Reparo {reparo.protocolo} - {self.aparelho.nome}')
+        self.assertEqual(str(reparo), f'Reparo {
+                         reparo.protocolo} - {self.aparelho.nome}')
 
     def test_cliente_notificado_default(self):
         reparo = Reparo.objects.create(
