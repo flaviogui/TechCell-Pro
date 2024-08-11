@@ -13,3 +13,7 @@ class ConfirmarReparoForm(forms.ModelForm):
             'data_inicio': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
             'data_conclusao': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['custo_estimado'].required = True 
