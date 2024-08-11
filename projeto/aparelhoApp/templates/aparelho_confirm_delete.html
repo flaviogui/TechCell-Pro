@@ -1,12 +1,25 @@
 {% extends 'base.html' %}
 
-{% block content %}
-  <h2>Confirmar Exclusão de Aparelho</h2>
-  <p>Tem certeza de que deseja excluir o aparelho {{ aparelho.marca }} {{ aparelho.modelo }}?</p>
-  <form method="post">
-    {% csrf_token %}
-    <button type="submit">Confirmar Exclusão</button>
-    <a href="{% url 'aparelho:list_aparelho' %}">Cancelar</a>
-  </form>
-{% endblock %}
+{% block title %}Confirmar Exclusão de Aparelho{% endblock %}
 
+{% block content %}
+<main class="mt-4">
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-danger text-white">
+                <h2 class="card-title">Confirmar Exclusão de Aparelho</h2>
+            </div>
+            <div class="card-body">
+                <p>Tem certeza de que deseja excluir o aparelho <strong>{{ aparelho.marca }} {{ aparelho.modelo }}</strong>?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                        <a href="{% url 'aparelho:list_aparelho' %}" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
