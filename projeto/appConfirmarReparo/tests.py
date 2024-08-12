@@ -1,6 +1,6 @@
-from django.test import TestCase, SimpleTestCase
-from django.urls import reverse, resolve
-from django.utils import timezone
+from django.test import TestCase, SimpleTestCase # type: ignore
+from django.urls import reverse, resolve # type: ignore
+from django.utils import timezone # type: ignore
 from uuid import uuid4
 from appConfirmarReparo.models import Reparo, Aparelho
 from appConfirmarReparo.forms import ConfirmarReparoForm
