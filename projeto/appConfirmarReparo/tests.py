@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 from django.test import TestCase, SimpleTestCase # type: ignore
 from django.urls import reverse, resolve # type: ignore
 from django.utils import timezone # type: ignore
+=======
+from django.test import TestCase, SimpleTestCase  # type: ignore
+from django.urls import reverse, resolve  # type: ignore
+from django.utils import timezone  # type: ignore
+>>>>>>> 41c2ba92586ad640e392997c8c3f6e55a7c00a7b
 from uuid import uuid4
 from appConfirmarReparo.models import Reparo, Aparelho
 from appConfirmarReparo.forms import ConfirmarReparoForm
 from appConfirmarReparo.views import reparo_detalhes, confirmar_reparo
+
 
 class ReparoIntegrationTest(TestCase):
     def setUp(self):
@@ -21,13 +28,16 @@ class ReparoIntegrationTest(TestCase):
         )
 
     def test_confirmar_reparo_view(self):
-        response = self.client.get(reverse('appConfirmarReparo:confirmar_reparo', args=[self.reparo.pk]))
+        response = self.client.get(
+            reverse('appConfirmarReparo:confirmar_reparo', args=[self.reparo.pk]))
         self.assertEqual(response.status_code, 200)
 
     def test_view_reparo_status(self):
-        response = self.client.get(reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
+        response = self.client.get(
+            reverse('appConfirmarReparo:reparo_detalhes', args=[self.reparo.pk]))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'Pendente')
+
 
 class ConfirmarReparoFormTest(TestCase):
     def setUp(self):
@@ -46,7 +56,8 @@ class ConfirmarReparoFormTest(TestCase):
             'custo_estimado': 150.0,
             'aparelho': self.aparelho.id,
             'status': 'pendente',
-            'data_inicio': timezone.now().strftime('%Y-%m-%dT%H:%M'),  # Formato compatível com o formulário
+            # Formato compatível com o formulário
+            'data_inicio': timezone.now().strftime('%Y-%m-%dT%H:%M'),
             'data_conclusao': '',  # Pode ser opcional
             'cliente_notificado': False  # Valor padrão
         }
@@ -58,7 +69,8 @@ class ConfirmarReparoFormTest(TestCase):
             'custo_estimado': 'invalid_value',
             'aparelho': self.aparelho.id,
             'status': 'pendente',
-            'data_inicio': timezone.now().strftime('%Y-%m-%dT%H:%M'),  # Formato compatível com o formulário
+            # Formato compatível com o formulário
+            'data_inicio': timezone.now().strftime('%Y-%m-%dT%H:%M'),
             'data_conclusao': '',  # Pode ser opcional
             'cliente_notificado': False  # Valor padrão
         }
@@ -79,7 +91,8 @@ class ConfirmarReparoFormTest(TestCase):
             'custo_estimado': 200.0,
             'aparelho': self.aparelho.id,
             'status': 'pendente',
-            'data_inicio': timezone.now().strftime('%Y-%m-%dT%H:%M'),  # Formato compatível com o formulário
+            # Formato compatível com o formulário
+            'data_inicio': timezone.now().strftime('%Y-%m-%dT%H:%M'),
             'data_conclusao': '',  # Pode ser opcional
             'cliente_notificado': False  # Valor padrão
         }
@@ -89,7 +102,7 @@ class ConfirmarReparoFormTest(TestCase):
         self.assertEqual(saved_reparo.custo_estimado, 200.0)
 
 
-class UrlsTestCase(SimpleTestCase): # type: ignore
+class UrlsTestCase(SimpleTestCase):  # type: ignore
     def test_reparo_detalhes_url(self):
         url = reverse('appConfirmarReparo:reparo_detalhes', args=[1])
         self.assertEqual(url, '/appConfirmarReparo/reparo/1/')
@@ -101,6 +114,7 @@ class UrlsTestCase(SimpleTestCase): # type: ignore
         self.assertEqual(url, '/appConfirmarReparo/confirmar_reparo/1/')
         resolved_view = resolve(url)
         self.assertEqual(resolved_view.func, confirmar_reparo)
+
 
 class ReparoModelTest(TestCase):
     def setUp(self):
@@ -127,7 +141,8 @@ class ReparoModelTest(TestCase):
             data_inicio=timezone.now(),
             status='em_progresso'
         )
-        self.assertEqual(str(reparo), f'Reparo {reparo.protocolo} - {self.aparelho.nome}')
+        self.assertEqual(str(reparo), f'Reparo {
+                         reparo.protocolo} - {self.aparelho.nome}')
 
     def test_cliente_notificado_default(self):
         reparo = Reparo.objects.create(
