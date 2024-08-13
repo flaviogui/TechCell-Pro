@@ -3,6 +3,30 @@
 {% block title %} Listar Clientes {% endblock %}
 
 {% block content %}
+<header>
+    <nav class="navbar bg-primary
+     navbar-dark navbar-expand-sm py-3" id="navbar">
+    <div class = "container" id = "nav-container d-flex align-items-center">
+            <a href="#" class = "navbar-brand">
+                TechCell-Pro 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id ="menuNavbar">
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                        <a href="#" class="nav-link active">Clientes</a>
+                        <a href="#" class="nav-link">Aparelhos</a>
+                        <a href="#" class="nav-link">Manutenção</a>
+                        <a href="#" class="nav-link">Sobre</a></div>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
+</header>
 <div class="container mt-5">
     <h2>Listar Clientes</h2>
     <table class="table table-striped table-hover">
@@ -12,7 +36,6 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>CPF</th>
-                <th>Sexo</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -23,7 +46,6 @@
                 <td><a href="#">{{ cliente.email }}</a></td>
                 <td>{{ cliente.telefone }}</td>
                 <td>{{ cliente.cpf }}</td>
-                <td>{{ cliente.sexo }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <a href="{% url 'cliente:update_cliente' cliente.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
