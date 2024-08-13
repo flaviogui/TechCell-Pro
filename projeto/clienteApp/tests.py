@@ -104,7 +104,7 @@ class ClienteFormTest(TestCase):
             'nome': 'Novo Cliente',
             'email': 'novo@cliente.com',
             'telefone': '987654321',
-            'cpf': '12345678909'  # CPF válido de exemplo
+            'cpf': '12345678909',  # CPF válido de exemplo
         }
         form = ClienteForm(data=form_data)
         self.assertTrue(form.is_valid(), form.errors)
@@ -114,7 +114,7 @@ class ClienteFormTest(TestCase):
             'nome': 'Novo Cliente',
             'email': 'email_invalido',  # Email inválido para testar validação
             'telefone': '987654321',
-            'cpf': '12345678901'  # CPF inválido para testar validação
+            'cpf': '12345678901',  # CPF inválido para testar validação
         }
         form = ClienteForm(data=form_data)
         self.assertFalse(form.is_valid())
