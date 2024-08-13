@@ -184,16 +184,17 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | RF0038        | Permitir a listagem de todos os fornecedores cadastrados. |
 | RF0039        | Permitir a visualização das informações detalhadas de um fornecedor específico. |
 
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| Prioridade            | Essencial                           | 
-| Estimativa            | 10 h                                 | 
-| Tempo Gasto (real):   |                                     | 
-| Tamanho Funcional     | 6 PF                                | 
-| Analista              | Gabriel                             | 
-| Desenvolvedor         | Laian e Fabio                       | 
-| Revisor               | Flavio                              | 
-| Testador              | Samuel                              | 
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 5h                                  | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 6 PF                                | 
+| **Analista**              | Gabriel                             | 
+| **Desenvolvedor**         | Fábio                               | 
+| **Revisor**               | Flávio                              | 
+| **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Laian                               |
 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
