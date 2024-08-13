@@ -170,36 +170,36 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA02.02** | Técnico registra o pagamento do reparo no sistema. O sistema valida o pagamento e atualiza o status do reparo para concluído. |
 
 
-### User Story US05 - Realizar Pagamento
-
+### User Story US05 - Manter Fornecedor
+               	                                                               
 |               |                                                                |
 | ------------- | :------------------------------------------------------------- |
-| **Descrição** | O sistema facilitará o processo de pagamento para clientes que procuram suporte técnico para dispositivos móveis. Assim que o cliente decidir pelo serviço e estiver pronto para efetuar o pagamento, ele será direcionado para a página de pagamento, seja através de um botão dedicado na página de suporte técnico. Na página de pagamento, todas as informações relevantes, incluindo os serviços selecionados e seus preços correspondentes, serão exibidas de forma clara para o cliente revisar antes de prosseguir. O cliente terá a opção de escolher entre diferentes métodos de pagamento, como cartão de crédito, débito, transferência bancária, entre outros. |
+| **Descrição** | O sistema permitirá o gerenciamento completo de fornecedores, garantindo que os dados de fornecedores sejam cadastrados, atualizados, visualizados, listados e excluídos conforme necessário. Isso inclui o registro de informações detalhadas como Nome, CNPJ, Endereço, Telefone, Email, Produtos/Peças Fornecidas e Data de Cadastro. Todas essas operações estarão disponíveis para o Gerente através de uma interface amigável e eficiente. |
+
 | **Requisitos envolvidos** |                                                    |
-| RF14          | Direcionamento para a página de pagamento. |
-| RF15          | Exibição clara das informações de serviço e preços.  |
-| RF16          | Opções de métodos de pagamento.        |
-| RF17          | Segurança dos dados de pagamento. |
-| RF18          | Confirmação de pagamento. |
-| RF19          | Gerar comprovante de pagamento. |
+| ------------- | :------------------------------------------------------------- |
+| RF0035        | Cadastrar Fornecedor com todos os atributos necessários. |
+| RF0036        | Permitir a alteração das informações do fornecedor. |
+| RF0037        | Permitir a exclusão das informações cadastradas do fornecedor. |
+| RF0038        | Permitir a listagem de todos os fornecedores cadastrados. |
+| RF0039        | Permitir a visualização das informações detalhadas de um fornecedor específico. |
 
-
-|                           |                                     |
-| ------------------------- | ----------------------------------- | 
-| **Prioridade**            | Essencial                           | 
-| **Estimativa**            | 12 h                                 | 
-| **Tempo Gasto (real):**   |                                     | 
-| **Tamanho Funcional**     | 8 PF                                | 
-| **Analista**              | Gabriel                                    | 
-| **Desenvolvedor**         | Laian e Fabio                              | 
-| **Revisor**               | Flavio                               | 
-| **Testador**              | Samuel                                 | 
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| Prioridade            | Essencial                           | 
+| Estimativa            | 10 h                                 | 
+| Tempo Gasto (real):   |                                     | 
+| Tamanho Funcional     | 6 PF                                | 
+| Analista              | Gabriel                             | 
+| Desenvolvedor         | Laian e Fabio                       | 
+| Revisor               | Flavio                              | 
+| Testador              | Samuel                              | 
 
 | Testes de Aceitação (TA) |  |
 | ----------- | --------- |
 | **Código**      | **Descrição** |
-| **TA05.01** | O usuário tenta realizar o pagamento de um pedido com todas as informações de pagamento válidas. O sistema processa o pagamento com sucesso e exibe uma mensagem de confirmação da transação.  |
-| **TA05.02** | Ao tentar realizar o pagamento, se algum dado do cartão de crédito ou informações de pagamento forem inválidos, o sistema informa o usuário sobre os campos incorretos e solicita informações válidas. |
-| **TA05.03** |  O usuário seleciona o método de pagamento desejado. O sistema exibe na tela todas as opções disponíveis de pagamento, incluindo cartão de crédito, PayPal, entre outros. |
-| **TA05.04** |  Caso o método de pagamento escolhido não esteja disponível, o sistema informa o usuário sobre a falta de opções de pagamento e fornece orientações sobre como proceder. |
-| **TA05.05** | O usuário tenta realizar o pagamento de um pedido, mas ocorre uma falha no processamento. O sistema exibe uma mensagem de erro clara e orienta o usuário sobre como resolver o problema, como verificar a conexão com a internet ou entrar em contato com o suporte ao cliente. |
+| **TA01.01** | O usuário cadastra um novo fornecedor com todas as informações válidas. O sistema salva os dados e exibe uma mensagem de confirmação do cadastro. |
+| **TA02.02** | O usuário tenta alterar as informações de um fornecedor existente. O sistema atualiza os dados e confirma a alteração. |
+| **TA03.03** | O usuário tenta excluir um fornecedor. O sistema remove os dados do fornecedor e confirma a exclusão. |
+| **TA03.04** | O usuário solicita a listagem de todos os fornecedores. O sistema exibe a lista completa de fornecedores cadastrados. |
+| **TA03.05** | O usuário visualiza as informações detalhadas de um fornecedor específico. O sistema exibe todas as informações relevantes de forma clara. |
