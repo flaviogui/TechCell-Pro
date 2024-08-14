@@ -24,8 +24,9 @@ urlpatterns = [
     path('cliente/', include('clienteApp.urls')),
     path('aparelho/', include('aparelhoApp.urls')),
     path('appConfirmarReparo/', include('appConfirmarReparo.urls')),
-    path('', TemplateView.as_view(template_name="index.html"), name='index'), 
-    #path('', TemplateView.as_view(template_name="index.html"))
+    path('', TemplateView.as_view(template_name="index.html"), name='index'),
+    # path('', TemplateView.as_view(template_name="index.html"))
     path('funcionario/', include('funcionarioApp.urls')),
+    path('fornecedor/', include('fornecedorApp.urls')),
     path('', TemplateView.as_view(template_name="index.html"))
 ]
