@@ -23,6 +23,7 @@
                 <td><a href="#">{{ funcionario.email }}</a></td>
                 <td>{{ funcionario.telefone }}</td>
                 <td>{{ funcionario.cpf }}</td>
+                <td>{{ funcionario.cargo }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <a href="{% url 'funcionario:update_funcionario' funcionario.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
