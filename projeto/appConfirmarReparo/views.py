@@ -1,5 +1,5 @@
-from http.client import HTTPResponse
-from pyexpat.errors import messages
+from django.http import HttpResponse  # type: ignore # Correção do import
+from django.contrib import messages  # type: ignore # Correção do import
 from django.shortcuts import render, get_object_or_404, redirect  # type: ignore
 from django.utils import timezone  # type: ignore
 from .models import Reparo
@@ -7,7 +7,8 @@ from .forms import ConfirmarReparoForm
 
 
 def index(request):
-    return HTTPResponse("Hello, world. You're at the index.")
+    # Correção do HttpResponse
+    return HttpResponse("Hello, world. You're at the index.")
 
 
 def confirmar_reparo(request, pk):
@@ -17,6 +18,7 @@ def confirmar_reparo(request, pk):
         if form.is_valid():
             reparo = form.save(commit=False)
             reparo.save()
+            # Certifique-se de que o namespace e nome da view estejam corretos
             return redirect('appConfirmarReparo:reparo_detalhes', pk=reparo.pk)
     else:
         form = ConfirmarReparoForm(instance=reparo)
@@ -42,7 +44,8 @@ def reparo_create_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Reparo cadastrado com sucesso!')
-            return redirect('lista_reparos.html')
+            # Redireciona para a view nomeada 'lista_reparos'
+            return redirect('appConfirmarReparo:lista_reparos')
     else:
         form = ConfirmarReparoForm()
 
