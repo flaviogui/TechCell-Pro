@@ -204,3 +204,38 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA03.03** | O usuário tenta excluir um fornecedor. O sistema remove os dados do fornecedor e confirma a exclusão. |
 | **TA03.04** | O usuário solicita a listagem de todos os fornecedores. O sistema exibe a lista completa de fornecedores cadastrados. |
 | **TA03.05** | O usuário visualiza as informações detalhadas de um fornecedor específico. O sistema exibe todas as informações relevantes de forma clara. |
+
+### User Story US08 - Manter Serviços
+               	                                                               
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema permitirá o gerenciamento completo dos serviços oferecidos pela loja de assistência técnica. O Gerente poderá cadastrar novos serviços, bem como alterar, visualizar, listar e excluir serviços existentes. Cada serviço incluirá informações como nome, descrição, preço e duração estimada, garantindo que todas as operações relacionadas aos serviços sejam realizadas de maneira eficiente e organizada. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| RF0025        | Cadastrar Serviço com os atributos necessários: nome, descrição, preço e duração estimada. |
+| RF0026        | Permitir a alteração das informações de um serviço cadastrado. |
+| RF0027        | Permitir a exclusão das informações cadastradas de um serviço. |
+| RF0028        | Permitir a listagem de todos os serviços cadastrados. |
+| RF0029        | Permitir a visualização das informações detalhadas de um serviço específico. |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 5h                                  | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 6 PF                                | 
+| **Analista**              | Gabriel                             | 
+| **Desenvolvedor**         | Fábio                               | 
+| **Revisor**               | Flávio                              | 
+| **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Laian                               |
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+| **TA01.01** | O usuário cadastra um novo serviço com todas as informações válidas. O sistema salva os dados e exibe uma mensagem de confirmação do cadastro. |
+| **TA02.02** | O usuário tenta alterar as informações de um serviço existente. O sistema atualiza os dados e confirma a alteração. |
+| **TA03.03** | O usuário tenta excluir um serviço. O sistema remove os dados do serviço e confirma a exclusão. |
+| **TA03.04** | O usuário solicita a listagem de todos os serviços. O sistema exibe a lista completa de serviços cadastrados. |
+| **TA03.05** | O usuário visualiza as informações detalhadas de um serviço específico. O sistema exibe todas as informações relevantes de forma clara.
