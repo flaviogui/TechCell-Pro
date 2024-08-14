@@ -17,7 +17,6 @@ class Fornecedor(models.Model):
     cidade = models.CharField(max_length=25)
     estado = models.CharField(max_length=2)
     cep = models.CharField(max_length=9)
-    data_cadastro = models.DateTimeField(default=datetime.now)
 
     class Meta:
         verbose_name = 'Fornecedor'

@@ -23,8 +23,8 @@ def fornecedor_create_view(request):
 
 
 def fornecedor_list_view(request):
-    fornecedores = fornecedores.objects.all()
-    context = {'fornecedores: ffornecedores'}
+    fornecedores = Fornecedor.objects.all()
+    context = {'fornecedores': fornecedores}
     return render(request, 'fornecedor_list.html', context)
 
 
