@@ -33,6 +33,18 @@
                             <li><a class="dropdown-item" href="{% url 'cliente:list_cliente' %}">Excluir</a></li>
                         </ul>
                     </li>
+                    <!-- Dropdown para Funcionário -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="FuncionarioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Funcionário
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="FuncionarioDropdown">
+                            <li><a class="dropdown-item" href="{% url 'funcionario:create_funcionario' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'funcionario:list_funcionario' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'funcionario:list_funcionario' %}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'funcionario:list_funcionario' %}">Excluir</a></li>
+                        </ul>
+                    </li>
                     <!-- Dropdown para Aparelhos -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="aparelhoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
