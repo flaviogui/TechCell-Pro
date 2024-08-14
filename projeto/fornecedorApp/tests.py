@@ -1,8 +1,9 @@
 from django.test import TestCase, Client  # type: ignore
 from .forms import FornecedorForm
-from django.urls import reverse  # type: ignore
+from django.urls import reverse, resolve  # type: ignore
 from django.test import TestCase  # type: ignore
 from .models import Fornecedor
+from .views import fornecedor_create_view, fornecedor_list_view, fornecedor_update_view, fornecedor_delete_view
 import uuid
 
 
@@ -125,3 +126,79 @@ class FornecedorViewsTest(TestCase):
         self.assertRedirects(response, reverse('fornecedor:list_fornecedor'))
         self.assertFalse(Fornecedor.objects.filter(
             pk=self.fornecedor.pk).exists())
+
+class FornecedorTestUrls(TestCase):
+
+    def test_create_url_resolves(self):
+        url = reverse('fornecedor:create_fornecedor')
+        self.assertEqual(resolve(url).func, fornecedor_create_view)
+
+    def test_list_url_resolves(self):
+        url = reverse('fornecedor:list_fornecedor')
+        self.assertEqual(resolve(url).func, fornecedor_list_view)
+
+    def test_update_url_resolves(self):
+        url = reverse('fornecedor:update_fornecedor', args=['some-uuid'])
+        self.assertEqual(resolve(url).func, fornecedor_update_view)
+
+    def test_delete_url_resolves(self):
+        url = reverse('fornecedor:delete_fornecedor', args=['some-uuid'])
+        self.assertEqual(resolve(url).func, fornecedor_delete_view)
+
+class FornecedorFormTest(TestCase):
+
+    def setUp(self):
+        self.valid_data = {
+            'nome': 'Fornecedor Exemplo',
+            'cnpj': '12.345.678/0001-90',  # Não obrigatório
+            'email': 'exemplo@fornecedor.com',
+            'telefone': '11999999999',  # Não obrigatório
+            'rua': 'Rua Exemplo',
+            'numero': '123',
+            'bairro': 'Centro',
+            'cidade': 'São Paulo',
+            'estado': 'SP',
+            'cep': '01000-000',
+        }
+        self.invalid_data = {
+            'nome': '',
+            'email': 'email@invalido',  # Email mal formatado
+            'telefone': '1199999999999999',  # Telefone com muitos dígitos
+            'rua': '',
+            'numero': '',
+            'bairro': '',
+            'cidade': '',
+            'estado': '',
+            'cep': '',
+        }
+
+    def test_form_valid_data(self):
+        form = FornecedorForm(data=self.valid_data)
+        self.assertTrue(form.is_valid(), msg=form.errors)
+
+    def test_form_invalid_data(self):
+        form = FornecedorForm(data=self.invalid_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('nome', form.errors)
+        self.assertIn('email', form.errors)
+        self.assertIn('rua', form.errors)
+        self.assertIn('numero', form.errors)
+        self.assertIn('bairro', form.errors)
+        self.assertIn('cidade', form.errors)
+        self.assertIn('estado', form.errors)
+        self.assertIn('cep', form.errors)
+
+    def test_form_missing_fields(self):
+        missing_fields_data = {
+            'nome': 'Fornecedor Sem Endereço',
+            'email': 'exemplo@fornecedor.com',
+            # Campos obrigatórios faltando: rua, numero, bairro, cidade, estado, cep
+        }
+        form = FornecedorForm(data=missing_fields_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('rua', form.errors)
+        self.assertIn('numero', form.errors)
+        self.assertIn('bairro', form.errors)
+        self.assertIn('cidade', form.errors)
+        self.assertIn('estado', form.errors)
+        self.assertIn('cep', form.errors)
