@@ -57,7 +57,18 @@
                             <li><a class="dropdown-item" href="{% url 'aparelho:list_aparelho' %}">Excluir</a></li>
                         </ul>
                     </li>
-                    <a href="#" class="nav-link">Manutenção</a>
+                    <!-- Dropdown para Reparo -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ReparoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Reparo
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="aparelhoDropdown">
+                            <li><a class="dropdown-item" href="{% url 'appConfirmarReparo:reparo_create' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'appConfirmarReparo:lista_reparos' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'appConfirmarReparo:lista_reparos' %}">Confirmar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'appConfirmarReparo:lista_reparos' %}">Detalhes</a></li>
+                        </ul>
+                    </li>
                     <a href="#" class="nav-link">Sobre</a>
                 </div>
             </div>
