@@ -205,6 +205,43 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA03.04** | O usuário solicita a listagem de todos os fornecedores. O sistema exibe a lista completa de fornecedores cadastrados. |
 | **TA03.05** | O usuário visualiza as informações detalhadas de um fornecedor específico. O sistema exibe todas as informações relevantes de forma clara. |
 
+
+### User Story US07 - Manter Peças
+                                                               
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema permitirá o gerenciamento completo das peças utilizadas pela loja de assistência técnica. O Gerente poderá cadastrar novas peças, bem como alterar, visualizar, listar e excluir peças existentes. Cada peça incluirá informações como nome, descrição, código, quantidade em estoque, preço de compra e fornecedor, garantindo que todas as operações relacionadas às peças sejam realizadas de maneira eficiente e organizada. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| **RF0030**    | Cadastrar Peça com os atributos necessários: nome, descrição, código, quantidade em estoque, preço de compra e fornecedor. |
+| **RF0031**    | Permitir a alteração das informações de uma peça cadastrada, incluindo nome, descrição, código, quantidade em estoque, preço de compra e fornecedor. |
+| **RF0032**    | Permitir a exclusão das informações cadastradas de uma peça. |
+| **RF0033**    | Permitir a listagem de todas as peças cadastradas. |
+| **RF0034**    | Permitir a visualização das informações detalhadas de uma peça específica. |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 6h                                  | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Gabriel                             | 
+| **Desenvolvedor**         | Fábio                               | 
+| **Revisor**               | Flávio                              | 
+| **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Laian                               |
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+| **TA01.01** | O usuário cadastra uma nova peça com todas as informações válidas. O sistema salva os dados e exibe uma mensagem de confirmação do cadastro. |
+| **TA02.02** | O usuário tenta alterar as informações de uma peça existente. O sistema atualiza os dados e confirma a alteração. |
+| **TA03.03** | O usuário tenta excluir uma peça. O sistema remove os dados da peça e confirma a exclusão. |
+| **TA03.04** | O usuário solicita a listagem de todas as peças. O sistema exibe a lista completa de peças cadastradas. |
+| **TA03.05** | O usuário visualiza as informações detalhadas de uma peça específica. O sistema exibe todas as informações relevantes de forma clara. |
+
+
 ### User Story US08 - Manter Serviços
                	                                                               
 |               |                                                                |
@@ -239,3 +276,39 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA03.03** | O usuário tenta excluir um serviço. O sistema remove os dados do serviço e confirma a exclusão. |
 | **TA03.04** | O usuário solicita a listagem de todos os serviços. O sistema exibe a lista completa de serviços cadastrados. |
 | **TA03.05** | O usuário visualiza as informações detalhadas de um serviço específico. O sistema exibe todas as informações relevantes de forma clara.
+
+### User Story US09 - Manter Ferramentas
+                                                               
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema permitirá o gerenciamento completo das ferramentas utilizadas pela loja de assistência técnica. O Gerente poderá cadastrar novas ferramentas, bem como alterar, visualizar, listar e excluir ferramentas existentes. Cada ferramenta incluirá informações como nome, descrição, código, quantidade disponível, condição (novo, usado, etc.), e fornecedor, garantindo que todas as operações relacionadas às ferramentas sejam realizadas de maneira eficiente e organizada. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| **RF0040**    | Cadastrar Ferramenta com os atributos necessários: nome, descrição, código, quantidade disponível, condição e fornecedor. |
+| **RF0041**    | Permitir a alteração das informações de uma ferramenta cadastrada, incluindo nome, descrição, código, quantidade disponível, condição e fornecedor. |
+| **RF0042**    | Permitir a exclusão das informações cadastradas de uma ferramenta. |
+| **RF0043**    | Permitir a listagem de todas as ferramentas cadastradas. |
+| **RF0044**    | Permitir a visualização das informações detalhadas de uma ferramenta específica. |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 6h                                  | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 7 PF                                | 
+| **Analista**              | Gabriel                             | 
+| **Desenvolvedor**         | Fábio                               | 
+| **Revisor**               | Flávio                              | 
+| **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Laian                               |
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+| **TA01.01** | O usuário cadastra uma nova ferramenta com todas as informações válidas. O sistema salva os dados e exibe uma mensagem de confirmação do cadastro. |
+| **TA02.02** | O usuário tenta alterar as informações de uma ferramenta existente. O sistema atualiza os dados e confirma a alteração. |
+| **TA03.03** | O usuário tenta excluir uma ferramenta. O sistema remove os dados da ferramenta e confirma a exclusão. |
+| **TA03.04** | O usuário solicita a listagem de todas as ferramentas. O sistema exibe a lista completa de ferramentas cadastradas. |
+| **TA03.05** | O usuário visualiza as informações detalhadas de uma ferramenta específica. O sistema exibe todas as informações relevantes de forma clara. |
+
