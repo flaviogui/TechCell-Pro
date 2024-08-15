@@ -1,0 +1,36 @@
+/* Estilização do dropdown */
+.custom-dropdown .dropdown-menu {
+    background-color: #003366; /* Cor de fundo azul escuro para combinar com o tema */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    border: none; /* Remove a borda padrão */
+}
+
+.custom-dropdown .dropdown-item {
+    color: #ffffff; /* Cor do texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 14px; /* Tamanho do texto */
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
+}
+
+.custom-dropdown .dropdown-item:hover {
+    background-color: #0059b3; /* Azul um pouco mais claro ao passar o mouse */
+    color: #ffffff; /* Mantém o texto branco ao passar o mouse */
+}
+
+.custom-dropdown .dropdown-toggle::after {
+    margin-left: 10px; /* Espaçamento do ícone */
+}
+
+.custom-dropdown .dropdown-menu.show {
+    opacity: 1; /* Totalmente visível */
+    visibility: visible; /* Visível */
+    transform: translateY(0); /* Sem deslocamento vertical */
+    transition: all 0.3s ease-in-out; /* Transição suave */
+}
+
+.custom-dropdown .dropdown-menu {
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Oculto inicialmente */
+    transform: translateY(-10px); /* Deslocamento inicial para cima */
+}
