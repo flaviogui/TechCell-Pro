@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Fornecedor Formulário {% endblock %}
+
+{% block content %}
+<header>
+    <nav class="navbar bg-primary
+     navbar-dark navbar-expand-sm py-3" id="navbar">
+    <div class = "container" id = "nav-container d-flex align-items-center">
+            <a href="#" class = "navbar-brand">
+                TechCell-Pro 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id ="menuNavbar">
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="{% url 'index' %}" 
+                        class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Clientes</a>
+                        <a href="#" class="nav-link active">Funcionário</a>
+                        <a href="#" class="nav-link">Produtos</a>
+                        <a href="#" class="nav-link">Manutenção</a>
+                        <a href="#" class="nav-link">Sobre</a></div>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
+</header>
+<main class="mt-4">
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="card-title">Adicionar Novo Fornecedor</h2>
+            </div>
+            <div class="card-body">
+                <hr>
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label class="form-label">{{ field.label }}</label>
+                        {{ field }}
+                        {% if field.help_text %}
+                            <small class="form-text text-muted">{{ field.help_text }}</small>
+                        {% endif %}
+                        {% if field.errors %}
+                            <div class="alert alert-danger mt-2">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary">Salvar Fornecedor</button>
+            </div>
+        </div>
+    </form>
+</div>
+</main>
+{% endblock %}

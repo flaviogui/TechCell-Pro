@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Listar Fornecedores {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Listar Fornecedores</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>CNPJ</th>
+                <th>Rua</th>
+                <th>Número</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>CEP</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fornecedor in fornecedores %}
+            <tr>
+                <td>{{ fornecedor.nome }}</td>
+                <td><a href="#">{{ fornecedor.email }}</a></td>
+                <td>{{ fornecedor.telefone }}</td>
+                <td>{{ fornecedor.cnpj }}</td>
+                <td>{{ fornecedor.rua }}</td>
+                <td>{{ fornecedor.numero }}</td>
+                <td>{{ fornecedor.bairro }}</td>
+                <td>{{ fornecedor.cidade }}</td>
+                <td>{{ fornecedor.estado }}</td>
+                <td>{{ fornecedor.cep }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'fornecedor:update_fornecedor' fornecedor.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="{% url 'fornecedor:delete_fornecedor' fornecedor.id %}" class="btn btn-sm btn-outline-danger">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
