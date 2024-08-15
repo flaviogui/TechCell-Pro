@@ -29,7 +29,6 @@ urlpatterns = [
     path('funcionario/', include('funcionarioApp.urls')),
     path('fornecedor/', include('fornecedorApp.urls')),
     path('produtos/', include('produtosApp.urls')),   
-    path('', TemplateView.as_view(template_name="index.html"))
     path('', TemplateView.as_view(template_name="index.html")),
     path('ferramenta/', include('ferramentaApp.urls'))
 ]
