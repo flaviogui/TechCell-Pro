@@ -15,7 +15,7 @@ def funcionario_create_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Funcionário Criado com Sucesso!')
-            return redirect(reverse('cliente:list_cliente'))
+            return redirect(reverse('funcionario:list_funcionario'))
     context = {
         'form': form
     }

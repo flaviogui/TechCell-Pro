@@ -24,9 +24,13 @@ urlpatterns = [
     path('cliente/', include('clienteApp.urls')),
     path('aparelho/', include('aparelhoApp.urls')),
     path('appConfirmarReparo/', include('appConfirmarReparo.urls')),
-    path('', TemplateView.as_view(template_name="index.html"), name='index'), 
-    #path('', TemplateView.as_view(template_name="index.html"))
+    path('', TemplateView.as_view(template_name="index.html"), name='index'),
+    # path('', TemplateView.as_view(template_name="index.html"))
     path('funcionario/', include('funcionarioApp.urls')),
+<<<<<<< HEAD
     path('produtos/', include('produtosApp.urls')),
+=======
+    path('fornecedor/', include('fornecedorApp.urls')),
+>>>>>>> 157aed0deffaabfdc4b9c28f0b2cb9f9e7b27bfa
     path('', TemplateView.as_view(template_name="index.html"))
 ]
