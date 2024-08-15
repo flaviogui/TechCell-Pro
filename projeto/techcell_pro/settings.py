@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'appConfirmarReparo',
     'funcionarioApp',
     'cpf_field',
+    'ferramentaApp',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Ferramentas{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Lista de Ferramentas</h2>
+    <a href="{% url 'ferramentaApp:create_ferramenta' %}" class="btn btn-primary mb-3">Cadastrar Nova Ferramenta</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Código</th>
+                <th>Quantidade Disponível</th>
+                <th>Condição</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ferramenta in ferramentas %}
+            <tr>
+                <td>{{ ferramenta.nome }}</td>
+                <td>{{ ferramenta.codigo }}</td>
+                <td>{{ ferramenta.quantidade_disponivel }}</td>
+                <td>{{ ferramenta.condicao }}</td>
+                <td>
+                    <a href="{% url 'ferramentaApp:detail_ferramenta' ferramenta.pk %}" class="btn btn-info btn-sm">Detalhes</a>
+                    <a href="{% url 'ferramentaApp:update_ferramenta' ferramenta.pk %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'ferramentaApp:delete_ferramenta' ferramenta.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

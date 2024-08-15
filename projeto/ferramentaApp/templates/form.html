@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ form.instance.pk|yesno:"Editar Ferramenta,Cadastrar Ferramenta" }}{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>{{ form.instance.pk|yesno:"Editar Ferramenta,Cadastrar Ferramenta" }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">{{ form.instance.pk|yesno:"Salvar Alterações,Cadastrar Ferramenta" }}</button>
+        <a href="{% url 'ferramentaApp:list_ferramentas' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
