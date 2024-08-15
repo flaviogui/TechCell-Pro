@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'aparelhoApp',
     'appConfirmarReparo',
     'funcionarioApp',
+    'produtosApp',
     'cpf_field',
 ]
 

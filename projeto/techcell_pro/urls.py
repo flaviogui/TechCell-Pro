@@ -27,5 +27,6 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name="index.html"), name='index'), 
     #path('', TemplateView.as_view(template_name="index.html"))
     path('funcionario/', include('funcionarioApp.urls')),
+    path('produtos/', include('produtosApp.urls')),
     path('', TemplateView.as_view(template_name="index.html"))
 ]
