@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect # type: ignore
 from .models import Produto
 from .forms import ProdutoForm
 

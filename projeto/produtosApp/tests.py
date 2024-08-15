@@ -1,9 +1,9 @@
 from decimal import Decimal
-from django.test import SimpleTestCase
-from django.urls import reverse, resolve
+from django.test import SimpleTestCase # type: ignore
+from django.urls import reverse, resolve # type: ignore
 from .views import listar_produtos, visualizar_produto, criar_produto, editar_produto, excluir_produto
-from django.test import TestCase
-from django.db import IntegrityError
+from django.test import TestCase # type: ignore
+from django.db import IntegrityError # type: ignore
 from .models import Produto
 from .forms import ProdutoForm
 
