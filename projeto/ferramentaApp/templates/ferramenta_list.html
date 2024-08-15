@@ -12,18 +12,16 @@
                 <th>Código</th>
                 <th>Quantidade Disponível</th>
                 <th>Condição</th>
-                <th>Fornecedor</th>
                 <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            {% for ferramenta in ferramentas %}
+            {% for ferramenta in ferramenta %}
             <tr>
                 <td>{{ ferramenta.nome }}</td>
                 <td>{{ ferramenta.codigo }}</td>
                 <td>{{ ferramenta.quantidade_disponivel }}</td>
                 <td>{{ ferramenta.condicao }}</td>
-                <td>{{ ferramenta.fornecedor }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <a href="{% url 'ferramenta:update_ferramenta' ferramenta.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
