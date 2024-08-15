@@ -5,6 +5,7 @@
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -22,7 +23,7 @@
                 <div class="navbar-nav ms-auto">
                     <a href="{% url 'index' %}" class="nav-link active">Home</a>
                     <!-- Dropdown para Clientes -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="clienteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Clientes
                         </a>
@@ -34,7 +35,7 @@
                         </ul>
                     </li>
                     <!-- Dropdown para Funcionário -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="FuncionarioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Funcionário
                         </a>
@@ -46,7 +47,7 @@
                         </ul>
                     </li>
                     <!-- Dropdown para Aparelhos -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="aparelhoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Aparelhos
                         </a>
@@ -58,7 +59,7 @@
                         </ul>
                     </li>
                     <!-- Dropdown para Reparo -->
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="ReparoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Reparo
                         </a>

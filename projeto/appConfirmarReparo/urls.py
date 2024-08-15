@@ -10,5 +10,5 @@ urlpatterns = [
     path('confirmar_reparo/<int:pk>/',
          views.confirmar_reparo, name='confirmar_reparo'),
     path('reparo/novo/', views.reparo_create_view, name='reparo_create'),
-
+    
 ]
