@@ -1,12 +1,12 @@
-from django.urls import path
-from . import views
+from django.urls import path  # type: ignore
+from .views import ferramenta_create_view, ferramenta_list_view, ferramenta_update_view, ferramenta_delete_view
+
 
 app_name = 'ferramenta'
 
 urlpatterns = [
-    path('', views.list_ferramentas, name='list_ferramentas'),
-    path('<int:pk>/', views.detail_ferramenta, name='detail_ferramenta'),
-    path('create/', views.create_ferramenta, name='create_ferramenta'),
-    path('<int:pk>/update/', views.update_ferramenta, name='update_ferramenta'),
-    path('<int:pk>/delete/', views.delete_ferramenta, name='delete_ferramenta'),
+    path('create/', ferramenta_create_view, name='create_ferramenta'),  # type: ignore
+    path('list/', ferramenta_list_view, name='list_ferramenta'),
+    path('edit/<str:pk>', ferramenta_update_view, name='update_ferramenta'),
+    path('delete/<str:pk>', ferramenta_delete_view, name='delete_ferramenta')
 ]

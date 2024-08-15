@@ -1,7 +1,7 @@
-from django import forms
-from .models import Ferramenta
+from django import forms  # type: ignore
+from ferramentaApp.models import Ferramenta  # type: ignore
 
 class FerramentaForm(forms.ModelForm):
     class Meta:
         model = Ferramenta
-        fields = ['nome', 'descricao', 'codigo', 'quantidade_disponivel', 'condicao', 'fornecedor']
+        fields = '__all__'

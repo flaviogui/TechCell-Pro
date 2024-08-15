@@ -1,42 +1,47 @@
-# Create your views here.
-
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, get_object_or_404  # type: ignore
+from django.views.generic import CreateView  # type: ignore
 from .models import Ferramenta
 from .forms import FerramentaForm
+from django.contrib import messages  # type: ignore
+from django.urls import reverse  # type: ignore
 
-def list_ferramentas(request):
-    ferramentas = Ferramenta.objects.all()
-    return render(request, 'ferramentaApp/list.html', {'ferramentas': ferramentas})
+# Função para criar um cliente
 
-def detail_ferramenta(request, pk):
-    ferramenta = get_object_or_404(Ferramenta, pk=pk)
-    return render(request, 'ferramentaApp/detail.html', {'ferramenta': ferramenta})
 
-def create_ferramenta(request):
-    if request.method == "POST":
+def ferramenta_create_view(request):
+    form = FerramentaForm()
+    if request.method == 'POST':
         form = FerramentaForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('ferramentaApp:list_ferramentas')
-    else:
-        form = FerramentaForm()
-    return render(request, 'ferramentaApp/form.html', {'form': form})
+            messages.success(request, 'Ferramenta Criada com Sucesso!')
+            return redirect(reverse('ferramenta:list_ferramenta'))
+    context = {
+        'form': form
+    }
+    return render(request, 'ferramenta_form.html', context)
 
-def update_ferramenta(request, pk):
+
+def ferramenta_list_view(request):
+    ferramenta = Ferramenta.objects.all()
+    context = {'ferramenta': ferramenta}
+    return render(request, 'ferramenta_list.html', context)
+
+
+def ferramenta_update_view(request, pk):
     ferramenta = get_object_or_404(Ferramenta, pk=pk)
-    if request.method == "POST":
-        form = FerramentaForm(request.POST, instance=ferramenta)
-        if form.is_valid():
-            form.save()
-            return redirect('ferramentaApp:detail_ferramenta', pk=ferramenta.pk)
-    else:
-        form = FerramentaForm(instance=ferramenta)
-    return render(request, 'ferramentaApp/form.html', {'form': form})
+    form = FerramentaForm(request.POST or None, instance=ferramenta)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Ferramenta Alterado com Sucesso!')
+        return redirect(reverse('ferramenta:list_ferramenta'))
+    context = {
+        'form': form
+    }
+    return render(request, 'ferramenta_update.html', context)
 
-def delete_ferramenta(request, pk):
+
+def ferramenta_delete_view(request, pk):
     ferramenta = get_object_or_404(Ferramenta, pk=pk)
-    if request.method == "POST":
-        ferramenta.delete()
-        return redirect('ferramentaApp:list_ferramentas')
-    return render(request, 'ferramentaApp/confirm_delete.html', {'ferramenta': ferramenta})
-
+    ferramenta.delete()
+    return redirect(reverse('ferramenta:list_ferramenta'))
