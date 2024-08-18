@@ -6,6 +6,7 @@ from django.test import TestCase # type: ignore
 from django.db import IntegrityError # type: ignore
 from .models import Produto
 from .forms import ProdutoForm
+from . import views
 
 
 class ProdutoFormTest(TestCase):
@@ -99,30 +100,28 @@ class ProdutoModelTest(TestCase):
             )
 
 
-class TestUrls(SimpleTestCase):
+class URLTests(TestCase):
 
-    def test_listar_produtos_url_resolve(self):
-        url = reverse('listar_produtos')
-        self.assertEqual(resolve(url).func, listar_produtos)
+    def test_listar_produtos_url_resolves(self):
+        url = reverse('produto:listar_produtos')
+        self.assertEqual(resolve(url).func, views.listar_produtos)
 
-    def test_visualizar_produto_url_resolve(self):
-        url = reverse('visualizar_produto', args=[1])
-        self.assertEqual(resolve(url).func, visualizar_produto)
+    def test_visualizar_produto_url_resolves(self):
+        url = reverse('produto:visualizar_produto', args=[1])
+        self.assertEqual(resolve(url).func, views.visualizar_produto)
 
-    def test_criar_produto_url_resolve(self):
-        url = reverse('criar_produto')
-        self.assertEqual(resolve(url).func, criar_produto)
+    def test_criar_produto_url_resolves(self):
+        url = reverse('produto:criar_produto')
+        self.assertEqual(resolve(url).func, views.criar_produto)
 
-    def test_editar_produto_url_resolve(self):
-        url = reverse('editar_produto', args=[1])
-        self.assertEqual(resolve(url).func, editar_produto)
+    def test_editar_produto_url_resolves(self):
+        url = reverse('produto:editar_produto', args=[1])
+        self.assertEqual(resolve(url).func, views.editar_produto)
 
-    def test_excluir_produto_url_resolve(self):
-        url = reverse('excluir_produto', args=[1])
-        self.assertEqual(resolve(url).func, excluir_produto)
-
-
-
+    def test_excluir_produto_url_resolves(self):
+        url = reverse('produto:excluir_produto', args=[1])
+        self.assertEqual(resolve(url).func, views.excluir_produto)
+        
 class ProdutoViewsTest(TestCase):
 
     def setUp(self):
