@@ -1,10 +1,11 @@
-from django.urls import path # type: ignore
-from . import views
+from django.urls import path  # type: ignore
+from .views import produto_create_view, produto_list_view, produto_update_view, produto_delete_view
+
+app_name = 'produto'
 
 urlpatterns = [
-    path('', views.listar_produtos, name='listar_produtos'),
-    path('<int:pk>/', views.visualizar_produto, name='visualizar_produto'),
-    path('novo/', views.criar_produto, name='criar_produto'),
-    path('<int:pk>/editar/', views.editar_produto, name='editar_produto'),
-    path('<int:pk>/excluir/', views.excluir_produto, name='excluir_produto'),
+    path('create/', produto_create_view, name='create_produto'),
+    path('list/', produto_list_view, name='list_produto'),
+    path('update/<uuid:pk>', produto_update_view, name='update_produto'),
+    path('delete/<uuid:pk>', produto_delete_view, name='delete_produto'),
 ]

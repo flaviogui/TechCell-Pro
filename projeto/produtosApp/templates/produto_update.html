@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Novo Produto{% endblock %}
+{% block title %}Editar Produto{% endblock %}
 
 {% block content %}
 <header>
@@ -27,7 +27,7 @@
     <div class="container mt-5">
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h2 class="card-title">Novo Produto</h2>
+                <h2 class="card-title">Editar Produto</h2>
             </div>
             <div class="card-body">
                 <form method="post">
@@ -48,7 +48,7 @@
                     {% endfor %}
                     <div class="text-end">
                         <button type="submit" class="btn btn-success">Salvar</button>
-                        <a href="{% url 'listar_produtos' %}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{% url 'produto:list_produto' %}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>

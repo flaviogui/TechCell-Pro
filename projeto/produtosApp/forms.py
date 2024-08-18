@@ -1,7 +1,8 @@
-from django import forms # type: ignore
-from .models import Produto
+from django import forms  # type: ignore
+from produtosApp.models import Produto  # type: ignore
+
 
 class ProdutoForm(forms.ModelForm):
     class Meta:
         model = Produto
-        fields = ['nome', 'descricao', 'codigo_barras', 'preco', 'categoria']
+        fields = '__all__'

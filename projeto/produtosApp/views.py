@@ -1,39 +1,63 @@
-from django.shortcuts import render, get_object_or_404, redirect # type: ignore
+from django.shortcuts import render, redirect, get_object_or_404  # type: ignore
 from .models import Produto
 from .forms import ProdutoForm
+from django.contrib import messages  # type: ignore
+from django.urls import reverse  # type: ignore
 
-def listar_produtos(request):
-    produtos = Produto.objects.all()
-    return render(request, 'listar_produtos.html', {'produtos': produtos})
+# Função para criar um aparelho
 
-def visualizar_produto(request, pk):
-    produto = get_object_or_404(Produto, pk=pk)
-    return render(request, 'visualizar_produto.html', {'produto': produto})
 
-def criar_produto(request):
+def produto_create_view(request):
     if request.method == 'POST':
         form = ProdutoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('listar_produtos')  # Corrigido para o nome da URL
+            messages.success(request, 'Produto criado com sucesso!')
+            return redirect(reverse('produto:list_produto'))
     else:
         form = ProdutoForm()
-    return render(request, 'criar_produto.html', {'form': form})
 
-def editar_produto(request, pk):
+    context = {
+        'form': form
+    }
+    return render(request, 'produto_form.html', context)
+
+# Função para listar aparelhos
+
+
+def produto_list_view(request):
+    produtos = Produto.objects.all()
+    context = {'produtos': produtos}
+    return render(request, 'produto_list.html', context)
+
+# Função para atualizar um aparelho
+
+
+def produto_update_view(request, pk):
     produto = get_object_or_404(Produto, pk=pk)
     if request.method == 'POST':
         form = ProdutoForm(request.POST, instance=produto)
         if form.is_valid():
             form.save()
-            return redirect('listar_produtos')  # Corrigido para o nome da URL
+            messages.success(request, 'Produto alterado com sucesso!')
+            return redirect(reverse('produto:list_produto'))
     else:
         form = ProdutoForm(instance=produto)
-    return render(request, 'editar_produto.html', {'form': form})
 
-def excluir_produto(request, pk):
+    context = {
+        'form': form
+    }
+    return render(request, 'produto_update.html', context)
+
+# Função para excluir um aparelho
+
+
+def produto_delete_view(request, pk):
     produto = get_object_or_404(Produto, pk=pk)
     if request.method == 'POST':
         produto.delete()
-        return redirect('listar_produtos')  # Corrigido para o nome da URL
-    return render(request, 'excluir_produto.html', {'produto': produto})
+        messages.success(request, 'Produto excluído com sucesso!')
+        return redirect(reverse('produto:list_produto'))
+
+    context = {'produto': produto}
+    return render(request, 'produto_confirm_delete.html', context)

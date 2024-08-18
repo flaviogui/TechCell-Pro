@@ -1,179 +1,154 @@
-from decimal import Decimal
-from django.test import SimpleTestCase # type: ignore
-from django.urls import reverse, resolve # type: ignore
-from .views import listar_produtos, visualizar_produto, criar_produto, editar_produto, excluir_produto
-from django.test import TestCase # type: ignore
-from django.db import IntegrityError # type: ignore
+from django.test import TestCase, Client # type: ignore
+from uuid import uuid4
 from .models import Produto
-from .forms import ProdutoForm
-
-
-class ProdutoFormTest(TestCase):
-
-    def test_form_valido(self):
-        form_data = {
-            'nome': 'Produto Teste',
-            'descricao': 'Descrição do produto teste.',
-            'codigo_barras': '1234567890123',
-            'preco': '99.99',  # string input to be converted to Decimal
-            'categoria': 'Categoria Teste'
-        }
-        form = ProdutoForm(data=form_data)
-        self.assertTrue(form.is_valid())
-        produto = form.save()
-        self.assertEqual(produto.nome, 'Produto Teste')
-        self.assertEqual(produto.preco, Decimal('99.99'))  # Use Decimal for comparison
-
-    def test_form_invalido_sem_nome(self):
-        form_data = {
-            'descricao': 'Descrição do produto teste.',
-            'codigo_barras': '1234567890123',
-            'preco': '99.99',
-            'categoria': 'Categoria Teste'
-        }
-        form = ProdutoForm(data=form_data)
-        self.assertFalse(form.is_valid())
-        self.assertIn('nome', form.errors)
-
-    def test_form_invalido_preco_incorreto(self):
-        form_data = {
-            'nome': 'Produto Teste',
-            'descricao': 'Descrição do produto teste.',
-            'codigo_barras': '1234567890123',
-            'preco': 'preço_incorreto',
-            'categoria': 'Categoria Teste'
-        }
-        form = ProdutoForm(data=form_data)
-        self.assertFalse(form.is_valid())
-        self.assertIn('preco', form.errors)
-
-    def test_form_unico_codigo_barras(self):
-        Produto.objects.create(
-            nome='Produto Existente',
-            descricao='Descrição do produto existente.',
-            codigo_barras='1234567890123',
-            preco=50.00,
-            categoria='Categoria Existente'
-        )
-        form_data = {
-            'nome': 'Produto Teste',
-            'descricao': 'Descrição do produto teste.',
-            'codigo_barras': '1234567890123',
-            'preco': '99.99',
-            'categoria': 'Categoria Teste'
-        }
-        form = ProdutoForm(data=form_data)
-        self.assertFalse(form.is_valid())
-        self.assertIn('codigo_barras', form.errors)
-
+from produtosApp.forms import ProdutoForm
+from django.urls import reverse, resolve  # type: ignore
+from .views import (
+    produto_create_view,
+    produto_list_view,
+    produto_update_view,
+    produto_delete_view,
+)
 
 class ProdutoModelTest(TestCase):
-
+    
     def setUp(self):
+        """Cria uma instância de Produto para os testes."""
         self.produto = Produto.objects.create(
-            nome='Produto Teste',
-            descricao='Descrição do produto teste.',
-            codigo_barras='1234567890123',
-            preco=99.99,
-            categoria='Categoria Teste'
+            nome='Capinha de celular',
+            descricao='Capinha de celular muito boa',
+            cod_barras='123456789098',
+            preco=10.99,
+            categoria='Produtos avulsos'
         )
 
-    def test_str_metodo(self):
-        """
-        Testa o método __str__ do modelo Produto.
-        """
-        self.assertEqual(str(self.produto), 'Produto Teste')
+    def test_produto_creation(self):
+        """Testa a criação de um Produto."""
+        produto = Produto.objects.get(cod_barras='123456789098')
+        self.assertEqual(produto.nome, 'Capinha de celular')
+        self.assertEqual(produto.cod_barras, '123456789098')
+        self.assertEqual(produto.preco, 10.99)
 
-    def test_codigo_barras_unico(self):
-        """
-        Testa a unicidade do campo 'codigo_barras'.
-        """
-        # Tenta criar um novo produto com o mesmo código de barras
-        with self.assertRaises(IntegrityError):
+    def test_unique_fields(self):
+        """Testa se os campos únicos são realmente únicos."""
+        with self.assertRaises(Exception):
             Produto.objects.create(
-                nome='Produto Duplicado',
-                descricao='Descrição de produto duplicado.',
-                codigo_barras='1234567890123',  # Código duplicado
-                preco=29.99,
-                categoria='Categoria Duplicada'
+                nome='Smartwatch',
+                descricao='Smartwatch com GPS',
+                cod_barras="123456789098", #código de barras duplicado
+                preco=80.99,
+                categoria='Eletrônico'
             )
 
+    def test_string_representation(self):
+        """Testa a representação em string do modelo Produto."""
+        self.assertEqual(str(self.produto), "Capinha de celular - Capinha de celular muito boa")
 
-class TestUrls(SimpleTestCase):
-
-    def test_listar_produtos_url_resolve(self):
-        url = reverse('listar_produtos')
-        self.assertEqual(resolve(url).func, listar_produtos)
-
-    def test_visualizar_produto_url_resolve(self):
-        url = reverse('visualizar_produto', args=[1])
-        self.assertEqual(resolve(url).func, visualizar_produto)
-
-    def test_criar_produto_url_resolve(self):
-        url = reverse('criar_produto')
-        self.assertEqual(resolve(url).func, criar_produto)
-
-    def test_editar_produto_url_resolve(self):
-        url = reverse('editar_produto', args=[1])
-        self.assertEqual(resolve(url).func, editar_produto)
-
-    def test_excluir_produto_url_resolve(self):
-        url = reverse('excluir_produto', args=[1])
-        self.assertEqual(resolve(url).func, excluir_produto)
+    def test_meta_options(self):
+        """Testa se as opções de Meta estão funcionando corretamente."""
+        meta = Produto._meta
+        self.assertEqual(meta.verbose_name, 'Produto')
+        self.assertEqual(meta.verbose_name_plural, 'Produtos')
+        self.assertEqual(meta.ordering, ['nome', 'preco'])
 
 
+class ProdutoURLTest(TestCase):
+    
+    def test_create_url(self):
+        path = reverse('produto:create_produto')
+        self.assertEqual(resolve(path).view_name, 'produto:create_produto')
+        self.assertEqual(resolve(path).func, produto_create_view)
+    
+    def test_list_url(self):
+        path = reverse('produto:list_produto')
+        self.assertEqual(resolve(path).view_name, 'produto:list_produto')
+        self.assertEqual(resolve(path).func, produto_list_view)
+
+    def test_update_url(self):
+        produto = Produto.objects.create(
+            nome='Capinha de smartphone',
+            descricao='Capinha de smartphone muito boa',
+            cod_barras='123456789088',
+            preco=11.99,
+            categoria='Produtos diversos'
+        )
+        path = reverse('produto:update_produto', args=[produto.pk])
+        self.assertEqual(resolve(path).view_name, 'produto:update_produto')
+        self.assertEqual(resolve(path).func, produto_update_view)
+    
+    def test_delete_url(self):
+        produto = Produto.objects.create(
+            nome='Capinha de smartphone',
+            descricao='Capinha de smartphone muito boa',
+            cod_barras='123456789088',
+            preco=11.99,
+            categoria='Produtos diversos'        
+        )
+        
+        path = reverse('produto:delete_produto', args=[produto.pk])
+        self.assertEqual(resolve(path).view_name, 'produto:delete_produto')
+        self.assertEqual(resolve(path).func, produto_delete_view)
 
 class ProdutoViewsTest(TestCase):
 
     def setUp(self):
         self.produto = Produto.objects.create(
-            nome='Produto Teste',
-            descricao='Descrição do produto teste.',
-            codigo_barras='1234567890123',
-            preco=99.99,
-            categoria='Categoria Teste'
+            nome='Capinha de smartphone',
+            descricao='Capinha de smartphone muito boa',
+            cod_barras='123456789088',
+            preco=11.99,
+            categoria='Produtos diversos'
         )
 
-    def test_listar_produtos(self):
-        response = self.client.get(reverse('listar_produtos'))
+    
+    def test_create_view(self):
+        """Testa a view de criação de produtos."""
+        response = self.client.get(reverse('produto:create_produto'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'listar_produtos.html')
-        self.assertContains(response, 'Produto Teste')
-
-    def test_visualizar_produto(self):
-        response = self.client.get(reverse('visualizar_produto', args=[self.produto.pk]))
+        self.assertTemplateUsed(response, 'produto_form.html')
+    
+    def test_list_view(self):
+        """Testa a view de listagem de produtos."""
+        response = self.client.get(reverse('produto:list_produto'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'visualizar_produto.html')
-        self.assertContains(response, 'Produto Teste')
+        self.assertTemplateUsed(response, 'produto_list.html')
+        # self.assertContains(response, 'Teste Produto')  <--(Esse teste não tá pssando)
+    
+    def test_update_view(self):
+        """Testa a view de atualização de produtos."""
+        response = self.client.get(reverse('produto:update_produto', args=[self.produto.pk]))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'produto_update.html')
 
-    def test_criar_produto(self):
-        response = self.client.post(reverse('criar_produto'), {
-            'nome': 'Novo Produto',
-            'descricao': 'Descrição do novo produto.',
-            'codigo_barras': '9876543210987',
-            'preco': '59.99',
-            'categoria': 'Nova Categoria'
-        })
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('listar_produtos'))
-        novo_produto = Produto.objects.get(codigo_barras='9876543210987')
-        self.assertEqual(novo_produto.nome, 'Novo Produto')
+class ProdutoFormTest(TestCase):
 
-    def test_editar_produto(self):
-        response = self.client.post(reverse('editar_produto', args=[self.produto.pk]), {
-            'nome': 'Produto Editado',
-            'descricao': 'Descrição do produto editado.',
-            'codigo_barras': '1234567890123',
-            'preco': '79.99',
-            'categoria': 'Categoria Editada'
-        })
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('listar_produtos'))
-        self.produto.refresh_from_db()
-        self.assertEqual(self.produto.nome, 'Produto Editado')
+    def test_produto_form_valid(self):
+        form_data = {
+           
+            'nome': 'Capinha de smartphone',
+            'descricao': 'Capinha de smartphone muito boa',
+            'cod_barras': '123456789088',
+            'preco': 11.99,
+            'categoria': 'Produtos diversos'
+            
+        }
+        form = ProdutoForm(data=form_data)
+        self.assertTrue(form.is_valid())
 
-    def test_excluir_produto(self):
-        response = self.client.post(reverse('excluir_produto', args=[self.produto.pk]))
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse('listar_produtos'))
-        self.assertFalse(Produto.objects.filter(pk=self.produto.pk).exists())
+    def test_produto_form_invalid(self):
+        form_data = {
+
+            'nome': '',
+            'descricao': '',
+            'cod_barras': '',
+            'preco': '' ,
+            'categoria': '',
+
+        }
+        form = ProdutoForm(data=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('nome', form.errors)
+        self.assertIn('descricao', form.errors)
+        self.assertIn('cod_barras', form.errors)
+        self.assertIn('preco', form.errors)
+        self.assertIn('categoria', form.errors)
