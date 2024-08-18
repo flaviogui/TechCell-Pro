@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Lista de Aparelhos{% endblock %}
+{% block title %}Lista de Produtos{% endblock %}
 
 {% block content %}
 <header>
@@ -27,8 +27,8 @@
 <main class="mt-4">
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2>Lista de Aparelhos</h2>
-            <a href="{% url 'aparelho:create_aparelho' %}" class="btn btn-success">Adicionar Aparelho</a>
+            <h2>Lista de Produtos</h2>
+            <a href="{% url 'produto:create_produto' %}" class="btn btn-success">Listar Produtos</a>
         </div>
         <div class="card shadow">
             <div class="card-body">
@@ -36,25 +36,25 @@
                     <table class="table table-hover table-bordered">
                         <thead class="table-primary">
                             <tr>
-                                <th>Marca</th>
-                                <th>Modelo</th>
-                                <th>IMEI</th>
-                                <th>Número de Série</th>
-                                <th>Descrição do Problema</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Cod.Barras</th>
+                                <th>Preço</th>
+                                <th>Categoria</th>
                                 <th class="text-center">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for aparelho in aparelhos %}
+                            {% for produto in produtos %}
                                 <tr>
-                                    <td>{{ aparelho.marca }}</td>
-                                    <td>{{ aparelho.modelo }}</td>
-                                    <td>{{ aparelho.imei }}</td>
-                                    <td>{{ aparelho.numero_serie }}</td>
-                                    <td>{{ aparelho.descricao_problema }}</td>
+                                    <td>{{ produto.nome }}</td>
+                                    <td>{{ produto.descricao }}</td>
+                                    <td>{{ produto.cod_barras }}</td>
+                                    <td>{{ produto.preco }}</td>
+                                    <td>{{ produto.categoria }}</td>
                                     <td class="text-center">
-                                        <a href="{% url 'aparelho:update_aparelho' aparelho.pk %}" class="btn btn-primary btn-sm">Editar</a>
-                                        <a href="{% url 'aparelho:delete_aparelho' aparelho.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                                        <a href="{% url 'produto:update_produto' produto.pk %}" class="btn btn-primary btn-sm">Editar</a>
+                                        <a href="{% url 'produto:delete_produto' produto.pk %}" class="btn btn-danger btn-sm">Excluir</a>
                                     </td>
                                 </tr>
                             {% endfor %}

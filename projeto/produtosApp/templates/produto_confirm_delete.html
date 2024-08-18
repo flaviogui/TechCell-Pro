@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Confirmar Exclusão de Produto{% endblock %}
+
+{% block content %}
+<main class="mt-4">
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-danger text-white">
+                <h2 class="card-title">Confirmar Exclusão de Produto</h2>
+            </div>
+            <div class="card-body">
+                <p>Tem certeza de que deseja excluir o produto <strong>{{ produto.nome }} {{ produto.preco }}</strong>?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                        <a href="{% url 'produto:list_produto' %}" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

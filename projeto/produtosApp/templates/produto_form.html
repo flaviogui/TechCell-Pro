@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Editar Produto{% endblock %}
+{% block title %}Criar Aparelho{% endblock %}
 
 {% block content %}
 <header>
@@ -12,11 +12,12 @@
             </button>
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-link">Home</a>
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
                     <a href="#" class="nav-link">Clientes</a>
-                    <a href="#" class="nav-link active">Produtos</a>
-                    <a href="#" class="nav-link">Manutenção</a>
-                    <a href="#" class="nav-link">Sobre</a>
+                    <a href="#" class="nav-link">Funcionário</a>
+                    <a href="#" class="nav-link active">Aparelhos</a>
+                    <a href="#" class="nav-link">Reparo</a>
+                    <a href="#" class="nav-link">Sobre</a></div>
                 </div>
             </div>
         </div>
@@ -27,7 +28,7 @@
     <div class="container mt-5">
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h2 class="card-title">Editar Produto</h2>
+                <h2 class="card-title">Cadastrar um Produto</h2>
             </div>
             <div class="card-body">
                 <form method="post">
@@ -48,7 +49,7 @@
                     {% endfor %}
                     <div class="text-end">
                         <button type="submit" class="btn btn-success">Salvar</button>
-                        <a href="{% url 'listar_produtos' %}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{% url 'aparelho:list_aparelho' %}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>

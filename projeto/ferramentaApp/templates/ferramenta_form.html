@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} Funcionário Formulário {% endblock %}
+{% block title %} Ferramenta Formulário {% endblock %}
 
 {% block content %}
 <header>
@@ -16,11 +16,11 @@
             <div class="collapse navbar-collapse" id ="menuNavbar">
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="{% url 'index' %}" class="nav-link">Home</a>
-                        <a href="#" class="nav-link">Clientes</a>
-                        <a href="#" class="nav-link active">Funcionário</a>
+                        <a href="{% url 'index' %}" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link active">Clientes</a>
+                        <a href="#" class="nav-link">Funcionário</a>
                         <a href="#" class="nav-link">Aparelhos</a>
-                        <a href="#" class="nav-link">Reparo</a>
+                        <a href="#" class="nav-link">Manutenção</a>
                         <a href="#" class="nav-link">Sobre</a></div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
         {% csrf_token %}
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h2 class="card-title">Adicionar Novo Funcionário</h2>
+                <h2 class="card-title">Adicionar nova ferramenta</h2>
             </div>
             <div class="card-body">
                 <hr>
@@ -52,7 +52,7 @@
                 {% endfor %}
             </div>
             <div class="card-footer text-end">
-                <button type="submit" class="btn btn-primary">Salvar Funcionário</button>
+                <button type="submit" class="btn btn-primary">Salvar Ferramenta</button>
             </div>
         </div>
     </form>
