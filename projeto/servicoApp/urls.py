@@ -6,8 +6,8 @@ app_name = 'servico'
 
 urlpatterns = [
     path('create/', servico_create_view,
-         name='create_fornecedor'),  # type: ignore
-    path('list/', servico_list_view, name='list_fornecedor'),
-    path('edit/<str:pk>', servico_update_view, name='update_fornecedor'),
-    path('delete/<str:pk>', servico_delete_view, name='delete_fornecedor')
+         name='create_servico'),  # type: ignore
+    path('list/', servico_list_view, name='list_servico'),
+    path('edit/<str:pk>', servico_update_view, name='update_servico'),
+    path('delete/<str:pk>', servico_delete_view, name='delete_servico')
 ]

@@ -19,7 +19,7 @@ def servico_create_view(request):
     context = {
         'form': form
     }
-    return render(request, 'servico_form.html' or context)
+    return render(request, 'servico_form.html', context)
 
 
 def servico_list_view(request):

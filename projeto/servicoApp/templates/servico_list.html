@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %} Listar Serviços {% endblock %}
+
+{% block content %}
+<header>
+    <nav class="navbar bg-primary
+     navbar-dark navbar-expand-sm py-3" id="navbar">
+    <div class = "container" id = "nav-container d-flex align-items-center">
+            <a href="#" class = "navbar-brand">
+                TechCell-Pro 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id ="menuNavbar">
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Clientes</a>
+                        <a href="#" class="nav-link active">Funcionário</a>
+                        <a href="#" class="nav-link">Aparelhos</a>
+                        <a href="#" class="nav-link">Reparo</a>
+                        <a href="#" class="nav-link">Sobre</a></div>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
+</header>
+<div class="container mt-5">
+    <h2>Listar Serviços</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Duração</th>
+                <th>Tipo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for servico in servicos %}
+            <tr>
+                <td>{{ servico.nome }}</td>
+                <td><a href="#">{{ servico.descricao }}</a></td>
+                <td>{{ servico.preco }}</td>
+                <td>{{ servico.duracao }}</td>
+                <td>{{ servico.tipo }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'servico:update_servico' servico.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="{% url 'servico:delete_servico' servico.id %}" class="btn btn-sm btn-outline-danger">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

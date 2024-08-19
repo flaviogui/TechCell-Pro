@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Serviço Formulário {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <form method="post">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Editar Serviço</h2>
+            </div>
+            <div class="card-body">
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label class="form-label">{{ field.label }}</label>
+                        {{ field }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-primary">Salvar Serviço</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
