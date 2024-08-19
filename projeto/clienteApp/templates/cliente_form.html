@@ -16,12 +16,17 @@
             <div class="collapse navbar-collapse" id ="menuNavbar">
                 <div class="collapse navbar-collapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="{% url 'index' %}" class="nav-link active">Home</a>
-                        <a href="#" class="nav-link active">Clientes</a>
-                        <a href="#" class="nav-link">Funcionário</a>
-                        <a href="#" class="nav-link">Aparelhos</a>
-                        <a href="#" class="nav-link">Reparo</a>
-                        <a href="#" class="nav-link">Sobre</a></div>
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                        <a href="{% url 'cliente:list_cliente' %}" class="nav-link active">Clientes</a>
+                        <a href="{% url 'funcionario:list_funcionario' %}" class="nav-link">Funcionário</a>
+                        <a href="{% url 'aparelho:list_aparelho' %}" class="nav-link">Aparelhos</a>
+                        <a href="{% url 'appConfirmarReparo:lista_reparos' %}" class="nav-link">Reparo</a>
+                        <a href="{% url 'fornecedor:list_fornecedor' %}" class="nav-link">Fornecedor</a>
+                        <a href="{% url 'ferramenta:list_ferramenta' %}" class="nav-link">Ferramentas</a>
+                        <a href="{% url 'servico:list_servico' %}" class="nav-link">Serviços</a>
+                        <a href="{% url 'peca:list_peca' %}" class="nav-link">Peças</a>
+                        <a href="{% url 'produto:list_produto' %}" class="nav-link">Produtos</a>
+                        </div>
                 </div>
             </div>
         </nav>

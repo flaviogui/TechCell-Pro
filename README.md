@@ -64,10 +64,15 @@ DB_PORT=5432
 <li>Faça as migrações do banco de dados:</li>
 <pre>python manage.py migrate</pre>
 
-
 <li>Inicie o servidor de desenvolvimento:</li>
 <pre>python manage.py runserver</pre>
 
 <li>Abra o navegador e acesse o endereço http://localhost:8000 para acessar a aplicação.</li>
 </ol>
 
+# Usando Docker
+<li>Para rodar os containers:</li>
+<pre> docker compose up -d </pre>
+
+<li>Para acessar o projeto:</li>
+<pre> http://localhost:8000/ </pre>
