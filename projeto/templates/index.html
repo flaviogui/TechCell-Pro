@@ -97,7 +97,7 @@
                     <!-- Dropdown para Serviços -->
                     <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="ServicoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ferramentas
+                            Serviços
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ServicoDropdown">
                             <li><a class="dropdown-item" href="{% url 'servico:create_servico' %}">Cadastrar</a></li>
@@ -109,13 +109,25 @@
                      <!-- Dropdown para Peças -->
                      <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="PecaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ferramentas
+                            Peças
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="PecaDropdown">
                             <li><a class="dropdown-item" href="{% url 'peca:create_peca' %}">Cadastrar</a></li>
                             <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Listar</a></li>
                             <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Editar</a></li>
                             <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Excluir</a></li>
+                        </ul>
+                    </li>
+                     <!-- Dropdown para Produtos -->
+                     <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ProdutoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ProdutoDropdown">
+                            <li><a class="dropdown-item" href="{% url 'produto:create_produto' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Excluir</a></li>
                         </ul>
                     </li>
                 </div>
