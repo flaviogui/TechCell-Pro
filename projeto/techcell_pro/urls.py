@@ -30,6 +30,6 @@ urlpatterns = [
     path('fornecedor/', include('fornecedorApp.urls')),
     path('produtos/', include('produtosApp.urls')),
     path('ferramenta/', include('ferramentaApp.urls')),
-    path('servico/', include('servicoApp.urls'))
-
+    path('servico/', include('servicoApp.urls')),
+    path('peca/', include('pecaApp.urls'))
 ]

@@ -1,3 +1,6 @@
-from django.contrib import admin
+from django.contrib import admin  # type: ignore
+from .models import Peca
 
-# Register your models here.
+# Registro dos modelos para o admin
+
+admin.site.register(Peca)

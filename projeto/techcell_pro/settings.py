@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cpf_field',
     'ferramentaApp',
     'servicoApp',
+    'pecaApp',
 ]
 
 MIDDLEWARE = [
