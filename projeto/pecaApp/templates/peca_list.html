@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %} Listar Peças {% endblock %}
+
+{% block content %}
+<header>
+    <nav class="navbar bg-primary
+     navbar-dark navbar-expand-sm py-3" id="navbar">
+    <div class = "container" id = "nav-container d-flex align-items-center">
+            <a href="#" class = "navbar-brand">
+                TechCell-Pro 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id ="menuNavbar">
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                        <a href="#" class="nav-link">Clientes</a>
+                        <a href="#" class="nav-link active">Funcionário</a>
+                        <a href="#" class="nav-link">Aparelhos</a>
+                        <a href="#" class="nav-link">Reparo</a>
+                        <a href="#" class="nav-link">Sobre</a></div>
+                </div>
+            </div>
+        </nav>
+        
+    </div>
+</header>
+<div class="container mt-5">
+    <h2>Listar Peças</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Código</th>
+                <th>Quantidade</th>
+                <th>Preço de Compra</th>
+                <th>fornecedor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for peca in pecas %}
+            <tr>
+                <td>{{ peca.nome }}</td>
+                <td><a href="#">{{ peca.descricao }}</a></td>
+                <td>{{ peca.codigo }}</td>
+                <td>{{ peca.quantidade }}</td>
+                <td>{{ peca.preco_compra }}</td>
+                <td>{{ peca.fornecedor }}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a href="{% url 'peca:update_peca' peca.id %}" class="btn btn-sm btn-outline-secondary">Editar</a>
+                        <a href="{% url 'peca:delete_peca' peca.id %}" class="btn btn-sm btn-outline-danger">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
