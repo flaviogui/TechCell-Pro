@@ -12,8 +12,8 @@
             </button>
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <div class="navbar-nav ms-auto">
-<<<<<<< HEAD
-                    <a href="{% url 'cliente:list_cliente' %}" class="nav-link">Clientes</a>
+                        <a href="{% url 'index' %}" class="nav-link">Home</a>
+                        <a href="{% url 'cliente:list_cliente' %}" class="nav-link">Clientes</a>
                         <a href="{% url 'funcionario:list_funcionario' %}" class="nav-link">Funcionário</a>
                         <a href="{% url 'aparelho:list_aparelho' %}" class="nav-link">Aparelhos</a>
                         <a href="{% url 'appConfirmarReparo:lista_reparos' %}" class="nav-link">Reparo</a>
@@ -22,15 +22,6 @@
                         <a href="{% url 'servico:list_servico' %}" class="nav-link">Serviços</a>
                         <a href="{% url 'peca:list_peca' %}" class="nav-link">Peças</a>
                         <a href="{% url 'produto:list_produto' %}" class="nav-link active">Produtos</a>
-=======
-                <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-link">Home</a>
-                    <a href="#" class="nav-link">Clientes</a>
-                    <a href="#" class="nav-link">Aparelho</a>
-                    <a href="#" class="nav-link active">Produtos</a>
-                    <a href="#" class="nav-link">Manutenção</a>
-                    <a href="#" class="nav-link">Sobre</a>
->>>>>>> 613bb92637e1c16e20290f27e5cf0aefc899e4cb
                 </div>
             </div>
         </div>
@@ -41,11 +32,7 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>Lista de Produtos</h2>
-<<<<<<< HEAD
-            <a href="{% url 'produto:list_produto' %}" class="btn btn-success">Listar Produtos</a>
-=======
             <a href="{% url 'produto:create_produto' %}" class="btn btn-success">Criar Produtos</a>
->>>>>>> 613bb92637e1c16e20290f27e5cf0aefc899e4cb
         </div>
         <div class="card shadow">
             <div class="card-body">
@@ -62,7 +49,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for produto in produto %}
+                            {% for produto in produtos %}
                                 <tr>
                                     <td>{{ produto.nome }}</td>
                                     <td>{{ produto.descricao }}</td>
