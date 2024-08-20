@@ -12,12 +12,13 @@
             </button>
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <div class="navbar-nav ms-auto">
-                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-link">Home</a>
                     <a href="#" class="nav-link">Clientes</a>
-                    <a href="#" class="nav-link">Funcionário</a>
-                    <a href="#" class="nav-link active">Aparelhos</a>
-                    <a href="#" class="nav-link">Reparo</a>
-                    <a href="#" class="nav-link">Sobre</a></div>
+                    <a href="#" class="nav-link">Aparelho</a>
+                    <a href="#" class="nav-link active">Produtos</a>
+                    <a href="#" class="nav-link">Manutenção</a>
+                    <a href="#" class="nav-link">Sobre</a>
                 </div>
             </div>
         </div>
@@ -28,7 +29,7 @@
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2>Lista de Produtos</h2>
-            <a href="{% url 'produto:create_produto' %}" class="btn btn-success">Listar Produtos</a>
+            <a href="{% url 'produto:create_produto' %}" class="btn btn-success">Criar Produtos</a>
         </div>
         <div class="card shadow">
             <div class="card-body">
