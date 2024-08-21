@@ -22,6 +22,19 @@
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <div class="navbar-nav ms-auto">
                     <a href="{% url 'index' %}" class="nav-link active">Home</a>
+                     <!-- Dropdown para Peças -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="PecaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Peças
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="PecaDropdown">
+                            <li><a class="dropdown-item" href="{% url 'peca:create_peca' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Excluir</a></li>
+                        </ul>
+                    </li>
+
                     <!-- Dropdown para Clientes -->
                     <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="clienteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -106,20 +119,8 @@
                             <li><a class="dropdown-item" href="{% url 'servico:list_servico' %}">Excluir</a></li>
                         </ul>
                     </li>
-                     <!-- Dropdown para Peças -->
-                     <li class="nav-item dropdown custom-dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="PecaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Peças
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="PecaDropdown">
-                            <li><a class="dropdown-item" href="{% url 'peca:create_peca' %}">Cadastrar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Listar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Editar</a></li>
-                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Excluir</a></li>
-                        </ul>
-                    </li>
-                     <!-- Dropdown para Produtos -->
-                     <li class="nav-item dropdown custom-dropdown">
+                    <!-- Dropdown para Produtos -->
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="ProdutoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Produtos
                         </a>
@@ -130,7 +131,8 @@
                             <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Excluir</a></li>
                         </ul>
                     </li>
-                </div>
+
+                </ul>
             </div>
         </div>
     </nav>
