@@ -45,6 +45,7 @@
                                 <th>IMEI</th>
                                 <th>Número de Série</th>
                                 <th>Descrição do Problema</th>
+                                <th>Cliente</th> <!-- Nova coluna -->
                                 <th class="text-center">Ações</th>
                             </tr>
                         </thead>
@@ -56,6 +57,7 @@
                                     <td>{{ aparelho.imei }}</td>
                                     <td>{{ aparelho.numero_serie }}</td>
                                     <td>{{ aparelho.descricao_problema }}</td>
+                                    <td>{{ aparelho.cliente.nome }}</td> <!-- Exibir nome do cliente -->
                                     <td class="text-center">
                                         <a href="{% url 'aparelho:update_aparelho' aparelho.pk %}" class="btn btn-primary btn-sm">Editar</a>
                                         <a href="{% url 'aparelho:delete_aparelho' aparelho.pk %}" class="btn btn-danger btn-sm">Excluir</a>

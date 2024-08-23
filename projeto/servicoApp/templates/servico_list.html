@@ -4,35 +4,35 @@
 
 {% block content %}
 <header>
-    <nav class="navbar bg-primary
-     navbar-dark navbar-expand-sm py-3" id="navbar">
-    <div class = "container" id = "nav-container d-flex align-items-center">
-            <a href="#" class = "navbar-brand">
+    <nav class="navbar bg-primary navbar-dark navbar-expand-sm py-3" id="navbar">
+        <div class="container" id="nav-container d-flex align-items-center">
+            <a href="#" class="navbar-brand">
                 TechCell-Pro 
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="menuNavbar">
-                <span class = "navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id ="menuNavbar">
-                <div class="collapse navbar-collapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="{% url 'cliente:list_cliente' %}" class="nav-link">Clientes</a>
-                        <a href="{% url 'funcionario:list_funcionario' %}" class="nav-link">Funcionário</a>
-                        <a href="{% url 'aparelho:list_aparelho' %}" class="nav-link">Aparelhos</a>
-                        <a href="{% url 'appConfirmarReparo:lista_reparos' %}" class="nav-link">Reparo</a>
-                        <a href="{% url 'fornecedor:list_fornecedor' %}" class="nav-link">Fornecedor</a>
-                        <a href="{% url 'ferramenta:list_ferramenta' %}" class="nav-link">Ferramentas</a>
-                        <a href="{% url 'servico:list_servico' %}" class="nav-link active">Serviços</a>
-                        <a href="{% url 'peca:list_peca' %}" class="nav-link">Peças</a>
-                        <a href="{% url 'produto:list_produto' %}" class="nav-link ">Produtos</a>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <div class="navbar-nav ms-auto">
+                    <a href="{% url 'cliente:list_cliente' %}" class="nav-link">Clientes</a>
+                    <a href="{% url 'funcionario:list_funcionario' %}" class="nav-link">Funcionário</a>
+                    <a href="{% url 'aparelho:list_aparelho' %}" class="nav-link">Aparelhos</a>
+                    <a href="{% url 'appConfirmarReparo:lista_reparos' %}" class="nav-link">Reparo</a>
+                    <a href="{% url 'fornecedor:list_fornecedor' %}" class="nav-link">Fornecedor</a>
+                    <a href="{% url 'ferramenta:list_ferramenta' %}" class="nav-link">Ferramentas</a>
+                    <a href="{% url 'servico:list_servico' %}" class="nav-link active">Serviços</a>
+                    <a href="{% url 'peca:list_peca' %}" class="nav-link">Peças</a>
+                    <a href="{% url 'produto:list_produto' %}" class="nav-link">Produtos</a>
                 </div>
             </div>
         </nav>
-        
     </div>
 </header>
-<div class="container mt-5">
-    <h2>Listar Serviços</h2>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Listar Serviços</h2>
+        <a href="{% url 'servico:create_servico' %}" class="btn btn-success">Adicionar Serviço</a>
+    </div>
     <table class="table table-striped table-hover">
         <thead>
             <tr>

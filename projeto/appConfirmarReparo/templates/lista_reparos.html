@@ -30,7 +30,10 @@
 
 <main class="mt-4">
     <div class="container mt-5">
-        <h2>Lista de Reparos</h2>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Lista de Reparos</h2>
+            <a href="{% url 'appConfirmarReparo:reparo_create' %}" class="btn btn-success">Adicionar Reparo</a>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>
