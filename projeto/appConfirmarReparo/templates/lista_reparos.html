@@ -12,11 +12,16 @@
             </button>
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-link">Home</a>
-                    <a href="#" class="nav-link">Clientes</a>
-                    <a href="#" class="nav-link">Produtos</a>
-                    <a href="#" class="nav-link active">Manutenção</a>
-                    <a href="#" class="nav-link">Sobre</a>
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                    <a href="{% url 'cliente:list_cliente' %}" class="nav-link">Clientes</a>
+                    <a href="{% url 'funcionario:list_funcionario' %}" class="nav-link">Funcionário</a>
+                    <a href="{% url 'aparelho:list_aparelho' %}" class="nav-link">Aparelhos</a>
+                    <a href="{% url 'appConfirmarReparo:lista_reparos' %}" class="nav-link active">Reparo</a>
+                    <a href="{% url 'fornecedor:list_fornecedor' %}" class="nav-link">Fornecedor</a>
+                    <a href="{% url 'ferramenta:list_ferramenta' %}" class="nav-link">Ferramentas</a>
+                    <a href="{% url 'servico:list_servico' %}" class="nav-link">Serviços</a>
+                    <a href="{% url 'peca:list_peca' %}" class="nav-link">Peças</a>
+                    <a href="{% url 'produto:list_produto' %}" class="nav-link">Produtos</a>
                 </div>
             </div>
         </div>
@@ -25,7 +30,10 @@
 
 <main class="mt-4">
     <div class="container mt-5">
-        <h2>Lista de Reparos</h2>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2>Lista de Reparos</h2>
+            <a href="{% url 'appConfirmarReparo:reparo_create' %}" class="btn btn-success">Adicionar Reparo</a>
+        </div>
         <table class="table table-striped">
             <thead>
                 <tr>

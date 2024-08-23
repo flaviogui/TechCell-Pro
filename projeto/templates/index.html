@@ -22,6 +22,19 @@
             <div class="collapse navbar-collapse" id="menuNavbar">
                 <div class="navbar-nav ms-auto">
                     <a href="{% url 'index' %}" class="nav-link active">Home</a>
+                     <!-- Dropdown para Peças -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="PecaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Peças
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="PecaDropdown">
+                            <li><a class="dropdown-item" href="{% url 'peca:create_peca' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'peca:list_peca' %}">Excluir</a></li>
+                        </ul>
+                    </li>
+
                     <!-- Dropdown para Clientes -->
                     <li class="nav-item dropdown custom-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="clienteDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -87,15 +100,38 @@
                         <a class="nav-link dropdown-toggle" href="#" id="FerramentaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Ferramentas
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ReparoDropdown">
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="FerramentaDropdown">
                             <li><a class="dropdown-item" href="{% url 'ferramenta:create_ferramenta' %}">Cadastrar</a></li>
                             <li><a class="dropdown-item" href="{% url 'ferramenta:list_ferramenta' %}">Listar</a></li>
                             <li><a class="dropdown-item" href="{% url 'ferramenta:list_ferramenta' %}">Editar</a></li>
                             <li><a class="dropdown-item" href="{% url 'ferramenta:list_ferramenta' %}">Excluir</a></li>
                         </ul>
                     </li>
-                    <a href="#" class="nav-link">Sobre</a>
-                </div>
+                    <!-- Dropdown para Serviços -->
+                    <li class="nav-item dropdown custom-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ServicoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Serviços
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ServicoDropdown">
+                            <li><a class="dropdown-item" href="{% url 'servico:create_servico' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'servico:list_servico' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'servico:list_servico' %}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'servico:list_servico' %}">Excluir</a></li>
+                        </ul>
+                    </li>
+                    <!-- Dropdown para Produtos -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="ProdutoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="ProdutoDropdown">
+                            <li><a class="dropdown-item" href="{% url 'produto:create_produto' %}">Cadastrar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Listar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Editar</a></li>
+                            <li><a class="dropdown-item" href="{% url 'produto:list_produto' %}">Excluir</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

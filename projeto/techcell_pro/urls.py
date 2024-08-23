@@ -28,6 +28,8 @@ urlpatterns = [
     # path('', TemplateView.as_view(template_name="index.html"))
     path('funcionario/', include('funcionarioApp.urls')),
     path('fornecedor/', include('fornecedorApp.urls')),
-    path('produtos/', include('produtosApp.urls')),   
-    path('ferramenta/', include('ferramentaApp.urls'))
+    path('produtos/', include('produtosApp.urls')),
+    path('ferramenta/', include('ferramentaApp.urls')),
+    path('servico/', include('servicoApp.urls')),
+    path('peca/', include('pecaApp.urls'))
 ]

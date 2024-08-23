@@ -1,7 +1,8 @@
-from django.db import models # type: ignore
+# models.py
+from django.db import models
 import uuid
+from clienteApp.models import Cliente  # Importar o modelo Cliente
 
-# Modelo para Aparelho
 class Aparelho(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     nome = models.CharField(max_length=100, default='nome')
@@ -12,7 +13,7 @@ class Aparelho(models.Model):
     numero_serie = models.CharField(max_length=50, unique=True)
     descricao_problema = models.TextField()
     ordem_servico = models.CharField(max_length=36, unique=True, null=True, blank=True)
-
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, null=True, blank=True)
     class Meta:
         verbose_name = 'Aparelho'
         verbose_name_plural = 'Aparelhos'

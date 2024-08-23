@@ -206,6 +206,42 @@ Este documento descreve os User Stories criados a partir da Lista de Requisitos 
 | **TA03.05** | O usuário visualiza as informações detalhadas de um fornecedor específico. O sistema exibe todas as informações relevantes de forma clara. |
 
 
+### User Story US06 - Manter Produto
+
+|               |                                                                |
+| ------------- | :------------------------------------------------------------- |
+| **Descrição** | O sistema permitirá o gerenciamento completo dos produtos oferecidos pela loja. O Gerente poderá cadastrar novos produtos, bem como alterar, visualizar, listar e excluir produtos existentes. Cada produto incluirá informações como nome, descrição, código de barras, preço e categoria, garantindo que todas as operações relacionadas aos produtos sejam realizadas de maneira eficiente e organizada. |
+
+| **Requisitos envolvidos** |                                                    |
+| ------------- | :------------------------------------------------------------- |
+| **RF0020**    | Cadastrar Produto com os atributos necessários: nome, descrição, código de barras, preço e categoria. |
+| **RF0021**    | Permitir a alteração das informações de um produto cadastrado, incluindo nome, descrição, código de barras, preço e categoria. |
+| **RF0022**    | Permitir a exclusão das informações cadastradas de um produto. |
+| **RF0023**    | Permitir a listagem de todos os produtos cadastrados. |
+| **RF0024**    | Permitir a visualização das informações detalhadas de um produto específico. |
+
+|                           |                                     |
+| ------------------------- | ----------------------------------- | 
+| **Prioridade**            | Essencial                           | 
+| **Estimativa**            | 4 dias                              | 
+| **Tempo Gasto (real):**   |                                     | 
+| **Tamanho Funcional**     | 8 PF                                | 
+| **Analista**              | Gabriel                             | 
+| **Desenvolvedor**         | Fábio                               | 
+| **Revisor**               | Flávio                              | 
+| **Testador**              | Samuel                              | 
+| **Desenvolvedor**         | Laian                               |
+
+| Testes de Aceitação (TA) |  |
+| ----------- | --------- |
+| **Código**      | **Descrição** |
+| **TA04.01** | O usuário cadastra um novo produto com todas as informações válidas. O sistema salva os dados e exibe uma mensagem de confirmação do cadastro. |
+| **TA04.02** | O usuário tenta alterar as informações de um produto existente. O sistema atualiza os dados e confirma a alteração. |
+| **TA04.03** | O usuário tenta excluir um produto. O sistema remove os dados do produto e confirma a exclusão. |
+| **TA04.04** | O usuário solicita a listagem de todos os produtos. O sistema exibe a lista completa de produtos cadastrados. |
+| **TA04.05** | O usuário visualiza as informações detalhadas de um produto específico. O sistema exibe todas as informações relevantes de forma clara. |
+
+
 ### User Story US07 - Manter Peças
                                                                
 |               |                                                                |

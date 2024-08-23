@@ -1,10 +1,38 @@
 {% extends 'base.html' %}
 
-{% block title %} Listar Fornecedores {% endblock %}
+{% block title %}Listar Fornecedores{% endblock %}
 
 {% block content %}
+<header>
+    <nav class="navbar bg-primary navbar-dark navbar-expand-sm py-3" id="navbar">
+        <div class="container d-flex align-items-center" id="nav-container">
+            <a href="#" class="navbar-brand">TechCell-Pro</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <div class="navbar-nav ms-auto">
+                    <a href="{% url 'index' %}" class="nav-link">Home</a>
+                    <a href="{% url 'cliente:list_cliente' %}" class="nav-link">Clientes</a>
+                    <a href="{% url 'funcionario:list_funcionario' %}" class="nav-link">Funcionário</a>
+                    <a href="{% url 'aparelho:list_aparelho' %}" class="nav-link">Aparelhos</a>
+                    <a href="{% url 'appConfirmarReparo:lista_reparos' %}" class="nav-link">Reparo</a>
+                    <a href="{% url 'fornecedor:list_fornecedor' %}" class="nav-link active">Fornecedor</a>
+                    <a href="{% url 'ferramenta:list_ferramenta' %}" class="nav-link">Ferramentas</a>
+                    <a href="{% url 'servico:list_servico' %}" class="nav-link">Serviços</a>
+                    <a href="{% url 'peca:list_peca' %}" class="nav-link">Peças</a>
+                    <a href="{% url 'produto:list_produto' %}" class="nav-link">Produtos</a>
+                </div>
+            </div>
+        </div>
+    </nav>       
+</header>
+
 <div class="container mt-5">
-    <h2>Listar Fornecedores</h2>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Listar Fornecedores</h2>
+        <a href="{% url 'fornecedor:create_fornecedor' %}" class="btn btn-success">Adicionar Fornecedor</a>
+    </div>
     <table class="table table-striped table-hover">
         <thead>
             <tr>

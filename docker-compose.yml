@@ -1,0 +1,45 @@
+version: "3.8"
+
+volumes:
+  postgres_data: {}
+
+networks:
+  postgres_network: {}
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready", "-d", "postgres"]
+      interval: 10s
+      timeout: 60s
+      retries: 5
+      start_period: 5s
+    user: postgres
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?error}
+    ports:
+      - 5432:5432
+    networks:
+      - postgres_network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    command: >-
+      postgres
+        -c log_statement=all
+
+  web:
+    build:
+      dockerfile: Dockerfile
+    command: >
+      sh -c  "python manage.py collectstatic --noinput
+              python manage.py makemigrations --noinput
+              python manage.py test
+              python manage.py migrate --noinput
+              python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./projeto:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
