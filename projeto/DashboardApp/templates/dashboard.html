@@ -1,0 +1,315 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+    <header>
+        
+        <nav class="navbar bg-primary navbar-dark navbar-expand-sm py-3" id="navbar">
+            <div class="container d-flex align-items-center">
+                <a href="#" class="navbar-brand">
+                    <img src="{% static 'img/hdcagency_logo.svg' %}" alt="Logo" class="me-2" style="height: 50px;">
+                    Dashboard <a href="{% url 'index' %}" class="nav-link">Home</a>
+                </a>
+                
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        
+        <h1 class="mb-4">Dashboard</h1>
+
+        <!-- Seção de Peças -->
+        <section id="pecas">
+            <h2>Peças</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for peca in pecas %}
+                        <tr>
+                            <td>{{ peca.id }}</td>
+                            <td>{{ peca.nome }}</td>
+                            <td>{{ peca.descricao }}</td>
+                            <td>{{ peca.quantidade }}</td>
+                            <td>{{ peca.preco }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5">Nenhuma peça cadastrada.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Clientes -->
+        <section id="clientes" class="mt-5">
+            <h2>Clientes</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cliente in clientes %}
+                        <tr>
+                            <td>{{ cliente.id }}</td>
+                            <td>{{ cliente.nome }}</td>
+                            <td>{{ cliente.email }}</td>
+                            <td>{{ cliente.telefone }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhum cliente cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Aparelhos -->
+        <section id="aparelhos" class="mt-5">
+            <h2>Aparelhos</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Modelo</th>
+                            <th>Marca</th>
+                            <th>Quantidade</th>
+                            <th>Data de Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for aparelho in aparelhos %}
+                        <tr>
+                            <td>{{ aparelho.id }}</td>
+                            <td>{{ aparelho.modelo }}</td>
+                            <td>{{ aparelho.marca }}</td>
+                            <td>{{ aparelho.quantidade }}</td>
+                            <td>{{ aparelho.data_compra }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5">Nenhum aparelho cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Funcionários -->
+        <section id="funcionarios" class="mt-5">
+            <h2>Funcionários</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for funcionario in funcionarios %}
+                        <tr>
+                            <td>{{ funcionario.id }}</td>
+                            <td>{{ funcionario.nome }}</td>
+                            <td>{{ funcionario.cargo }}</td>
+                            <td>{{ funcionario.telefone }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhum funcionário cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Reparos -->
+        <section id="reparos" class="mt-5">
+            <h2>Reparos</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Descrição</th>
+                            <th>Data do Reparo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for reparo in reparos %}
+                        <tr>
+                            <td>{{ reparo.id }}</td>
+                            <td>{{ reparo.descricao }}</td>
+                            <td>{{ reparo.data_reparo }}</td>
+                            <td>{{ reparo.status }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhum reparo cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Fornecedores -->
+        <section id="fornecedores" class="mt-5">
+            <h2>Fornecedores</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Contato</th>
+                            <th>Telefone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fornecedor in fornecedores %}
+                        <tr>
+                            <td>{{ fornecedor.id }}</td>
+                            <td>{{ fornecedor.nome }}</td>
+                            <td>{{ fornecedor.contato }}</td>
+                            <td>{{ fornecedor.telefone }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhum fornecedor cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Ferramentas -->
+        <section id="ferramentas" class="mt-5">
+            <h2>Ferramentas</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for ferramenta in ferramentas %}
+                        <tr>
+                            <td>{{ ferramenta.id }}</td>
+                            <td>{{ ferramenta.nome }}</td>
+                            <td>{{ ferramenta.descricao }}</td>
+                            <td>{{ ferramenta.quantidade }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhuma ferramenta cadastrada.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="mt-5">
+            <h2>Serviços</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for servico in servicos %}
+                        <tr>
+                            <td>{{ servico.id }}</td>
+                            <td>{{ servico.nome }}</td>
+                            <td>{{ servico.descricao }}</td>
+                            <td>{{ servico.preco }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">Nenhum serviço cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Seção de Produtos -->
+        <section id="produtos" class="mt-5">
+            <h2>Produtos</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for produto in produtos %}
+                        <tr>
+                            <td>{{ produto.id }}</td>
+                            <td>{{ produto.nome }}</td>
+                            <td>{{ produto.descricao }}</td>
+                            <td>{{ produto.preco }}</td>
+                            <td>{{ produto.quantidade }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5">Nenhum produto cadastrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -31,5 +31,6 @@ urlpatterns = [
     path('produtos/', include('produtosApp.urls')),
     path('ferramenta/', include('ferramentaApp.urls')),
     path('servico/', include('servicoApp.urls')),
+    path('dashboard/', include('DashboardApp.urls')),
     path('peca/', include('pecaApp.urls'))
 ]
